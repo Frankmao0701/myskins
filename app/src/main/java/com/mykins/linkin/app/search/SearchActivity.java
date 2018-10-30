@@ -47,7 +47,7 @@ public class SearchActivity extends BaseActivity {
 
         FragmentManager fragmentManager = getSupportFragmentManager();
         Fragment fragment = fragmentManager.findFragmentById(R.id.contentFrame);
-        if(fragment == null){
+        if (fragment == null) {
             mSearchFragment = new SearchFragment();
             fragmentManager.beginTransaction()
                     .add(R.id.contentFrame, mSearchFragment)
@@ -56,18 +56,18 @@ public class SearchActivity extends BaseActivity {
     }
 
     @OnTextChanged(R.id.include_search_input)
-    void onSearchInput(CharSequence text){
-        if (!TextUtils.isEmpty(text)){
+    void onSearchInput(CharSequence text) {
+        if (!TextUtils.isEmpty(text)) {
             mSearchClear.setVisibility(View.VISIBLE);
             mSearchFragment.loadData();
-        }else{
+        } else {
             mSearchFragment.showStart();
             mSearchClear.setVisibility(View.GONE);
         }
     }
 
     @OnClick(R.id.include_search_clear)
-    void onSearchClear(){
+    void onSearchClear() {
         mSearchFragment.showStart();
         mSearchInput.setText("");
         mSearchClear.setVisibility(View.GONE);
@@ -75,7 +75,7 @@ public class SearchActivity extends BaseActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        if (item.getItemId() == android.R.id.home){
+        if (item.getItemId() == android.R.id.home) {
             finish();
             return true;
         }

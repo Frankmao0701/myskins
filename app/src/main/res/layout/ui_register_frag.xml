@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              xmlns:app="http://schemas.android.com/apk/res-auto"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              android:background="@android:color/white"
-              android:fitsSystemWindows="true"
-              android:orientation="vertical">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
 
     <!-- account -->
     <FrameLayout
@@ -36,7 +36,7 @@
                 android:maxLines="1"
                 android:singleLine="true"
                 android:textColorHint="@color/color_787878"
-                android:textSize="13sp"/>
+                android:textSize="13sp" />
 
         </android.support.design.widget.TextInputLayout>
     </FrameLayout>
@@ -44,7 +44,7 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="1px"
-        android:background="@color/color_ebebeb"/>
+        android:background="@color/color_ebebeb" />
 
     <!-- password -->
     <FrameLayout
@@ -75,7 +75,7 @@
                 android:maxLines="1"
                 android:singleLine="true"
                 android:textColorHint="@color/color_787878"
-                android:textSize="13sp"/>
+                android:textSize="13sp" />
 
         </android.support.design.widget.TextInputLayout>
     </FrameLayout>
@@ -83,7 +83,7 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="1px"
-        android:background="@color/color_ebebeb"/>
+        android:background="@color/color_ebebeb" />
 
     <!-- verify-->
     <RelativeLayout
@@ -103,7 +103,7 @@
             android:paddingRight="3dp"
             android:text="@string/title_send_verify_code"
             android:textColor="@android:color/white"
-            android:textSize="13sp"/>
+            android:textSize="13sp" />
 
         <android.support.design.widget.TextInputLayout
             android:id="@+id/register.verify.input"
@@ -128,7 +128,7 @@
                 android:maxLines="1"
                 android:singleLine="true"
                 android:textColorHint="@color/color_787878"
-                android:textSize="13sp"/>
+                android:textSize="13sp" />
 
         </android.support.design.widget.TextInputLayout>
     </RelativeLayout>
@@ -136,7 +136,7 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="1px"
-        android:background="@color/color_ebebeb"/>
+        android:background="@color/color_ebebeb" />
 
     <Button
         android:id="@+id/register.submit.btn"
@@ -149,9 +149,10 @@
         android:background="@drawable/round_5c5c5c_bg"
         android:text="@string/title_register"
         android:textColor="@android:color/white"
-        android:textSize="16sp"/>
+        android:textSize="16sp" />
 
-    <Button android:id="@+id/register.protocal.btn"
+    <Button
+        android:id="@+id/register.protocal.btn"
         android:layout_width="match_parent"
         android:layout_height="42dp"
         android:layout_centerHorizontal="true"
@@ -160,6 +161,6 @@
         android:background="@null"
         android:text="@string/title_register_protocal"
         android:textColor="@color/color_787878"
-        android:textSize="16sp"/>
+        android:textSize="16sp" />
 
 </LinearLayout>

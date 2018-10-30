@@ -56,7 +56,7 @@ public class NewKinsFragment extends BaseFragment {
     private void loadData() {
         ArrayList<KinsBean> newKins = new ArrayList<>();
         newKins.addAll(Arrays.asList(new KinsBean[]{
-          new KinsBean("http://img.hb.aicdn.com/859b6e9c965eb9a1cb60dd095443dead5b96ab0578890-Ech9SR_fw658", "痞子厨子", "不想当厨师的工程师不是好的将军"),
+                new KinsBean("http://img.hb.aicdn.com/859b6e9c965eb9a1cb60dd095443dead5b96ab0578890-Ech9SR_fw658", "痞子厨子", "不想当厨师的工程师不是好的将军"),
                 new KinsBean("http://img.hb.aicdn.com/859b6e9c965eb9a1cb60dd095443dead5b96ab0578890-Ech9SR_fw658", "痞子厨子", "不想当厨师的工程师不是好的将军"),
                 new KinsBean("http://img.hb.aicdn.com/859b6e9c965eb9a1cb60dd095443dead5b96ab0578890-Ech9SR_fw658", "痞子厨子", "不想当厨师的工程师不是好的将军"),
                 new KinsBean("http://img.hb.aicdn.com/859b6e9c965eb9a1cb60dd095443dead5b96ab0578890-Ech9SR_fw658", "痞子厨子", "不想当厨师的工程师不是好的将军")

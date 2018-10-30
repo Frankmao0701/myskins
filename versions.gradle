@@ -5,7 +5,7 @@
 ext.deps = [:]
 def versions = [:]
 versions.arch = hasProperty("ARCH_VERSION") ? getProperty("ARCH_VERSION") : "1.0.0-rc1"
-versions.support = "27.0.0"
+versions.support = "27.1.0"
 versions.runner = "1.0.1"
 versions.rules = "1.0.1"
 versions.dagger = "2.11"
@@ -41,6 +41,8 @@ versions.keyboardVisibility = '2.1.0'
 versions.badgeview = '1.1.3'
 versions.ninegridimageview = '1.0.0'
 versions.zxing = '2.2'
+versions.rxbinding = '2.1.1'
+versions.rxpermissions = '0.10.2'
 
 def deps = [:]
 
@@ -135,6 +137,9 @@ deps.keyboardVisibility = "net.yslibrary.keyboardvisibilityevent:keyboardvisibil
 deps.badgeview = "q.rorbin:badgeview:$versions.badgeview"
 deps.ninegridimageview = "com.lqr.ninegridimageview:library:$versions.ninegridimageview"
 deps.zxing = "cn.yipianfengye.android:zxing-library:$versions.zxing"
+deps.rxbinding = "com.jakewharton.rxbinding2:rxbinding:$versions.rxbinding"
+deps.rxpermissions = "com.github.tbruyelle:rxpermissions:$versions.rxpermissions"
+
 ext.deps = deps
 
 def build_versions = [:]

@@ -5,5 +5,5 @@ package com.mykins.linkin.bean;
  */
 
 public class RelationTitle {
-    
+
 }

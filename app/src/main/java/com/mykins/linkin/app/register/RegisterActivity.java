@@ -18,7 +18,7 @@ import dagger.android.support.HasSupportFragmentInjector;
  * Created by jerry on 2017/9/3.
  */
 
-public class RegisterActivity extends BaseActivity implements HasSupportFragmentInjector{
+public class RegisterActivity extends BaseActivity implements HasSupportFragmentInjector {
     @Inject
     DispatchingAndroidInjector<Fragment> dispatchingAndroidInjector;
 
@@ -44,6 +44,6 @@ public class RegisterActivity extends BaseActivity implements HasSupportFragment
 
     @Override
     public AndroidInjector<Fragment> supportFragmentInjector() {
-        return  this.dispatchingAndroidInjector;
+        return this.dispatchingAndroidInjector;
     }
 }

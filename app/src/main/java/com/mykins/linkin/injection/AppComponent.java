@@ -23,7 +23,8 @@ public interface AppComponent {
     @Component.Builder
     interface Builder {
 
-        @BindsInstance Builder app(MyApp app);
+        @BindsInstance
+        Builder app(MyApp app);
 
         AppComponent build();
     }

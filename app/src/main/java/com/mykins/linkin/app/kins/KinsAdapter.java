@@ -104,7 +104,7 @@ class KinsAdapter extends RecyclerView.Adapter {
                 contactHolder.kins_item_name.setText(n);
                 String url = "http://img.hb.aicdn.com/cd392e199f22b27f8d4acb4d4026a79eab46ceeed414-GM93zI_fw658";
                 GlideHelper.loadUrlRound(mFragment, url, ((ContactHolder) holder).kins_item_avatar);
-                contactHolder.kins_item_link.setImageResource(position%2==0?R.mipmap.ic_contact_link:R.mipmap.ic_contact_linked);
+                contactHolder.kins_item_link.setImageResource(position % 2 == 0 ? R.mipmap.ic_contact_link : R.mipmap.ic_contact_linked);
                 break;
             case TYPE_GROUP:
                 GroupHolder groupHolder = (GroupHolder) holder;
@@ -122,9 +122,9 @@ class KinsAdapter extends RecyclerView.Adapter {
         //添群组
         if (position == 0) {
             type = TYPE_ADD;
-        } else if (position-1<mGroups.size()) {
+        } else if (position - 1 < mGroups.size()) {
             type = TYPE_GROUP;
-        }else{
+        } else {
             int pos = position - mGroups.size() - 1;
             int len = mData.get(pos).length;
             //字母索引

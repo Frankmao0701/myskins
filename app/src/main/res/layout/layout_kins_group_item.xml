@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="74dp"
-    >
+    android:layout_height="74dp">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -20,6 +18,6 @@
             android:layout_marginLeft="24dp"
             android:text="@string/title_kins_add"
             android:textColor="@color/color_535f5f"
-            android:textSize="14sp"/>
+            android:textSize="14sp" />
     </LinearLayout>
 </FrameLayout>

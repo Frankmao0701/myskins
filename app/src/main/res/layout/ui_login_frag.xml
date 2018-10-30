@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v4.widget.NestedScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/color_faebe4">
@@ -23,7 +22,7 @@
             android:paddingLeft="16dp"
             android:paddingRight="16dp"
             android:paddingTop="16dp"
-            android:src="@mipmap/ic_login_logo"/>
+            android:src="@mipmap/ic_login_logo" />
 
         <!-- account -->
         <RelativeLayout
@@ -40,7 +39,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
                 android:layout_centerVertical="true"
-                android:src="@mipmap/ic_account"/>
+                android:src="@mipmap/ic_account" />
 
             <EditText
                 android:id="@+id/login.edt_account"
@@ -56,7 +55,7 @@
                 android:paddingLeft="32dp"
                 android:paddingRight="12dp"
                 android:textColorHint="@color/b1b1b1b1"
-                android:textSize="13sp"/>
+                android:textSize="13sp" />
         </RelativeLayout>
 
         <RelativeLayout
@@ -74,7 +73,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
                 android:layout_centerVertical="true"
-                android:src="@mipmap/ic_pwd"/>
+                android:src="@mipmap/ic_pwd" />
 
             <EditText
                 android:id="@+id/login.edt_pwd"
@@ -89,7 +88,7 @@
                 android:paddingLeft="32dp"
                 android:paddingRight="12dp"
                 android:textColorHint="@color/b1b1b1b1"
-                android:textSize="13sp"/>
+                android:textSize="13sp" />
         </RelativeLayout>
 
         <Button
@@ -103,7 +102,7 @@
             android:paddingRight="10dp"
             android:paddingTop="12dp"
             android:text="@string/title_forget_password"
-            android:textColor="@color/b1b1b1b1"/>
+            android:textColor="@color/b1b1b1b1" />
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -119,7 +118,7 @@
                 android:background="@drawable/round_5c5c5c_bg"
                 android:text="@string/title_login"
                 android:textColor="@android:color/white"
-                android:textSize="16sp"/>
+                android:textSize="16sp" />
 
             <Button
                 android:id="@+id/login.register.btn"
@@ -133,7 +132,7 @@
                 android:paddingRight="10dp"
                 android:paddingTop="10dp"
                 android:text="@string/title_register"
-                android:textSize="16sp"/>
+                android:textSize="16sp" />
         </RelativeLayout>
     </LinearLayout>
 </android.support.v4.widget.NestedScrollView>

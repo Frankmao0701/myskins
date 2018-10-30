@@ -29,10 +29,12 @@ public interface KinsProfileContract {
         void endRelationProgress();
 
         void startAppellationProgress();
+
         void endAppellationProgress();
 
         /**
          * 关系定位选择对话框
+         *
          * @param relationTitleList
          */
         void showRelationPicker(LinkedTreeMap<Object, Object> relationTitleList);

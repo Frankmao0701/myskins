@@ -1,48 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
         android:layout_marginLeft="50dp"
         android:layout_marginRight="50dp"
-        android:layout_gravity="center_horizontal"
-        android:orientation="horizontal"
-        android:background="@mipmap/ic_msg_left">
-        <ImageView
+        android:background="@mipmap/ic_msg_left"
+        android:orientation="horizontal">
+
+        <LinearLayout
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_margin="5dp"
-            android:src="@mipmap/ic_launcher" />
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@mipmap/ic_launcher" />
+        </LinearLayout>
+
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginRight="8dp">
+
             <TextView
+                android:id="@+id/gather.share.content"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="萨达打赏打赏萨达啊实打实打赏大声道阿萨德爱尚打赏打啊ad啊打打ad "
-                android:paddingTop="15dp"
-                android:maxLines="2"
                 android:ellipsize="end"
-                android:textColor="@android:color/white"/>
+                android:maxLines="2"
+                android:paddingTop="15dp"
+                android:text="萨达打赏打赏萨达啊实打实打赏大声道阿萨德爱尚打赏打啊ad啊打打ad "
+                android:textColor="@android:color/white" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@android:color/white"
-                android:textSize="14sp"
-                android:text="@string/text_pic_count"
                 android:layout_alignParentBottom="true"
-                android:layout_marginBottom="10dp" />
+                android:layout_marginBottom="10dp"
+                android:text="@string/text_pic_count"
+                android:textColor="@android:color/white"
+                android:textSize="14sp" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@android:color/white"
-                android:textSize="14sp"
-                android:text="6月8日"
                 android:layout_alignParentBottom="true"
                 android:layout_alignParentRight="true"
-                android:layout_marginBottom="10dp" />
+                android:layout_marginBottom="10dp"
+                android:text="6月8日"
+                android:textColor="@android:color/white"
+                android:textSize="14sp" />
         </RelativeLayout>
     </LinearLayout>
 </FrameLayout>

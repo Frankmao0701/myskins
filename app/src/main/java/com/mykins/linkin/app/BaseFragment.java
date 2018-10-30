@@ -10,6 +10,7 @@ import android.support.v7.app.AppCompatActivity;
  */
 
 public class BaseFragment extends Fragment {
+    public final String TAG = this.getClass().getSimpleName();
     protected AppCompatActivity mActivity;
     protected Context mContext;
 

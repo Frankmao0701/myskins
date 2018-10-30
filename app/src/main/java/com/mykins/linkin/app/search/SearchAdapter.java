@@ -22,18 +22,18 @@ import butterknife.ButterKnife;
  * Created by yjn on 2017/11/5.
  */
 
-class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ViewHolder>{
+class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ViewHolder> {
 
     private final Fragment mFragment;
     Activity mActivity;
     ArrayList<Object> mData = new ArrayList<>();
 
-    SearchAdapter(Activity activity, Fragment fragment){
+    SearchAdapter(Activity activity, Fragment fragment) {
         this.mActivity = activity;
         this.mFragment = fragment;
     }
 
-    void addData(ArrayList<Object> data){
+    void addData(ArrayList<Object> data) {
         mData.addAll(data);
         notifyDataSetChanged();
     }
@@ -42,9 +42,9 @@ class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ViewHolder>{
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         ViewHolder holder = null;
         View view = null;
-        if (viewType == -1){
+        if (viewType == -1) {
             view = this.mActivity.getLayoutInflater().inflate(R.layout.include_title, null);
-        }else {
+        } else {
             view = this.mActivity.getLayoutInflater().inflate(R.layout.layout_search_result_item, null);
         }
         holder = new ViewHolder(view);
@@ -55,15 +55,15 @@ class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ViewHolder>{
     public void onBindViewHolder(ViewHolder holder, int position) {
         int viewType = getItemViewType(position);
         Object data = mData.get(position);
-        if (viewType == -1){
+        if (viewType == -1) {
             String title = (String) data;
-           holder.title.setText(title);
-        }else {
+            holder.title.setText(title);
+        } else {
             SearchResultBean resultBean = (SearchResultBean) data;
             GlideHelper.loadUrlRound(mFragment, resultBean.getAvatar(), holder.avatar);
             holder.name.setText(resultBean.getName());
             holder.desc.setText(resultBean.getDesc());
-            switch (viewType){
+            switch (viewType) {
                 case SearchResultBean.SEARCH_IM:
                     holder.flag.setVisibility(View.GONE);
                     break;
@@ -82,10 +82,10 @@ class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ViewHolder>{
     @Override
     public int getItemViewType(int position) {
         Object data = mData.get(position);
-        if (data instanceof SearchResultBean){
+        if (data instanceof SearchResultBean) {
             SearchResultBean resultBean = (SearchResultBean) data;
             return resultBean.getType();
-        }else { //title
+        } else { //title
             return -1;
         }
     }
@@ -95,16 +95,21 @@ class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ViewHolder>{
         return mData.size();
     }
 
-    class ViewHolder extends RecyclerView.ViewHolder{
-        @BindView(R.id.search_result_item_avatar) @Nullable
+    class ViewHolder extends RecyclerView.ViewHolder {
+        @BindView(R.id.search_result_item_avatar)
+        @Nullable
         ImageView avatar;
-        @BindView(R.id.search_result_item_name)@Nullable
+        @BindView(R.id.search_result_item_name)
+        @Nullable
         TextView name;
-        @BindView(R.id.search_result_item_desc)@Nullable
+        @BindView(R.id.search_result_item_desc)
+        @Nullable
         TextView desc;
-        @BindView(R.id.search_type_flag)@Nullable
+        @BindView(R.id.search_type_flag)
+        @Nullable
         ImageView flag;
-        @BindView(R.id.include_title)@Nullable
+        @BindView(R.id.include_title)
+        @Nullable
         TextView title;
 
         public ViewHolder(View itemView) {

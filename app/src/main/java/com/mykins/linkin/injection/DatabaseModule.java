@@ -20,13 +20,13 @@ public class DatabaseModule {
 
     @Provides
     @Singleton
-    public UserDb provideUserDb(MyApp app){
-        return Room.databaseBuilder(app, UserDb.class,"users.db").build();
+    public UserDb provideUserDb(MyApp app) {
+        return Room.databaseBuilder(app, UserDb.class, "users.db").build();
     }
 
     @Provides
     @Singleton
-    public UserDao provideUserDao(UserDb db){
+    public UserDao provideUserDao(UserDb db) {
         return db.userDao();
     }
 }

@@ -65,7 +65,7 @@ class NewKinsAdapter extends RecyclerView.Adapter<NewKinsAdapter.NewKinsHolder> 
                 || viewType == VIEW_TYPE_NEWKINS_RECOMMEND) {
             view = mInflater.inflate(R.layout.ui_new_kins_item, null);
         } else if (viewType == VIEW_TYPE_New_KINS_TITLE
-                || viewType == VIEW_TYPE_RECOMMEND_KINS_TITLE){
+                || viewType == VIEW_TYPE_RECOMMEND_KINS_TITLE) {
             view = mInflater.inflate(R.layout.include_title, null);
         }
         holder = new NewKinsHolder(view);
@@ -108,7 +108,7 @@ class NewKinsAdapter extends RecyclerView.Adapter<NewKinsAdapter.NewKinsHolder> 
     @Override
     public int getItemViewType(int position) {
         int type = -1;
-        if (position<mNewKins.size()) {
+        if (position < mNewKins.size()) {
             if (position == 0)
                 type = VIEW_TYPE_New_KINS_TITLE;
             else
@@ -129,21 +129,29 @@ class NewKinsAdapter extends RecyclerView.Adapter<NewKinsAdapter.NewKinsHolder> 
     }
 
     class NewKinsHolder extends RecyclerView.ViewHolder {
-        @BindView(R.id.kins_new_item_avatar) @Nullable
+        @BindView(R.id.kins_new_item_avatar)
+        @Nullable
         ImageView avatar;
-        @BindView(R.id.kins_new_item_name)@Nullable
+        @BindView(R.id.kins_new_item_name)
+        @Nullable
         TextView name;
-        @BindView(R.id.kins_new_item_desc)@Nullable
+        @BindView(R.id.kins_new_item_desc)
+        @Nullable
         TextView desc;
-        @BindView(R.id.kins_new_item_accept)@Nullable
+        @BindView(R.id.kins_new_item_accept)
+        @Nullable
         Button accept;
-        @BindView(R.id.kins_new_item_reject)@Nullable
+        @BindView(R.id.kins_new_item_reject)
+        @Nullable
         Button reject;
-        @BindView(R.id.kins_new_item_buttons)@Nullable
+        @BindView(R.id.kins_new_item_buttons)
+        @Nullable
         LinearLayout buttons;
-        @BindView(R.id.kins_new_item_more)@Nullable
+        @BindView(R.id.kins_new_item_more)
+        @Nullable
         ImageView more;
-        @BindView(R.id.include_title)@Nullable
+        @BindView(R.id.include_title)
+        @Nullable
         TextView title;
 
         public NewKinsHolder(View itemView) {

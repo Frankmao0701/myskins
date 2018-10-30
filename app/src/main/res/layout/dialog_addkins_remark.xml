@@ -38,7 +38,7 @@
             android:text="@string/sure"
             android:background="@drawable/bg_remark_sure"
             android:textColor="@color/color_62c554"
-            android:textSize="14sp"/>
+            android:textSize="14sp" />
     </LinearLayout>
 
 </LinearLayout>

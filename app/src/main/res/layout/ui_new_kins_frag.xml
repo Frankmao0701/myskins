@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v4.widget.NestedScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/color_ebebeb">
@@ -26,7 +25,7 @@
                 android:layout_alignParentLeft="true"
                 android:layout_centerVertical="true"
                 android:scaleType="fitXY"
-                android:src="@mipmap/ic_search"/>
+                android:src="@mipmap/ic_search" />
 
             <ImageButton
                 android:id="@+id/kins.search.clear"
@@ -36,7 +35,7 @@
                 android:layout_centerVertical="true"
                 android:scaleType="fitXY"
                 android:background="@null"
-                android:src="@mipmap/ic_clear"/>
+                android:src="@mipmap/ic_clear" />
 
             <EditText
                 android:layout_width="match_parent"
@@ -50,7 +49,7 @@
                 android:singleLine="true"
                 android:textColor="@color/color_444444"
                 android:textColorHint="@color/color_a5a7a7"
-                android:textSize="@dimen/font_14"/>
+                android:textSize="@dimen/font_14" />
         </RelativeLayout>
 
         <!-- content -->
@@ -59,13 +58,13 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <include layout="@layout/include_empty"/>
+            <include layout="@layout/include_empty" />
 
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/kins.new.recyclerView"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginBottom="12dp"/>
+                android:layout_marginBottom="12dp" />
         </FrameLayout>
 
     </LinearLayout>

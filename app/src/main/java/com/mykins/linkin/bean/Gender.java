@@ -10,7 +10,7 @@ public enum Gender {
 
     private int value;
 
-    Gender(int value){
+    Gender(int value) {
         this.value = value;
     }
 

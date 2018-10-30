@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -12,6 +12,7 @@
         android:orientation="vertical">
 
         <TextView
+            android:id="@+id/gather.active.content"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="15dp"
@@ -28,6 +29,7 @@
             android:layout_height="0.5dp"
             android:layout_marginTop="2dp"
             android:background="@android:color/white" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -39,6 +41,7 @@
             android:textSize="14sp"
             android:textColor="@android:color/white"
             android:text="地点:大梅沙" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -50,6 +53,7 @@
             android:textSize="14sp"
             android:textColor="@android:color/white"
             android:text="2018年10月30日" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -58,7 +62,7 @@
             android:textColor="@android:color/white"
             android:layout_marginRight="5dp"
             android:layout_marginBottom="5dp"
-            android:text="6月8日"/>
+            android:text="6月8日" />
     </LinearLayout>
 
 </FrameLayout>

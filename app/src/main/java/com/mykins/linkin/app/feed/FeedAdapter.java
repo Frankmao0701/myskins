@@ -44,7 +44,7 @@ class FeedAdapter extends RecyclerView.Adapter<FeedAdapter.ViewHolder> {
     public void onBindViewHolder(ViewHolder holder, int position) {
         String url = "http://img.hb.aicdn.com/1bb534a3c66ceef02f2ad0ce0368c05966437cc819d23-cRA0rz_fw658";
         GlideHelper.loadUrlRound(mFragment, url, holder.avatar);
-        if (position%2 != 0){
+        if (position % 2 != 0) {
             holder.typeFlag.setImageResource(R.mipmap.ic_event_flag);
         }
     }
@@ -56,13 +56,17 @@ class FeedAdapter extends RecyclerView.Adapter<FeedAdapter.ViewHolder> {
     }
 
     class ViewHolder extends RecyclerView.ViewHolder {
-        @BindView(R.id.feed_item_avatar)@Nullable
+        @BindView(R.id.feed_item_avatar)
+        @Nullable
         ImageView avatar;
-        @BindView(R.id.feed_item_name)@Nullable
+        @BindView(R.id.feed_item_name)
+        @Nullable
         TextView name;
-        @BindView(R.id.feed_type_flag)@Nullable
+        @BindView(R.id.feed_type_flag)
+        @Nullable
         ImageView typeFlag;
-        @BindView(R.id.feed_item_content)@Nullable
+        @BindView(R.id.feed_item_content)
+        @Nullable
         TextView content;
         @BindView(R.id.feed_item_event_date)
         TextView eventDate;

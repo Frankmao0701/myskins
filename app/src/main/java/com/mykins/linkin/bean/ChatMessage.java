@@ -10,8 +10,8 @@ public class ChatMessage {
     long owner_id;
     CharSequence datetime;
 
-    public ChatMessage(CharSequence name, CharSequence msg_text, long owner_id, CharSequence datetime){
-        this.name =name;
+    public ChatMessage(CharSequence name, CharSequence msg_text, long owner_id, CharSequence datetime) {
+        this.name = name;
         this.msg_text = msg_text;
         this.owner_id = owner_id;
         this.datetime = datetime;

@@ -152,7 +152,7 @@
                     android:paddingLeft="32dp"
                     android:text="@string/title_selection"
                     android:textColor="@color/color_8b8b8b"
-                    android:textSize="14sp"/>
+                    android:textSize="14sp" />
 
                 <ImageView
                     android:id="@+id/kins.profile.item.arrow3"
@@ -334,7 +334,7 @@
                     android:paddingLeft="32dp"
                     android:textColor="@color/color_494949"
                     android:textSize="14sp"
-                    android:text="231231@qq.com"/>
+                    android:text="231231@qq.com" />
 
                 <ImageView
                     android:id="@+id/kins.profile.item.arrow6"

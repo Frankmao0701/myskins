@@ -58,7 +58,7 @@ public class SearchFragment extends BaseFragment {
         super.onDestroy();
     }
 
-    void showStart(){
+    void showStart() {
         mSearchStart.setVisibility(View.VISIBLE);
         mRecylerView.setVisibility(View.GONE);
     }
@@ -67,8 +67,8 @@ public class SearchFragment extends BaseFragment {
         mSearchStart.setVisibility(View.GONE);
         mRecylerView.setVisibility(View.VISIBLE);
 
-        boolean isEmpty = mAdapter.getItemCount()==0;
-        if (!isEmpty)return;
+        boolean isEmpty = mAdapter.getItemCount() == 0;
+        if (!isEmpty) return;
 
 
         ArrayList<Object> data = new ArrayList<>();
@@ -76,24 +76,24 @@ public class SearchFragment extends BaseFragment {
         data.addAll(Arrays.asList(new SearchResultBean[]{
                 new SearchResultBean("http://img.hb.aicdn.com/859b6e9c965eb9a1cb60dd095443dead5b96ab0578890-Ech9SR_fw658", "痞子厨子", "不想当厨师的工程师不是好的将军", SearchResultBean.SEARCH_IM),
                 new SearchResultBean("http://img.hb.aicdn.com/859b6e9c965eb9a1cb60dd095443dead5b96ab0578890-Ech9SR_fw658", "痞子厨子", "不想当厨师的工程师不是好的将军", SearchResultBean.SEARCH_IM),
-                new SearchResultBean("http://img.hb.aicdn.com/859b6e9c965eb9a1cb60dd095443dead5b96ab0578890-Ech9SR_fw658", "痞子厨子", "不想当厨师的工程师不是好的将军",SearchResultBean.SEARCH_IM),
-                new SearchResultBean("http://img.hb.aicdn.com/859b6e9c965eb9a1cb60dd095443dead5b96ab0578890-Ech9SR_fw658", "痞子厨子", "不想当厨师的工程师不是好的将军",SearchResultBean.SEARCH_IM)
+                new SearchResultBean("http://img.hb.aicdn.com/859b6e9c965eb9a1cb60dd095443dead5b96ab0578890-Ech9SR_fw658", "痞子厨子", "不想当厨师的工程师不是好的将军", SearchResultBean.SEARCH_IM),
+                new SearchResultBean("http://img.hb.aicdn.com/859b6e9c965eb9a1cb60dd095443dead5b96ab0578890-Ech9SR_fw658", "痞子厨子", "不想当厨师的工程师不是好的将军", SearchResultBean.SEARCH_IM)
         }));
 
 
         data.add(ResUtils.string(R.string.title_search_share));
         data.addAll(Arrays.asList(new SearchResultBean[]{
-                new SearchResultBean("http://img.hb.aicdn.com/1bb534a3c66ceef02f2ad0ce0368c05966437cc819d23-cRA0rz_fw658", "索隆1", "不想当厨师的工程师不是好的将军",SearchResultBean.SEARCH_SHARE),
-                new SearchResultBean("http://img.hb.aicdn.com/1bb534a3c66ceef02f2ad0ce0368c05966437cc819d23-cRA0rz_fw658", "索隆2", "不想当厨师的工程师不是好的将军",SearchResultBean.SEARCH_SHARE),
-                new SearchResultBean("http://img.hb.aicdn.com/1bb534a3c66ceef02f2ad0ce0368c05966437cc819d23-cRA0rz_fw658", "索隆3", "不想当厨师的工程师不是好的将军",SearchResultBean.SEARCH_SHARE),
-                new SearchResultBean("http://img.hb.aicdn.com/1bb534a3c66ceef02f2ad0ce0368c05966437cc819d23-cRA0rz_fw658", "索隆4", "不想当厨师的工程师不是好的将军",SearchResultBean.SEARCH_SHARE)
+                new SearchResultBean("http://img.hb.aicdn.com/1bb534a3c66ceef02f2ad0ce0368c05966437cc819d23-cRA0rz_fw658", "索隆1", "不想当厨师的工程师不是好的将军", SearchResultBean.SEARCH_SHARE),
+                new SearchResultBean("http://img.hb.aicdn.com/1bb534a3c66ceef02f2ad0ce0368c05966437cc819d23-cRA0rz_fw658", "索隆2", "不想当厨师的工程师不是好的将军", SearchResultBean.SEARCH_SHARE),
+                new SearchResultBean("http://img.hb.aicdn.com/1bb534a3c66ceef02f2ad0ce0368c05966437cc819d23-cRA0rz_fw658", "索隆3", "不想当厨师的工程师不是好的将军", SearchResultBean.SEARCH_SHARE),
+                new SearchResultBean("http://img.hb.aicdn.com/1bb534a3c66ceef02f2ad0ce0368c05966437cc819d23-cRA0rz_fw658", "索隆4", "不想当厨师的工程师不是好的将军", SearchResultBean.SEARCH_SHARE)
         }));
 
         data.add(ResUtils.string(R.string.title_search_event));
         data.addAll(Arrays.asList(new SearchResultBean[]{
-                new SearchResultBean("http://img.hb.aicdn.com/1bb534a3c66ceef02f2ad0ce0368c05966437cc819d23-cRA0rz_fw658", "索隆1", "不想当厨师的工程师不是好的将军",SearchResultBean.SEARCH_EVENT),
-                new SearchResultBean("http://img.hb.aicdn.com/1bb534a3c66ceef02f2ad0ce0368c05966437cc819d23-cRA0rz_fw658", "索隆2", "不想当厨师的工程师不是好的将军",SearchResultBean.SEARCH_EVENT),
-                new SearchResultBean("http://img.hb.aicdn.com/1bb534a3c66ceef02f2ad0ce0368c05966437cc819d23-cRA0rz_fw658", "索隆3", "不想当厨师的工程师不是好的将军",SearchResultBean.SEARCH_EVENT),
+                new SearchResultBean("http://img.hb.aicdn.com/1bb534a3c66ceef02f2ad0ce0368c05966437cc819d23-cRA0rz_fw658", "索隆1", "不想当厨师的工程师不是好的将军", SearchResultBean.SEARCH_EVENT),
+                new SearchResultBean("http://img.hb.aicdn.com/1bb534a3c66ceef02f2ad0ce0368c05966437cc819d23-cRA0rz_fw658", "索隆2", "不想当厨师的工程师不是好的将军", SearchResultBean.SEARCH_EVENT),
+                new SearchResultBean("http://img.hb.aicdn.com/1bb534a3c66ceef02f2ad0ce0368c05966437cc819d23-cRA0rz_fw658", "索隆3", "不想当厨师的工程师不是好的将军", SearchResultBean.SEARCH_EVENT),
                 new SearchResultBean("http://img.hb.aicdn.com/1bb534a3c66ceef02f2ad0ce0368c05966437cc819d23-cRA0rz_fw658", "索隆4", "不想当厨师的工程师不是好的将军", SearchResultBean.SEARCH_EVENT)
         }));
 

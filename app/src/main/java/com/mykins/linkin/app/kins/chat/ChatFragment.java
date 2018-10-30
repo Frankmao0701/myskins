@@ -85,8 +85,8 @@ public class ChatFragment extends BaseFragment {
                     public void onVisibilityChanged(boolean isOpen) {
                         if (isOpen) {
                             mEmoticonView.setVisibility(View.GONE);
-                        }else{
-                            if (markEmoticonVisible){
+                        } else {
+                            if (markEmoticonVisible) {
                                 markEmoticonVisible = false;
                                 mEmoticonView.setVisibility(View.VISIBLE);
                             }
@@ -107,10 +107,10 @@ public class ChatFragment extends BaseFragment {
         loadData();
     }
 
-    public boolean onBackPressed(){
-        if (mEmoticonView.getVisibility() == View.VISIBLE){
-           mEmoticonView.setVisibility(View.GONE);
-           return true;
+    public boolean onBackPressed() {
+        if (mEmoticonView.getVisibility() == View.VISIBLE) {
+            mEmoticonView.setVisibility(View.GONE);
+            return true;
         }
         return false;
     }
@@ -127,7 +127,7 @@ public class ChatFragment extends BaseFragment {
             if (KeyboardVisibilityEvent.isKeyboardVisible(mActivity)) {
                 KeyboardUtils.hideSoftInput(mActivity);
                 markEmoticonVisible = true;
-            }else{
+            } else {
                 mEmoticonView.setVisibility(View.VISIBLE);
             }
 

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
     <LinearLayout
         android:id="@+id/chat.input.bar"
@@ -11,7 +11,7 @@
         android:background="@android:color/white"
         android:orientation="vertical">
 
-        <include layout="@layout/include_divider"/>
+        <include layout="@layout/include_divider" />
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -28,7 +28,7 @@
                 android:layout_alignParentLeft="true"
                 android:layout_centerVertical="true"
                 android:background="@null"
-                android:src="@mipmap/ic_new"/>
+                android:src="@mipmap/ic_new" />
 
             <ImageButton
                 android:id="@+id/chat.input.attach"
@@ -37,7 +37,7 @@
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
                 android:background="@null"
-                android:src="@mipmap/ic_attach"/>
+                android:src="@mipmap/ic_attach" />
 
             <ImageButton
                 android:id="@+id/chat.input.emoticon"
@@ -47,7 +47,7 @@
                 android:layout_marginRight="12dp"
                 android:layout_toLeftOf="@id/chat.input.attach"
                 android:background="@null"
-                android:src="@mipmap/ic_emoji"/>
+                android:src="@mipmap/ic_emoji" />
 
             <EditText
                 android:id="@+id/chat.input.text"
@@ -62,7 +62,7 @@
                 android:paddingLeft="12dp"
                 android:paddingRight="12dp"
                 android:textColor="@color/color_414c4e"
-                android:textSize="15sp"/>
+                android:textSize="15sp" />
         </RelativeLayout>
 
 
@@ -71,7 +71,7 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:background="@color/color_ebebeb"
-            android:visibility="gone"/>
+            android:visibility="gone" />
 
     </LinearLayout>
 
@@ -80,6 +80,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@id/chat.input.bar"
-        android:layout_alignParentTop="true"/>
+        android:layout_alignParentTop="true" />
 
 </RelativeLayout>

@@ -2,6 +2,8 @@ package com.mykins.linkin.app;
 
 import android.app.Activity;
 import android.app.Application;
+import android.content.Context;
+import android.support.multidex.MultiDex;
 
 import com.mykins.linkin.injection.AppInjector;
 import com.mykins.linkin.util.GlideHelper;
@@ -18,7 +20,7 @@ import dagger.android.HasActivityInjector;
  * Created by jerry on 2017/8/24.
  */
 
-public class MyApp extends Application implements HasActivityInjector{
+public class MyApp extends Application implements HasActivityInjector {
     @Inject
     DispatchingAndroidInjector<Activity> dispatchingAndroidInjector;
 
@@ -39,6 +41,11 @@ public class MyApp extends Application implements HasActivityInjector{
         return mInstance;
     }
 
+    @Override
+    protected void attachBaseContext(Context base) {
+//        MultiDex.install(this);
+        super.attachBaseContext(base);
+    }
 
     @Override
     public AndroidInjector<Activity> activityInjector() {

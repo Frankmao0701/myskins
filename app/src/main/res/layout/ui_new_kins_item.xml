@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -16,7 +15,7 @@
         android:layout_height="48dp"
         android:layout_alignParentLeft="true"
         android:layout_centerVertical="true"
-        android:scaleType="fitXY"/>
+        android:scaleType="fitXY" />
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -24,11 +23,12 @@
         android:layout_alignParentRight="true"
         android:layout_toRightOf="@+id/kins.new.item.avatar">
 
-        <View android:id="@+id/line"
+        <View
+            android:id="@+id/line"
             android:layout_width="match_parent"
             android:layout_height="1px"
-              android:layout_centerVertical="true"
-            android:background="@android:color/transparent"/>
+            android:layout_centerVertical="true"
+            android:background="@android:color/transparent" />
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -54,7 +54,7 @@
                     android:gravity="center"
                     android:text="@string/title_accept"
                     android:textColor="@color/color_4dbd3d"
-                    android:textSize="12sp"/>
+                    android:textSize="12sp" />
 
                 <Button
                     android:id="@+id/kins.new.item.reject"
@@ -67,7 +67,7 @@
                     android:gravity="center"
                     android:text="@string/title_reject"
                     android:textColor="@color/color_ed6a5f"
-                    android:textSize="12sp"/>
+                    android:textSize="12sp" />
             </LinearLayout>
 
             <TextView
@@ -83,7 +83,7 @@
                 android:fontFamily="bold"
                 android:textColor="@color/color_414c4e"
                 android:textSize="@dimen/font_14"
-                tools:text="猪八戒"/>
+                tools:text="猪八戒" />
         </RelativeLayout>
 
         <TextView
@@ -97,7 +97,7 @@
             android:gravity="left|center"
             android:textColor="@color/color_a5a7a7"
             android:textSize="@dimen/font_12"
-            tools:text="他可能是我表哥的妹妹"/>
+            tools:text="他可能是我表哥的妹妹" />
 
         <ImageView
             android:id="@+id/kins.new.item.more"
@@ -107,7 +107,7 @@
             android:layout_centerVertical="true"
             android:src="@mipmap/ic_arrow"
             android:visibility="gone"
-            tools:visibility="visible"/>
+            tools:visibility="visible" />
     </RelativeLayout>
 
 </RelativeLayout>

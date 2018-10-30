@@ -121,7 +121,7 @@ public class ItemsDialog extends DialogFragment {
         if (items != null && items.size() > 0) {
             Resources res = activity.getResources();
             mHeight = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 42, res.getDisplayMetrics());
-            mHeight *= items.size()+1;
+            mHeight *= items.size() + 1;
             mHeight += ConvertUtils.dp2px(res, 45);
         }
         // Create and show the dialog.

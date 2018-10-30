@@ -6,6 +6,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.mykins.linkin.R;
 
@@ -59,9 +60,9 @@ public class GatherAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
 
     class ActivityViewHolder extends RecyclerView.ViewHolder {
 
-        @BindView(R.id.chat_item_status)
+        @BindView(R.id.gather_active_content)
         @Nullable
-        View status;
+        TextView gather_active_content;
 
         public ActivityViewHolder(View itemView) {
             super(itemView);
@@ -71,9 +72,9 @@ public class GatherAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
 
     class ShareViewHolder extends RecyclerView.ViewHolder {
 
-        @BindView(R.id.chat_item_status)
+        @BindView(R.id.gather_share_content)
         @Nullable
-        View status;
+        View gather_share_content;
 
         public ShareViewHolder(View itemView) {
             super(itemView);

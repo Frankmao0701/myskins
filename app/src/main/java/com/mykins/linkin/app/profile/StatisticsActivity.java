@@ -16,6 +16,7 @@ public class StatisticsActivity extends BaseActivity {
     Toolbar mToolbar;
 
     Unbinder mUiBinder;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         setContentView(R.layout.activity_statistics);

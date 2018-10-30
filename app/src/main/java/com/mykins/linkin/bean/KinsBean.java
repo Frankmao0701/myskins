@@ -10,13 +10,13 @@ public class KinsBean {
     String avatar;
     private String kinsTitle;
 
-    public KinsBean(String avatar, String name, String description){
+    public KinsBean(String avatar, String name, String description) {
         this.avatar = avatar;
         this.name = name;
         this.description = description;
     }
 
-    public KinsBean(String avatar, String name, String description, String kinsTitle){
+    public KinsBean(String avatar, String name, String description, String kinsTitle) {
         this.avatar = avatar;
         this.name = name;
         this.description = description;

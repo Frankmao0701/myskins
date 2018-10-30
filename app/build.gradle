@@ -11,7 +11,7 @@ android {
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
         versionName "1.0"
-
+        multiDexEnabled true
         testInstrumentationRunner 'android.support.test.runner.AndroidJUnitRunner'
     }
 
@@ -100,7 +100,7 @@ dependencies {
 
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     // App's dependencies, including test
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
+//    implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation deps.support.app_compat
     implementation deps.support.cardview
     implementation deps.support.design
@@ -123,8 +123,11 @@ dependencies {
     implementation deps.badgeview
     implementation deps.ninegridimageview
     implementation deps.zxing
+    implementation deps.rxbinding
+    implementation deps.rxpermissions
 //    implementation 'cn.yipianfengye.android:zxing-library:2.2'
-
+//    implementation 'com.jakewharton.rxbinding2:rxbinding:2.1.1'
+//    implementation 'com.github.tbruyelle:rxpermissions:0.10.2'
     implementation deps.dagger.runtime
     implementation deps.dagger.android
     implementation deps.dagger.android_support

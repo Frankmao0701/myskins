@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-             android:layout_width="match_parent"
-             android:layout_height="match_parent"
-             android:fitsSystemWindows="true">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
 
     <LinearLayout
         android:id="@+id/search.start"
@@ -17,7 +17,7 @@
             android:gravity="center"
             android:text="@string/title_search_project"
             android:textColor="@color/color_a5a7a7"
-            android:textSize="16sp"/>
+            android:textSize="16sp" />
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -33,7 +33,7 @@
                 android:paddingRight="26dp"
                 android:text="@string/title_search_share"
                 android:textColor="@color/color_4dbd3d"
-                android:textSize="16sp"/>
+                android:textSize="16sp" />
 
 
             <View
@@ -42,7 +42,7 @@
                 android:layout_height="16dp"
                 android:layout_centerVertical="true"
                 android:layout_toLeftOf="@id/search.title.share"
-                android:background="@color/color_4dbd3d"/>
+                android:background="@color/color_4dbd3d" />
 
             <View
                 android:id="@+id/search.title.line2"
@@ -50,7 +50,7 @@
                 android:layout_height="16dp"
                 android:layout_centerVertical="true"
                 android:layout_toRightOf="@id/search.title.share"
-                android:background="@color/color_4dbd3d"/>
+                android:background="@color/color_4dbd3d" />
 
             <TextView
                 android:id="@+id/search.title.im"
@@ -63,7 +63,7 @@
                 android:paddingRight="26dp"
                 android:text="@string/title_search_im"
                 android:textColor="@color/color_4dbd3d"
-                android:textSize="16sp"/>
+                android:textSize="16sp" />
 
             <TextView
                 android:id="@+id/search.title.event"
@@ -75,12 +75,12 @@
                 android:paddingRight="26dp"
                 android:text="@string/title_search_event"
                 android:textColor="@color/color_4dbd3d"
-                android:textSize="16sp"/>
+                android:textSize="16sp" />
         </RelativeLayout>
     </LinearLayout>
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent" />
 </FrameLayout>

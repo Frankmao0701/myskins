@@ -79,8 +79,8 @@ class KinsProfilePresenter implements KinsProfileContract.Presenter {
                                     int value = relationsPath.get(i);
                                     if (childNode == null) {
                                         childNode = (LinkedTreeMap<Object, Object>) data.get(value + "");
-                                    }else {
-                                        childNode = (LinkedTreeMap<Object, Object>) childNode.get(value+"");
+                                    } else {
+                                        childNode = (LinkedTreeMap<Object, Object>) childNode.get(value + "");
                                     }
 
                                     if (i == size - 1) {

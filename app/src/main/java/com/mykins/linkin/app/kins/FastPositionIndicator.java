@@ -17,12 +17,12 @@ import com.mykins.linkin.util.ResUtils;
 
 public class FastPositionIndicator extends View {
 
-//    public static String[] mLetters = {"A", "B", "C", "D", "E", "F", "G", "H",
+    //    public static String[] mLetters = {"A", "B", "C", "D", "E", "F", "G", "H",
 //            "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U",
 //            "V", "W", "X", "Y", "Z", "#"};
     private String[] mLetters;
 
-    public void setLetters(String[] letters){
+    public void setLetters(String[] letters) {
         this.mLetters = letters;
         invalidate();
     }
@@ -63,7 +63,7 @@ public class FastPositionIndicator extends View {
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-        if(mLetters == null)return;
+        if (mLetters == null) return;
 
         // 获取该自定义View的宽度和高度
         int width = getWidth();
@@ -98,7 +98,7 @@ public class FastPositionIndicator extends View {
     @SuppressWarnings("deprecation")
     @Override
     public boolean dispatchTouchEvent(MotionEvent event) {
-        if(mLetters == null)return true;
+        if (mLetters == null) return true;
         float y = event.getY();
         int viewHeight = getHeight();
 
@@ -106,7 +106,7 @@ public class FastPositionIndicator extends View {
         int oldChoose = choose;
         // 根据y坐标确定当前哪个字母被选中
         int h = viewHeight - paddingTop - paddingBottom;
-        int pos = (int) ((y-paddingTop) / h * mLetters.length);
+        int pos = (int) ((y - paddingTop) / h * mLetters.length);
 
         int action = event.getAction();
         switch (action) {
@@ -125,7 +125,7 @@ public class FastPositionIndicator extends View {
 
                 break;
             default:
-                if(y<paddingTop ||y>(viewHeight-paddingBottom))return true;
+                if (y < paddingTop || y > (viewHeight - paddingBottom)) return true;
 
                 // 设置右边字母View的背景色
                 setBackgroundColor(ResUtils.color(R.color.color_30000000));

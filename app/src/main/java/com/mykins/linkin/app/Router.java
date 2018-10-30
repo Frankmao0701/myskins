@@ -15,6 +15,7 @@ import com.mykins.linkin.app.profile.PrivacyActivity;
 import com.mykins.linkin.app.profile.ResetPasswordActivity;
 import com.mykins.linkin.app.profile.SettingActivity;
 import com.mykins.linkin.app.profile.StatisticsActivity;
+import com.mykins.linkin.app.profile.gather.GatherActivity;
 import com.mykins.linkin.app.search.SearchActivity;
 import com.mykins.linkin.app.start.StartActivity;
 import com.uuzuche.lib_zxing.activity.CaptureActivity;
@@ -86,21 +87,30 @@ public final class Router {
         checkActivity(activity);
         activity.startActivityForResult(new Intent(activity, CaptureActivity.class), requestCode);
     }
+
     public static void actResetPwd(Activity activity) {
         checkActivity(activity);
         activity.startActivity(new Intent(activity, ResetPasswordActivity.class));
     }
+
     public static void actPrivacy(Activity activity) {
         checkActivity(activity);
         activity.startActivity(new Intent(activity, PrivacyActivity.class));
     }
+
     public static void actUserInfo(Activity activity) {
         checkActivity(activity);
         activity.startActivity(new Intent(activity, MyInfoActivity.class));
     }
+
     public static void actAddKin(Activity activity) {
         checkActivity(activity);
         activity.startActivity(new Intent(activity, AddKinActivity.class));
+    }
+
+    public static void actGather(Activity activity) {
+        checkActivity(activity);
+        activity.startActivity(new Intent(activity, GatherActivity.class));
     }
 
 }

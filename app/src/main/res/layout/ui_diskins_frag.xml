@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-             xmlns:tools="http://schemas.android.com/tools"
-             android:layout_width="match_parent"
-             android:layout_height="match_parent"
-             android:orientation="vertical">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/diskins.recyclerView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent" />
 
 
     <TextView
@@ -23,7 +23,7 @@
         android:textSize="32sp"
         android:visibility="gone"
         tools:text="A"
-        tools:visibility="visible"/>
+        tools:visibility="visible" />
 
     <LinearLayout
         android:layout_width="23dp"
@@ -38,7 +38,7 @@
             android:layout_height="match_parent"
             android:background="#00000000"
             android:paddingBottom="12dp"
-            android:paddingTop="148dp"/>
+            android:paddingTop="148dp" />
     </LinearLayout>
 
 </FrameLayout>

@@ -38,7 +38,7 @@ public class EmoticonView extends FrameLayout {
     private ArrayList<Object[]> mData;
     private OnEmoticonClicked onEmoticonClicked;
 
-    public void setOnEmoticonClicked(OnEmoticonClicked onEmoticonClicked){
+    public void setOnEmoticonClicked(OnEmoticonClicked onEmoticonClicked) {
         this.onEmoticonClicked = onEmoticonClicked;
     }
 
@@ -89,7 +89,7 @@ public class EmoticonView extends FrameLayout {
             holder.itemView.setOnClickListener(new OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    if (onEmoticonClicked != null){
+                    if (onEmoticonClicked != null) {
                         String value = (String) v.getTag();
                         onEmoticonClicked.onEmoticonItemClicked(value);
                     }
@@ -124,7 +124,7 @@ public class EmoticonView extends FrameLayout {
         }
     }
 
-    interface OnEmoticonClicked{
+    interface OnEmoticonClicked {
         void onEmoticonItemClicked(String value);
     }
 }

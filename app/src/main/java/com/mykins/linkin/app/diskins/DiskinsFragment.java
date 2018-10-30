@@ -86,7 +86,7 @@ public class DiskinsFragment extends BaseFragment {
         if (item.getItemId() == android.R.id.home) {
             mActivity.finish();
             return true;
-        }else if (item.getItemId() == R.id.diskins_menu_add) {
+        } else if (item.getItemId() == R.id.diskins_menu_add) {
             Router.actKinsProfile(mActivity, KinsProfileActivity.TYPE_DIS_KINS);
             return true;
         }

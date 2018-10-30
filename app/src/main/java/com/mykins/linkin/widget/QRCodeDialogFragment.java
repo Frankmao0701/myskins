@@ -34,6 +34,7 @@ public class QRCodeDialogFragment extends DialogFragment {
     ImageView profile_qrcode;
 
     private Bitmap mBitmap;
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {

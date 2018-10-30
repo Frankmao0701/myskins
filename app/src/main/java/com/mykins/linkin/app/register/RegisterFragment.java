@@ -65,7 +65,7 @@ public class RegisterFragment extends BaseFragment implements RegisterContract.V
     @Override
     public void onResume() {
         super.onResume();
-        
+
     }
 
     @Override
@@ -84,7 +84,7 @@ public class RegisterFragment extends BaseFragment implements RegisterContract.V
 
     }
 
-    boolean validatePhone(){
+    boolean validatePhone() {
         mRegisterAccountInputLayout.setErrorEnabled(true);
         final String account = mRegisterAccountEdt.getText().toString().trim();
         if (CheckStrUtil.isEmpty(account)) {
@@ -102,7 +102,7 @@ public class RegisterFragment extends BaseFragment implements RegisterContract.V
     void onRegisterClick() {
         //form validation
         // 1) phone & email
-        if (!validatePhone())return;
+        if (!validatePhone()) return;
 
         // 2) password
         mRegisterPasswordInputLayout.setErrorEnabled(true);
@@ -151,7 +151,7 @@ public class RegisterFragment extends BaseFragment implements RegisterContract.V
 
     @Override
     public void interval(Long s) {
-        if (s < 60 && s>=0) {
+        if (s < 60 && s >= 0) {
             mRegisterVerifyBtn.setText("( " + (60 - s) + " )");
         } else {
             mRegisterVerifyBtn.setText(ResUtils.string(R.string.title_send_verify_code));

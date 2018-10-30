@@ -12,7 +12,7 @@ public class SearchResultBean {
     String desc;
     int type;
 
-    public SearchResultBean(String avatar, String name, String desc, int type){
+    public SearchResultBean(String avatar, String name, String desc, int type) {
         this.name = name;
         this.avatar = avatar;
         this.desc = desc;

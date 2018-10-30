@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -17,7 +16,7 @@
         android:layout_alignParentLeft="true"
         android:layout_centerVertical="true"
         android:scaleType="fitXY"
-        android:src="@mipmap/ic_launcher"/>
+        android:src="@mipmap/ic_launcher" />
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -44,7 +43,7 @@
                 android:scaleType="fitXY"
                 android:src="@mipmap/ic_camera"
                 android:visibility="visible"
-                tools:visibility="gone"/>
+                tools:visibility="gone" />
 
             <TextView
                 android:id="@+id/feed.item.content"
@@ -57,7 +56,7 @@
                 android:text="活动：今天台风有雨，一起出去浪吧, Haha ~"
                 android:textColor="@color/color_a5a7a7"
                 android:textSize="@dimen/font_12"
-                tools:text="活动：今天台风有雨，一起出去浪吧, Haha ~"/>
+                tools:text="活动：今天台风有雨，一起出去浪吧, Haha ~" />
         </LinearLayout>
 
 
@@ -72,7 +71,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
-                android:src="@mipmap/ic_mute"/>
+                android:src="@mipmap/ic_mute" />
 
             <TextView
                 android:id="@+id/feed.item.name"
@@ -88,7 +87,7 @@
                 android:text="猪八戒"
                 android:textColor="@color/color_414c4e"
                 android:textSize="@dimen/font_14"
-                tools:text="猪八戒"/>
+                tools:text="猪八戒" />
 
 
         </RelativeLayout>
@@ -112,7 +111,7 @@
                 android:background="@mipmap/ic_dots_red"
                 android:scaleType="centerInside"
                 android:visibility="visible"
-                tools:visibility="gone"/>
+                tools:visibility="gone" />
 
             <TextView
                 android:id="@+id/feed.item.event.time"
@@ -125,7 +124,7 @@
                 android:text="21:54"
                 android:textColor="@color/color_a5a7a7"
                 android:textSize="@dimen/font_12"
-                tools:text="21:54"/>
+                tools:text="21:54" />
 
             <TextView
                 android:id="@+id/feed.item.event.date"
@@ -139,7 +138,7 @@
                 android:text="时间：2017/11/5"
                 android:textColor="@color/color_a5a7a7"
                 android:textSize="@dimen/font_12"
-                tools:text="时间：2017/11/5"/>
+                tools:text="时间：2017/11/5" />
         </RelativeLayout>
 
     </RelativeLayout>

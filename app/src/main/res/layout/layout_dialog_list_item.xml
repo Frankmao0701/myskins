@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -13,7 +12,7 @@
         android:gravity="center_horizontal|center_vertical"
         android:paddingLeft="42dp"
         android:textSize="18sp"
-        tools:text="父亲"/>
+        tools:text="父亲" />
 
 
     <View
@@ -22,6 +21,6 @@
         android:layout_height="6dp"
         android:layout_gravity="center_vertical"
         android:layout_marginLeft="14dp"
-        android:background="@mipmap/ic_dots_green"/>
+        android:background="@mipmap/ic_dots_green" />
 
 </LinearLayout>

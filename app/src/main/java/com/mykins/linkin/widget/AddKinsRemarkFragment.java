@@ -29,6 +29,7 @@ public class AddKinsRemarkFragment extends DialogFragment {
     Unbinder mUiBinder;
 
     private Bitmap mBitmap;
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
