@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingLeft="12dp"
+    android:paddingRight="12dp"
+    android:paddingTop="6dp"
+    android:paddingBottom="14dp">
+
+    <TextView
+        android:id="@+id/chat.item.name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="start|center_vertical"
+        android:paddingBottom="4dp"
+        android:textColor="@color/color_747474"
+        android:textSize="16sp"
+        tools:text="那一年"/>
+
+    <LinearLayout
+        android:id="@+id/chat.item.content"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/chat.item.datetime"
+        app:layout_constraintTop_toBottomOf="@id/chat.item.name"
+        app:layout_constraintWidth_default="wrap">
+
+        <ImageView
+            android:id="@+id/chat.item.triangle"
+            android:layout_width="12dp"
+            android:layout_height="12dp"
+            android:layout_marginLeft="12dp"
+            android:src="@drawable/ic_popup_green_triangle"/>
+
+        <TextView
+            android:id="@+id/chat.item.msg.text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-4dp"
+            android:background="@drawable/popup_green_bg"
+            android:gravity="left|center_vertical"
+            android:minHeight="40dp"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:textSize="14sp"
+            android:lineSpacingExtra="0.5dp"
+            android:textColor="@color/color_414c4e"
+            tools:text="#asfasdfssdfsdfasdfsdfasasfasdfssdfsdfasdfsdfasasfasdfssdfsdfasdfsdfasasfasdfssdfsdfasdfsdfasasfasdfssdfsdfasdfsdfas#"
+            tools:visibility="visible"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/chat.item.datetime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="start|center_vertical"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        android:paddingBottom="4dp"
+        app:layout_constraintBottom_toBottomOf="@id/chat.item.content"
+        app:layout_constraintLeft_toRightOf="@id/chat.item.content"
+        app:layout_constraintRight_toRightOf="parent"
+        android:textSize="12sp"
+        android:textColor="@color/color_bdbfbe"
+        tools:text="2017-11-12 12:33"/>
+
+</android.support.constraint.ConstraintLayout>

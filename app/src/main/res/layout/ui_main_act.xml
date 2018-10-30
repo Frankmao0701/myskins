@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingTop="70dp"
+            android:visibility="visible">
+
+            <!-- tabs-->
+            <android.support.design.widget.TabLayout
+                android:id="@+id/main.tabLayout"
+                style="@style/Linkin_main_tabLayout"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_alignParentBottom="true"
+                android:background="@color/color_27302f"/>
+
+            <android.support.v4.view.ViewPager
+                android:id="@+id/main.viewPager"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_above="@id/main.tabLayout"/>
+        </RelativeLayout>
+
+        <FrameLayout
+            android:id="@+id/main.profile.head"
+            android:layout_width="match_parent"
+            android:layout_height="160dp"
+            android:visibility="gone"
+            tools:visibility="visible">
+
+            <ImageView
+                android:id="@+id/main.profile.bg"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:adjustViewBounds="true"
+                android:scaleType="centerCrop"
+                android:src="@mipmap/ic_appbar_bg"/>
+
+            <RelativeLayout
+                android:id="@+id/main.profile.info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_marginBottom="12dp"
+                android:paddingLeft="12dp"
+                android:paddingRight="12dp">
+
+                <ImageView
+                    android:id="@+id/profile.avatar"
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"/>
+
+                <ImageView
+                    android:id="@+id/profile.qrcode"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:src="@mipmap/ic_qrcode"/>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="64dp"
+                    android:layout_toLeftOf="@id/profile.qrcode"
+                    android:layout_toRightOf="@id/profile.avatar"
+                    android:orientation="vertical"
+                    android:paddingLeft="12dp"
+                    android:paddingRight="12dp">
+
+                    <View
+                        android:id="@+id/baseline"
+                        android:layout_width="match_parent"
+                        android:layout_height="1px"
+                        android:layout_centerVertical="true"/>
+
+                    <TextView
+                        android:id="@+id/profile.name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_above="@id/baseline"
+                        android:gravity="left|center_vertical"
+                        android:text="令狐冲"
+                        android:textColor="@android:color/white"
+                        android:textSize="16sp"/>
+
+                    <TextView
+                        android:id="@+id/profile.id"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_below="@id/baseline"
+                        android:gravity="left|center_vertical"
+                        android:text="ID23345345"
+                        android:textColor="@android:color/white"
+                        android:textSize="16sp"/>
+                </RelativeLayout>
+            </RelativeLayout>
+        </FrameLayout>
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/main.toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/linkin.actionBarSize"
+            android:background="@color/colorPrimary"
+            android:title="@string/title_contact"
+            app:titleTextAppearance="@style/Linkin_Toolbar_TitleText_Dark"
+            app:titleTextColor="@android:color/white"/>
+    </FrameLayout>
+</FrameLayout>

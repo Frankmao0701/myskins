@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#27302f</color>
+    <color name="colorPrimaryDark">#27302f</color>
+    <color name="colorAccent">#5c5c5c</color>
+
+    <color name="login_primary">#faebe4</color>
+    <color name="login_primary_dark">#faebe4</color>
+    <color name="login_accent">#5c5c5c</color>
+    <color name="b1b1b1b1">#b1b1b1b1</color>
+    <color name="color_787878">#787878</color>
+    <color name="color_a2a2a2">#a2a2a2</color>
+    <color name="color_ebebeb">#ebebeb</color>
+    <color name="color_faebe4">#faebe4</color>
+    <color name="color_bdbfbe">#bdbfbe</color>
+    <color name="color_27302f">#27302f</color>
+    <color name="color_30000000">#30000000</color>
+    <color name="color_535f5f">#535f5f</color>
+    <color name="color_f5f5f5">#f5f5f5</color>
+    <color name="color_a1a1a1">#a1a1a1</color>
+    <color name="color_3399ff">#3399ff</color>
+    <color name="color_d85c5c5c">#d85c5c5c</color>
+    <color name="color_000000">#000000</color>
+    <color name="color_414c4e">#414c4e</color>
+    <color name="color_4dbd3d">#4dbd3d</color>
+    <color name="color_a5a7a7">#a5a7a7</color>
+    <color name="color_444444">#444444</color>
+    <color name="color_ed6a5f">#ed6a5f</color>
+    <color name="color_f6f6f6">#f6f6f6</color>
+    <color name="color_747474">#747474</color>
+    <color name="color_ececec">#ececec</color>
+    <color name="color_8da55b">#8da55b</color>
+    <color name="color_e4e4e4">#e4e4e4</color>
+    <color name="color_424e4f">#424e4f</color>
+    <color name="color_8b8b8b">#8b8b8b</color>
+    <color name="color_253335">#253335</color>
+    <color name="color_7a7a7a">#7a7a7a</color>
+    <color name="color_62c554">#62c554</color>
+    <color name="color_474747">#474747</color>
+    <color name="color_494949">#494949</color>
+    <color name="color_3f4c4d">#3f4c4d</color>
+    <color name="color_7d7d7d">#7d7d7d</color>
+    <color name="color_313131">#313131</color>
+    <color name="color_335ca1">#335ca1</color>
+</resources>

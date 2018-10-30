@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="cfg_api_base_url" translatable="false">http://www.mykins.cn:10080/api/</string>
+</resources>

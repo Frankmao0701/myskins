@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="74dp"
+    android:background="@android:color/white"
+    android:paddingLeft="10dp">
+
+
+    <ImageView
+        android:id="@+id/kins.contact.item.avatar"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_centerVertical="true"
+        tools:src="@mipmap/ic_launcher_round"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_toRightOf="@id/kins.contact.item.avatar"
+        android:paddingBottom="14dp"
+        android:paddingTop="14dp"
+        >
+
+        <TextView
+            android:id="@+id/kins.contact.item.name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="20dp"
+            android:textColor="@color/color_535f5f"
+            android:textSize="14sp"
+            tools:background="@color/b1b1b1b1"
+            tools:text="猪八戒"/>
+
+        <LinearLayout
+            android:id="@+id/kins.contact.item.location.parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:src="@mipmap/ic_location"
+                />
+
+            <TextView
+                android:id="@+id/kins.contact.item.location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:text="广东.深圳"
+                android:textColor="@color/color_a1a1a1"
+                android:textSize="12sp"
+                tools:background="@color/b1b1b1b1"/>
+        </LinearLayout>
+
+        <ImageView android:id="@+id/kins.contact.item.link"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:src="@mipmap/ic_contact_linked"
+            android:layout_marginRight="32dp"/>
+
+        <TextView
+            android:id="@+id/kins.contact.item.nickName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_toLeftOf="@id/kins.contact.item.location.parent"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:maxLines="1"
+            android:text="表哥"
+            android:textColor="@color/color_a1a1a1"
+            android:textSize="12sp"
+            tools:text="表哥"/>
+
+    </RelativeLayout>
+</RelativeLayout>

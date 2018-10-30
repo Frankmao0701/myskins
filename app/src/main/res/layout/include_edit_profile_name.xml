@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <View
+        android:id="@+id/baseline"
+        android:layout_width="1dp"
+        android:layout_height="36dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/color_ebebeb"/>
+
+    <com.mykins.linkin.view.NoChangingBackgroundTextInputLayout
+        android:id="@+id/first.name.layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_gravity="center_horizontal|center_vertical"
+        android:layout_toLeftOf="@id/baseline"
+        android:gravity="center_vertical"
+        app:hintEnabled="false">
+
+        <EditText
+            android:id="@+id/kins.profile.editing.first.name"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:background="@android:color/white"
+            android:gravity="center"
+            android:hint="@string/hint_first_name"
+            android:maxLines="1"
+            android:paddingLeft="16dp"
+            android:paddingRight="8dp"
+            android:textColorHint="@color/color_787878"
+            android:textSize="14sp"/>
+    </com.mykins.linkin.view.NoChangingBackgroundTextInputLayout>
+
+    <com.mykins.linkin.view.NoChangingBackgroundTextInputLayout
+        android:id="@+id/second.name.layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_gravity="center_horizontal|center_vertical"
+        android:layout_toRightOf="@id/baseline"
+        android:gravity="center_vertical"
+        app:hintEnabled="false">
+
+        <EditText
+            android:id="@+id/kins.profile.editing.second.name"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:background="@android:color/white"
+            android:gravity="center"
+            android:hint="@string/hint_second_name"
+            android:maxLines="1"
+            android:paddingLeft="16dp"
+            android:paddingRight="8dp"
+            android:textColorHint="@color/color_787878"
+            android:textSize="14sp"/>
+    </com.mykins.linkin.view.NoChangingBackgroundTextInputLayout>
+</RelativeLayout>

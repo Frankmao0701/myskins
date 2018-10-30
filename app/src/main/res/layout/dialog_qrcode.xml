@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_qrcode"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:padding="23dp">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/qrcode.avator.img"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:src="@mipmap/ic_launcher" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/qrcode.avator.img"
+            android:layout_marginLeft="15dp"
+            android:layout_toRightOf="@id/qrcode.avator.img"
+            android:orientation="vertical"
+            android:paddingTop="10dp">
+
+            <TextView
+                android:id="@+id/profile.user.name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="猪八家"
+                android:textColor="@color/color_474747"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/profile.user.id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="1231231312" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/profile.qrcode"
+        android:layout_width="140dp"
+        android:layout_height="140dp"
+        android:layout_marginTop="19dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="19dp"
+        android:text="@string/tips_scan_add" />
+
+</LinearLayout>

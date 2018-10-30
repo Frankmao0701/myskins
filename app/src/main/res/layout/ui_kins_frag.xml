@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:tools="http://schemas.android.com/tools"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:orientation="vertical">
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/kins.contact.rcv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+
+    <TextView
+        android:id="@+id/kins.fast.showIndicator"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_gravity="center"
+        android:background="@drawable/round_5c5c5c_alpha"
+        android:gravity="center"
+        android:text="0"
+        android:textColor="@android:color/white"
+        android:textSize="32sp"
+        android:visibility="gone"
+        tools:text="A"
+        tools:visibility="visible"/>
+
+    <LinearLayout
+        android:layout_width="23dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right|bottom"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+        <!-- dynamic adding child views by programing -->
+        <com.mykins.linkin.app.kins.FastPositionIndicator
+            android:id="@+id/kins.fast.indicator"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#00000000"
+            android:paddingBottom="12dp"
+            android:paddingTop="148dp"/>
+    </LinearLayout>
+
+</FrameLayout>

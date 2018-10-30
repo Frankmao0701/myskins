@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources><!-- Base application theme. -->
+
+    <!-- NoActionBar -->
+    <style name="Linkin.AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/color_4dbd3d</item>
+        <item name="android:windowBackground">@color/color_ebebeb</item>
+        <item name="android:actionMenuTextColor">@android:color/white</item>
+    </style>
+
+    <style name="Linkin.Login" parent="Linkin.AppTheme">
+        <item name="colorPrimary">@color/login_primary</item>
+        <item name="colorPrimaryDark">@android:color/transparent</item>
+        <item name="colorAccent">@color/login_accent</item>
+        <item name="android:windowBackground">@color/color_faebe4</item>
+    </style>
+
+    <style name="Theme.AppCompat.Light.NoActionBar.FullScreen" parent="@style/Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowBackground">@color/color_faebe4</item>
+    </style>
+
+</resources>

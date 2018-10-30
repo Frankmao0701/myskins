@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:fitsSystemWindows="true">
+
+    <LinearLayout
+        android:id="@+id/search.start"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingTop="96dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/title_search_project"
+            android:textColor="@color/color_a5a7a7"
+            android:textSize="16sp"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="12dp">
+
+            <TextView
+                android:id="@+id/search.title.share"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:paddingLeft="26dp"
+                android:paddingRight="26dp"
+                android:text="@string/title_search_share"
+                android:textColor="@color/color_4dbd3d"
+                android:textSize="16sp"/>
+
+
+            <View
+                android:id="@+id/search.title.line"
+                android:layout_width="1dp"
+                android:layout_height="16dp"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@id/search.title.share"
+                android:background="@color/color_4dbd3d"/>
+
+            <View
+                android:id="@+id/search.title.line2"
+                android:layout_width="1dp"
+                android:layout_height="16dp"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@id/search.title.share"
+                android:background="@color/color_4dbd3d"/>
+
+            <TextView
+                android:id="@+id/search.title.im"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@id/search.title.line"
+                android:paddingLeft="26dp"
+                android:paddingRight="26dp"
+                android:text="@string/title_search_im"
+                android:textColor="@color/color_4dbd3d"
+                android:textSize="16sp"/>
+
+            <TextView
+                android:id="@+id/search.title.event"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@id/search.title.line2"
+                android:paddingLeft="26dp"
+                android:paddingRight="26dp"
+                android:text="@string/title_search_event"
+                android:textColor="@color/color_4dbd3d"
+                android:textSize="16sp"/>
+        </RelativeLayout>
+    </LinearLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+</FrameLayout>

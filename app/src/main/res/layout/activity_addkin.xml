@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/addkin_toolbar"
+        style="@style/Linkin_NavigationBack"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/linkin.actionBarSize"
+        android:background="@color/colorPrimary"
+        app:contentInsetStartWithNavigation="0dp"
+        app:titleTextAppearance="@style/Linkin_Toolbar_TitleText_Dark"
+        app:titleTextColor="@android:color/white" />
+
+    <RelativeLayout
+        android:id="@+id/profile.add.avatar.rl"
+        android:layout_width="match_parent"
+        android:layout_height="78dp"
+        android:background="@android:color/white"
+        android:paddingLeft="18dp"
+        android:paddingRight="16dp">
+
+        <ImageView
+            android:id="@+id/profile.add.avatar.img"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:src="@mipmap/ic_launcher" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/profile.add.avatar.img"
+            android:layout_marginLeft="20dp"
+            android:layout_toRightOf="@id/profile.add.avatar.img"
+            android:orientation="vertical"
+            android:paddingTop="10dp">
+
+            <TextView
+                android:id="@+id/profile.add.name.tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="猪八戒"
+                android:textColor="@color/color_3f4c4d"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/profile.add.id.tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="ID78787"
+                android:textColor="@color/color_7d7d7d"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/color_ebebeb" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="78dp"
+        android:background="@android:color/white"
+        android:paddingLeft="18dp"
+        android:paddingRight="16dp">
+
+        <TextView
+            android:id="@+id/profile.add.address.tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="@string/text_address_now"
+            android:textColor="@color/color_253335" />
+
+        <TextView
+            android:id="@+id/profile.add.address.value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="24dp"
+            android:layout_toRightOf="@id/profile.add.address.tv"
+            android:text="广东深圳"
+            android:textColor="@color/color_253335" />
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/color_ebebeb" />
+
+    <Button
+        android:id="@+id/profile.add.sure.btn"
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/round_white_bg"
+        android:text="@string/text_addkin"
+        android:textColor="@color/color_3f4c4d"
+        android:textSize="16sp" />
+</LinearLayout>

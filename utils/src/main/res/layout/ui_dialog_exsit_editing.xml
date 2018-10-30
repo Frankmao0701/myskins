@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:cardCornerRadius="5dp">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="8dp"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        android:paddingTop="4dp">
+
+        <FrameLayout
+            android:id="@+id/dialog.close"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left|top"
+                android:background="@null"
+                android:scaleType="center"
+                android:src="@drawable/ic_close_black_18dp"/>
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/dialog.content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="left|center_vertical"
+            android:padding="16dp"
+            android:text="@string/title_discard_tips"
+            tools:text="继续离开页面，已编辑的内容将会丢失"/>
+
+        <Button
+            android:id="@+id/dialog.button.ok"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="8dp"
+            android:background="@null"
+            android:text="@string/title_discard"
+            android:textColor="@color/color_ed6a5f"/>
+
+        <Button
+            android:id="@+id/dialog.button.cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:layout_alignBottom="@id/dialog.button.ok"
+            android:layout_alignParentBottom="true"
+            android:layout_toLeftOf="@id/dialog.button.ok"
+            android:background="@null"
+            android:text="@string/title_edit_continue"
+            android:textColor="#787878"/>
+
+    </RelativeLayout>
+</android.support.v7.widget.CardView>

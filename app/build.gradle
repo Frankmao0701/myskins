@@ -1,0 +1,166 @@
+apply plugin: 'com.android.application'
+apply plugin: 'com.jakewharton.butterknife'
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
+
+    defaultConfig {
+        applicationId "com.mykins.linkin"
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner 'android.support.test.runner.AndroidJUnitRunner'
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    signingConfigs {
+        release {
+            storeFile file("../kinshelper-release.jks")
+            storePassword "mykins"
+            keyAlias "kinshelper-release"
+            keyPassword "mykins"
+        }
+        debug {
+            storeFile file("../kinshelper-debug.jks")
+            storePassword "mykins"
+            keyAlias "kinshelper-debug"
+            keyPassword "mykins"
+        }
+    }
+
+    buildTypes {
+        debug {
+            // Minifying the variant used for tests is not supported when using Jack.
+            minifyEnabled false
+            // Uses new built-in shrinker http://tools.android.com/tech-docs/new-build-system/built-in-shrinker
+            useProguard false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            testProguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguardTest-rules.pro'
+            signingConfig signingConfigs.debug
+        }
+
+        release {
+            minifyEnabled true
+            useProguard true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            testProguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+    }
+    flavorDimensions "default"
+    // If you need to add more flavors, consider using flavor dimensions.
+    productFlavors {
+        mock {
+            dimension "default"
+            applicationIdSuffix = ".mock"
+        }
+        prod {
+            dimension "default"
+        }
+    }
+
+    // Remove mockRelease as it's not needed.
+    android.variantFilter { variant ->
+        if (variant.buildType.name.equals('release')
+                && variant.getFlavors().get(0).name.equals('mock')) {
+            variant.setIgnore(true)
+        }
+    }
+
+    // Always show the result of every unit test, even if it passes.
+    testOptions.unitTests.all {
+        testLogging {
+            events 'passed', 'skipped', 'failed', 'standardOut', 'standardError'
+        }
+    }
+
+    dexOptions {
+        preDexLibraries true
+        maxProcessCount 4
+        // Instead of setting the heap size for the DEX process, increase Gradle's
+        // heap size to enable dex-in-process. To learm more, read the next section.
+        // javaMaxHeapSize "2048m"
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+}
+
+dependencies {
+    api project(':emoticon')
+    api project(':utils')
+
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    // App's dependencies, including test
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation deps.support.app_compat
+    implementation deps.support.cardview
+    implementation deps.support.design
+    implementation deps.support.recyclerview
+    implementation deps.support.v4
+    implementation deps.support.constraintLayout
+    implementation deps.room.runtime
+    implementation deps.room.rxjava2
+
+    implementation deps.butterknife
+    implementation deps.espresso.idling_resource
+    implementation deps.rxjava2
+    implementation deps.rx_autoDispose
+    annotationProcessor deps.butterknife_compiler
+    implementation deps.retrofit.rxjava_adapter
+    implementation deps.gson
+    implementation deps.jpinyin
+    implementation deps.easyPopup
+    implementation deps.keyboardVisibility
+    implementation deps.badgeview
+    implementation deps.ninegridimageview
+    implementation deps.zxing
+//    implementation 'cn.yipianfengye.android:zxing-library:2.2'
+
+    implementation deps.dagger.runtime
+    implementation deps.dagger.android
+    implementation deps.dagger.android_support
+    implementation deps.constraint_layout
+
+    annotationProcessor deps.dagger.android_support_compiler
+    annotationProcessor deps.dagger.compiler
+    annotationProcessor deps.room.compiler
+    annotationProcessor deps.lifecycle.compiler
+
+    // Dependencies for local unit tests
+    testImplementation deps.junit
+    testImplementation deps.mockito.all
+
+    // Android Testing Support Library's runner and rules
+    androidTestImplementation(deps.espresso.core, {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    androidTestImplementation deps.support.runner
+    androidTestImplementation deps.support.rules
+
+    // Dependencies for Android unit tests
+    androidTestImplementation deps.junit
+    androidTestImplementation deps.mockito.core
+    // androidTestImplementation 'com.google.dexmaker:dexmaker:1.2'
+    // androidTestImplementation 'com.google.dexmaker:dexmaker-mockito:1.2'
+
+    // Espresso UI Testing
+    androidTestImplementation deps.espresso.core
+    androidTestImplementation deps.espresso.contrib
+    androidTestImplementation deps.espresso.intents
+
+    // Resolve conflicts between main and test APK:
+    androidTestImplementation deps.support.annotations
+    androidTestImplementation deps.support.v4
+    androidTestImplementation deps.support.recyclerview
+    androidTestImplementation deps.support.app_compat
+    androidTestImplementation deps.support.design
+}

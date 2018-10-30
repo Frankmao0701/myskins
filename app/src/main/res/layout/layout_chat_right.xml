@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingLeft="12dp"
+    android:paddingRight="12dp"
+    android:paddingTop="6dp"
+    android:paddingBottom="14dp">
+
+    <TextView
+        android:id="@+id/chat.item.datetime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="end|center_vertical"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        android:paddingBottom="4dp"
+        android:textColor="@color/color_bdbfbe"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@id/chat.item.content"
+        app:layout_constraintHorizontal_bias="1"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/chat.item.content"
+        tools:text="14:22"/>
+
+    <FrameLayout
+        android:id="@+id/chat.item.content"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/popup_white_bg"
+        android:minHeight="40dp"
+        app:layout_constraintLeft_toRightOf="@+id/chat.item.datetime"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintWidth_default="wrap">
+
+        <TextView
+            android:id="@+id/chat.item.msg.text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:paddingBottom="8dp"
+            android:paddingLeft="14dp"
+            android:paddingRight="16dp"
+            android:paddingTop="8dp"
+            android:gravity="end|center_vertical"
+            android:lineSpacingExtra="0.5dp"
+            android:textColor="@color/color_414c4e"
+            android:textSize="14sp"
+            tools:text="#asfsdfasdfsdfasdsdfsdfas#"
+            tools:visibility="visible"/>
+
+        <View
+            android:id="@+id/chat.item.status"
+            android:layout_width="6dp"
+            android:layout_height="6dp"
+            android:layout_marginBottom="4dp"
+            android:layout_marginRight="4dp"
+            android:layout_gravity="right|bottom"
+            android:background="@mipmap/ic_dots_green"/>
+
+    </FrameLayout>
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,629 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/kins.profile.frame"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_e4e4e4">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="visible">
+
+            <ImageView
+                android:id="@+id/kins.profile.bg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:scaleType="centerCrop"
+                android:src="@mipmap/ic_thumbail2"/>
+
+            <RelativeLayout
+                android:id="@+id/kins.profile.head"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_marginBottom="6dp"
+                android:paddingLeft="12dp"
+                android:paddingRight="12dp">
+
+                <ImageView
+                    android:id="@+id/kins.profile.avatar"
+                    android:layout_width="56dp"
+                    android:layout_height="56dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    tools:src="@mipmap/ic_launcher"/>
+
+                <ImageView
+                    android:id="@+id/kins.profile.chat"
+                    android:layout_width="34dp"
+                    android:layout_height="34dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="12dp"
+                    android:layout_toRightOf="@id/kins.profile.avatar"
+                    android:background="@color/color_ebebeb"
+                    android:src="@mipmap/ic_liao"/>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:layout_toRightOf="@id/kins.profile.chat"
+                    android:orientation="vertical"
+                    android:paddingLeft="24dp"
+                    android:paddingRight="12dp">
+
+                    <TextView
+                        android:id="@+id/kins.profile.id"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_above="@+id/kins.profile.progress"
+                        android:layout_alignParentRight="true"
+                        android:gravity="right|center_vertical"
+                        android:text="ID: 132345234"
+                        android:textColor="@android:color/white"
+                        android:textSize="11sp"/>
+
+                    <!-- 完整度 -->
+                    <ProgressBar
+                        android:id="@+id/kins.profile.progress"
+                        style="@android:style/Widget.ProgressBar.Horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="4dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginTop="5dp"
+                        android:progress="25"
+                        android:progressDrawable="@drawable/progress"/>
+
+                    <TextView
+                        android:id="@+id/kins.profile.progress.title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_below="@id/kins.profile.progress"
+                        android:gravity="left|center_vertical"
+                        android:text="@string/title_profile_progress"
+                        android:textColor="@android:color/white"
+                        android:textSize="11sp"/>
+
+                    <TextView
+                        android:id="@+id/kins.profile.progress.value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_below="@id/kins.profile.progress"
+                        android:gravity="right|center_vertical"
+                        android:text="56%"
+                        android:textColor="@android:color/white"
+                        android:textSize="11sp"
+                        tools:text="25%"/>
+
+                </RelativeLayout>
+            </RelativeLayout>
+        </FrameLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/white"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:id="@+id/kins.profile.item.name"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:paddingLeft="18dp"
+                    android:paddingRight="16dp">
+
+                    <TextView
+                        android:id="@+id/kins.profile.item.name.title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:text="@string/title_name"
+                        android:textColor="@color/color_414c4e"
+                        android:textSize="14sp"/>
+
+                    <TextView
+                        android:id="@+id/kins.profile.item.name.value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toLeftOf="@+id/kins.profile.item.arrow1"
+                        android:layout_toRightOf="@id/kins.profile.item.name.title"
+                        android:background="@null"
+                        android:enabled="false"
+                        android:paddingLeft="32dp"
+                        android:textColor="@color/color_8b8b8b"
+                        android:textSize="14sp"
+                        />
+
+                    <ImageView
+                        android:id="@+id/kins.profile.item.arrow1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:src="@mipmap/ic_arrow"/>
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/color_e4e4e4"/>
+
+                <RelativeLayout
+                    android:id="@+id/kins.profile.item.relations"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:paddingLeft="18dp"
+                    android:paddingRight="16dp">
+
+                    <TextView
+                        android:id="@+id/kins.profile.item.relations.title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:text="@string/title_relations"
+                        android:textColor="@color/color_424e4f"
+                        android:textSize="14sp"/>
+
+                    <TextView
+                        android:id="@+id/kins.profile.item.relations.value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toLeftOf="@+id/kins.profile.item.arrow8"
+                        android:layout_toRightOf="@id/kins.profile.item.relations.title"
+                        android:background="@null"
+                        android:enabled="false"
+                        android:paddingLeft="32dp"
+                        android:text="@string/title_selection"
+                        android:textColor="@color/color_8b8b8b"
+                        android:textSize="14sp"
+                        />
+
+                    <FrameLayout
+                        android:id="@+id/kins.profile.item.arrow8"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true">
+
+                        <ImageView
+                            android:id="@+id/kins.profile.item.arrow.arrow8.icon"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@mipmap/ic_arrow"/>
+
+                        <ProgressBar
+                            android:id="@+id/kins.profile.item.arrow8.progressbar"
+                            style="@style/Widget.AppCompat.ProgressBar"
+                            android:layout_width="26dp"
+                            android:layout_height="26dp"
+                            android:visibility="gone"/>
+                    </FrameLayout>
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/color_e4e4e4"/>
+
+                <RelativeLayout
+                    android:id="@+id/kins.profile.item.appellation"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:paddingLeft="18dp"
+                    android:paddingRight="16dp"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/kins.profile.item.appellation.title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:text="@string/title_appellation"
+                        android:textColor="@color/color_424e4f"
+                        android:textSize="14sp"/>
+
+                    <TextView
+                        android:id="@+id/kins.profile.item.appellation.value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toLeftOf="@+id/kins.profile.item.arrow2"
+                        android:layout_toRightOf="@id/kins.profile.item.appellation.title"
+                        android:background="@null"
+                        android:enabled="false"
+                        android:paddingLeft="32dp"
+                        android:text="@string/title_selection"
+                        android:textColor="@color/color_8b8b8b"
+                        android:textSize="14sp"
+                        tools:text="猪八戒888"/>
+
+                    <FrameLayout
+                        android:id="@+id/kins.profile.item.arrow2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true">
+
+                        <ImageView
+                            android:id="@+id/kins.profile.item.arrow.arrow2.icon"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@mipmap/ic_arrow"/>
+
+                        <ProgressBar
+                            android:id="@+id/kins.profile.item.arrow2.progressbar"
+                            style="@style/Widget.AppCompat.ProgressBar"
+                            android:layout_width="26dp"
+                            android:layout_height="26dp"
+                            android:visibility="gone"/>
+                    </FrameLayout>
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/color_e4e4e4"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp"
+                    android:background="@color/color_ebebeb"/>
+
+                <RelativeLayout
+                    android:id="@+id/kins.profile.item.zodiac"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:paddingLeft="18dp"
+                    android:paddingRight="16dp">
+
+                    <TextView
+                        android:id="@+id/kins.profile.item.zodiac.title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:text="@string/title_zodiac"
+                        android:textColor="@color/color_424e4f"
+                        android:textSize="14sp"/>
+
+                    <TextView
+                        android:id="@+id/kins.profile.item.zodiac.value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toLeftOf="@+id/kins.profile.item.arrow3"
+                        android:layout_toRightOf="@id/kins.profile.item.zodiac.title"
+                        android:background="@null"
+                        android:enabled="false"
+                        android:paddingLeft="32dp"
+                        android:text="@string/title_selection"
+                        android:textColor="@color/color_8b8b8b"
+                        android:textSize="14sp"
+                        tools:text="猪八戒888"/>
+
+                    <ImageView
+                        android:id="@+id/kins.profile.item.arrow3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:src="@mipmap/ic_arrow"/>
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/color_e4e4e4"/>
+
+                <RelativeLayout
+                    android:id="@+id/kins.profile.item.address"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:paddingLeft="18dp"
+                    android:paddingRight="16dp">
+
+                    <TextView
+                        android:id="@+id/kins.profile.item.address.title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:text="@string/title_address"
+                        android:textColor="@color/color_424e4f"
+                        android:textSize="14sp"/>
+
+                    <TextView
+                        android:id="@+id/kins.profile.item.address.value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toLeftOf="@+id/kins.profile.item.arrow4"
+                        android:layout_toRightOf="@id/kins.profile.item.address.title"
+                        android:background="@null"
+                        android:enabled="false"
+                        android:paddingLeft="32dp"
+                        android:textColor="@color/color_8b8b8b"
+                        android:textSize="14sp"
+                        tools:text="猪八戒888"/>
+
+                    <ImageView
+                        android:id="@+id/kins.profile.item.arrow4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:src="@mipmap/ic_arrow"/>
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp"
+                    android:background="@color/color_ebebeb"/>
+
+                <RelativeLayout
+                    android:id="@+id/kins.profile.item.phone_number"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:paddingLeft="18dp"
+                    android:paddingRight="16dp">
+
+                    <TextView
+                        android:id="@+id/kins.profile.item.phone_number.title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:text="@string/title_phone_num"
+                        android:textColor="@color/color_424e4f"
+                        android:textSize="14sp"/>
+
+                    <TextView
+                        android:id="@+id/kins.profile.item.phone_number.value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toLeftOf="@+id/kins.profile.item.arrow5"
+                        android:layout_toRightOf="@id/kins.profile.item.phone_number.title"
+                        android:background="@null"
+                        android:enabled="false"
+                        android:paddingLeft="32dp"
+                        android:textColor="@color/color_8b8b8b"
+                        android:textSize="14sp"
+                        tools:text="猪八戒888"/>
+
+                    <ImageView
+                        android:id="@+id/kins.profile.item.arrow5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:src="@mipmap/ic_arrow"/>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/kins.profile.item.birthday"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:paddingLeft="18dp"
+                    android:paddingRight="16dp"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/kins.profile.item.birthday.title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:text="@string/title_birthday"
+                        android:textColor="@color/color_424e4f"
+                        android:textSize="14sp"/>
+
+                    <TextView
+                        android:id="@+id/kins.profile.item.birthday.value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toLeftOf="@+id/kins.profile.item.arrow9"
+                        android:layout_toRightOf="@id/kins.profile.item.birthday.title"
+                        android:background="@null"
+                        android:enabled="false"
+                        android:paddingLeft="32dp"
+                        android:textColor="@color/color_8b8b8b"
+                        android:textSize="14sp"
+                        tools:text="猪八戒888"/>
+
+                    <ImageView
+                        android:id="@+id/kins.profile.item.arrow9"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:src="@mipmap/ic_arrow"/>
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/color_e4e4e4"/>
+
+                <RelativeLayout
+                    android:id="@+id/kins.profile.item.email"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:paddingLeft="18dp"
+                    android:paddingRight="16dp">
+
+                    <TextView
+                        android:id="@+id/kins.profile.item.email.title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:text="@string/title_email_address"
+                        android:textColor="@color/color_424e4f"
+                        android:textSize="14sp"/>
+
+                    <TextView
+                        android:id="@+id/kins.profile.item.email.value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toLeftOf="@+id/kins.profile.item.arrow6"
+                        android:layout_toRightOf="@id/kins.profile.item.email.title"
+                        android:background="@null"
+                        android:enabled="false"
+                        android:paddingLeft="32dp"
+                        android:textColor="@color/color_8b8b8b"
+                        android:textSize="14sp"
+                        tools:text="猪八戒888"/>
+
+                    <ImageView
+                        android:id="@+id/kins.profile.item.arrow6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:src="@mipmap/ic_arrow"/>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/kins.profile.item.years"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:paddingLeft="18dp"
+                    android:paddingRight="16dp"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/kins.profile.item.years.title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:text="@string/title_years_old"
+                        android:textColor="@color/color_424e4f"
+                        android:textSize="14sp"/>
+
+                    <TextView
+                        android:id="@+id/kins.profile.item.years.value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toLeftOf="@+id/kins.profile.item.arrow10"
+                        android:layout_toRightOf="@id/kins.profile.item.years.title"
+                        android:background="@null"
+                        android:enabled="false"
+                        android:paddingLeft="32dp"
+                        android:textColor="@color/color_8b8b8b"
+                        android:textSize="14sp"
+                        tools:text="猪八戒888"/>
+
+                    <ImageView
+                        android:id="@+id/kins.profile.item.arrow10"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:src="@mipmap/ic_arrow"/>
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp"
+                    android:background="@color/color_ebebeb"/>
+
+                <RelativeLayout
+                    android:id="@+id/kins.profile.item.mark"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:paddingLeft="18dp"
+                    android:paddingRight="16dp">
+
+                    <TextView
+                        android:id="@+id/kins.profile.item.mark.title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:text="@string/title_mark"
+                        android:textColor="@color/color_424e4f"
+                        android:textSize="14sp"/>
+
+                    <TextView
+                        android:id="@+id/kins.profile.item.mark.value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toLeftOf="@+id/kins.profile.item.arrow7"
+                        android:layout_toRightOf="@id/kins.profile.item.mark.title"
+                        android:background="@null"
+                        android:paddingLeft="32dp"
+                        android:textColor="@color/color_8b8b8b"
+                        android:textSize="14sp"
+                        tools:text=""/>
+
+                    <ImageView
+                        android:id="@+id/kins.profile.item.arrow7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:src="@mipmap/ic_arrow"/>
+                </RelativeLayout>
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/kins.profile.toolbar"
+            style="@style/Linkin_NavigationBack"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/linkin.actionBarSize"
+            android:background="@android:color/transparent"
+            app:contentInsetStartWithNavigation="0dp"
+            app:titleTextAppearance="@style/Linkin_Toolbar_TitleText_Dark">
+
+            <TextView
+                android:id="@+id/kins.profile.title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:maxLines="1"
+                android:text="@string/title_kins_profile"
+                android:textColor="@android:color/white"
+                android:textSize="16sp"
+                tools:text="聊天"/>
+        </android.support.v7.widget.Toolbar>
+    </FrameLayout>
+</FrameLayout>

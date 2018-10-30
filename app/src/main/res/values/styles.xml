@@ -1,0 +1,30 @@
+<resources>
+
+    <style name="Linkin_NavigationBack">
+        <item name="navigationIcon">@mipmap/ic_nav_up</item>
+        <item name="android:layout_height">@dimen/linkin.actionBarSize</item>
+    </style>
+
+    <style name="Linkin_Toolbar_TitleText_Dark" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/colorPrimaryDark</item>
+    </style>
+
+    <style name="Linkin_main_tabLayout" parent="Base.Widget.Design.TabLayout">
+        <item name="tabIndicatorHeight">0dp</item>
+    </style>
+
+    <style name="Linkin_tabLayout" parent="Linkin_main_tabLayout">
+        <item name="tabIndicatorColor">@color/color_4dbd3d</item>
+        <item name="tabIndicatorHeight">2dp</item>
+        <item name="tabBackground">?attr/selectableItemBackground</item>
+        <item name="tabTextAppearance">@style/CustomTabTextAppearance</item>
+        <item name="tabSelectedTextColor">@color/color_414c4e</item>
+    </style>
+
+    <style name="CustomTabTextAppearance" parent="TextAppearance.Design.Tab">
+        <item name="android:textSize">@dimen/font_14</item>
+        <item name="android:textColor">@color/color_414c4e</item>
+        <item name="textAllCaps">true</item>
+    </style>
+</resources>
