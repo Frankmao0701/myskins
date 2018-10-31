@@ -8,6 +8,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
@@ -15,6 +16,7 @@ import android.widget.LinearLayout;
 
 import com.mykins.linkin.app.BaseFragment;
 import com.mykins.linkin.R;
+import com.mykins.linkin.app.Router;
 import com.mykins.linkin.bean.ChatMessage;
 import com.mykins.linkin.emoticon.EmoticonTextHelper;
 import com.mykins.linkin.emoticon.EmoticonsKeyboardUtils;
@@ -99,6 +101,15 @@ public class ChatFragment extends BaseFragment {
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         inflater.inflate(R.menu.menu_chat, menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == R.id.chat_menu_more) {
+            Router.actSingleChatSetting(mActivity);
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     @Override

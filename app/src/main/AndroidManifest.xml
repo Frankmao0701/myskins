@@ -104,6 +104,15 @@
         <activity
             android:name=".app.profile.gather.GatherActivity"
             android:screenOrientation="portrait" />
+        <activity
+            android:name=".app.kins.chat.SingleChatSettingActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".app.feed.publish.KinsRangeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".app.feed.publish.PublishShareActivity"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>

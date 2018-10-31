@@ -7,14 +7,18 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.mykins.linkin.app.BaseFragment;
 import com.mykins.linkin.R;
+import com.mykins.linkin.app.Router;
 import com.mykins.linkin.bean.FeedBean;
+import com.mykins.linkin.util.ConvertUtils;
 import com.mykins.linkin.util.CustomViewUtils;
+import com.zyyoona7.lib.EasyPopup;
 
 import java.util.ArrayList;
 
@@ -42,7 +46,8 @@ public class FeedFragment extends BaseFragment {
     LinearLayoutManager mLinearLayoutManager;
 
     FeedAdapter mAdapter;
-
+    EasyPopup mPopupMenu;
+    View mPopupArchorView;
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -72,7 +77,37 @@ public class FeedFragment extends BaseFragment {
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         inflater.inflate(R.menu.menu_feed, menu);
     }
-
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == R.id.feed_menu_add) {
+            if (mPopupMenu == null) {
+                mPopupMenu = new EasyPopup(mContext)
+                        .setContentView(R.layout.ui_feed_popup_view)
+                        //.setAnimationStyle(R.style.CirclePopAnim)
+                        //是否允许点击PopupWindow之外的地方消失
+                        .setFocusAndOutsideEnable(true)
+                        .createPopup();
+                mPopupMenu.getContentView().findViewById(R.id.feed_popup_share)
+                        .setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                Router.actPublishShare(mActivity);
+                            }
+                        });
+                mPopupMenu.getContentView().findViewById(R.id.feed_popup_activity)
+                        .setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+//                                Router.actDiskins(mActivity);
+                            }
+                        });
+            }
+            mPopupArchorView = getActivity().findViewById(R.id.feed_menu_add);
+            mPopupMenu.showAsDropDown(mPopupArchorView, -ConvertUtils.dp2px(mContext,45),0);
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
     @Override
     public void onDestroyView() {
         super.onDestroyView();

@@ -107,4 +107,10 @@
     <string name="text_add_remark">要不要给TA捎句话</string>
     <string name="no">不用了</string>
     <string name="text_pic_count">共%1$s张</string>
+    <string name="text_keyword_search">关键词搜索</string>
+    <string name="text_input_word">输入文字</string>
+    <string name="text_share_round">分享范围</string>
+    <string name="title_share_range">分享范围</string>
+    <string name="title_activity_range">活动范围</string>
+    <string name="title_publish">发起</string>
 </resources>

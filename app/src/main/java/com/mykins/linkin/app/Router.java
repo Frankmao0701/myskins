@@ -4,7 +4,10 @@ import android.app.Activity;
 import android.content.Intent;
 
 import com.mykins.linkin.app.diskins.DisKinsActivity;
+import com.mykins.linkin.app.feed.publish.KinsRangeActivity;
+import com.mykins.linkin.app.feed.publish.PublishShareActivity;
 import com.mykins.linkin.app.kins.chat.ChatActivity;
+import com.mykins.linkin.app.kins.chat.SingleChatSettingActivity;
 import com.mykins.linkin.app.kins.manage.KinsManageActivity;
 import com.mykins.linkin.app.kins.profile.KinsProfileActivity;
 import com.mykins.linkin.app.kins.profile.KinsProfileEditActivity;
@@ -111,6 +114,18 @@ public final class Router {
     public static void actGather(Activity activity) {
         checkActivity(activity);
         activity.startActivity(new Intent(activity, GatherActivity.class));
+    }
+    public static void actSingleChatSetting(Activity activity) {
+        checkActivity(activity);
+        activity.startActivity(new Intent(activity, SingleChatSettingActivity.class));
+    }
+    public static void actPublishShare(Activity activity) {
+        checkActivity(activity);
+        activity.startActivity(new Intent(activity, PublishShareActivity.class));
+    }
+    public static void actKinsRange(Activity activity) {
+        checkActivity(activity);
+        activity.startActivity(new Intent(activity, KinsRangeActivity.class));
     }
 
 }
