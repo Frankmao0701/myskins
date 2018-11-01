@@ -10,6 +10,10 @@ public class KinsBean {
     String avatar;
     private String kinsTitle;
 
+    public KinsBean() {
+
+    }
+
     public KinsBean(String avatar, String name, String description) {
         this.avatar = avatar;
         this.name = name;

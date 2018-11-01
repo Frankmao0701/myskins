@@ -5,8 +5,10 @@ import android.content.Intent;
 
 import com.mykins.linkin.app.diskins.DisKinsActivity;
 import com.mykins.linkin.app.feed.publish.KinsRangeActivity;
+import com.mykins.linkin.app.feed.publish.PublishActivityActivity;
 import com.mykins.linkin.app.feed.publish.PublishShareActivity;
 import com.mykins.linkin.app.kins.chat.ChatActivity;
+import com.mykins.linkin.app.kins.chat.GroupContactActivity;
 import com.mykins.linkin.app.kins.chat.SingleChatSettingActivity;
 import com.mykins.linkin.app.kins.manage.KinsManageActivity;
 import com.mykins.linkin.app.kins.profile.KinsProfileActivity;
@@ -101,31 +103,76 @@ public final class Router {
         activity.startActivity(new Intent(activity, PrivacyActivity.class));
     }
 
+    /**
+     * 个人中心页面
+     * @param activity
+     */
     public static void actUserInfo(Activity activity) {
         checkActivity(activity);
         activity.startActivity(new Intent(activity, MyInfoActivity.class));
     }
 
+    /**
+     * 添加亲友页面
+     * @param activity activity
+     */
     public static void actAddKin(Activity activity) {
         checkActivity(activity);
         activity.startActivity(new Intent(activity, AddKinActivity.class));
     }
 
+    /**
+     * 汇总页面
+     * @param activity activity
+     */
     public static void actGather(Activity activity) {
         checkActivity(activity);
         activity.startActivity(new Intent(activity, GatherActivity.class));
     }
+
+    /**
+     * 单聊设置页面
+     * @param activity activity
+     */
     public static void actSingleChatSetting(Activity activity) {
         checkActivity(activity);
         activity.startActivity(new Intent(activity, SingleChatSettingActivity.class));
     }
+
+    /**
+     * 发布分享页面
+     * @param activity activity
+     */
     public static void actPublishShare(Activity activity) {
         checkActivity(activity);
         activity.startActivity(new Intent(activity, PublishShareActivity.class));
     }
+
+    /**
+     * 发布活动页面
+     * @param activity activity
+     */
+    public static void actPublishActivity(Activity activity) {
+        checkActivity(activity);
+        activity.startActivity(new Intent(activity, PublishActivityActivity.class));
+    }
+
+    /**
+     * 活动范围
+     * @param activity activity
+     */
     public static void actKinsRange(Activity activity) {
         checkActivity(activity);
         activity.startActivity(new Intent(activity, KinsRangeActivity.class));
+    }
+
+    /**
+     * 群组通讯录
+     * @param activity activity
+     */
+    public static void actGroupContact(Activity activity) {
+        checkActivity(activity);
+        activity.startActivity(new Intent(activity, GroupContactActivity.class));
     }
 
 }

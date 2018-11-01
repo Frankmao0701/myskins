@@ -125,6 +125,7 @@ dependencies {
     implementation deps.zxing
     implementation deps.rxbinding
     implementation deps.rxpermissions
+    implementation deps.PickerView
 //    implementation 'cn.yipianfengye.android:zxing-library:2.2'
 //    implementation 'com.jakewharton.rxbinding2:rxbinding:2.1.1'
 //    implementation 'com.github.tbruyelle:rxpermissions:0.10.2'

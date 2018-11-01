@@ -109,7 +109,7 @@ class KinsAdapter extends RecyclerView.Adapter {
             case TYPE_GROUP:
                 GroupHolder groupHolder = (GroupHolder) holder;
                 GroupBean groupBean = mGroups.get(dataPos);
-
+                groupHolder.kins_item_groupName.setText(groupBean.getName());
                 break;
             default:
                 //spilt line

@@ -98,13 +98,17 @@ public class FeedFragment extends BaseFragment {
                         .setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View v) {
-//                                Router.actDiskins(mActivity);
+                                Router.actPublishActivity(mActivity);
                             }
                         });
             }
             mPopupArchorView = getActivity().findViewById(R.id.feed_menu_add);
             mPopupMenu.showAsDropDown(mPopupArchorView, -ConvertUtils.dp2px(mContext,45),0);
             return true;
+        }else if (item.getItemId() == R.id.feed_menu_search){
+            Router.actGroupContact(mActivity);
+            return true;
+
         }
         return super.onOptionsItemSelected(item);
     }

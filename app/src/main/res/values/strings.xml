@@ -124,5 +124,19 @@
     <string name="title_share_range">分享范围</string>
     <string name="title_activity_range">活动范围</string>
     <string name="title_publish">发起</string>
+    <string name="text_input_activity_title">请输入活动标题</string>
+    <string name="text_theme_pic">主题图片</string>
+    <string name="text_activity_title">活动标题</string>
+    <string name="text_input_activity_content">请输入活动内容</string>
+    <string name="text_activity_content">活动内容</string>
+    <string name="text_activity_time">活动时间</string>
+    <string name="text_input_activity_time">年/月/日/时</string>
+    <string name="text_activity_address">活动地点</string>
+    <string name="text_input_activity_address">请输入活动地点</string>
+    <string name="text_choose_need_reply">请选择是否需要回复</string>
+    <string name="text_choose_need_stat">请选择是否需要统计参加人数</string>
+    <string name="text_choose_need_money">请选择是否设定报名费用</string>
+    <string name="text_activity_range">活动范围</string>
+    <string name="done">完成</string>
 
 </resources>

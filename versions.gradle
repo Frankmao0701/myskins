@@ -43,6 +43,7 @@ versions.ninegridimageview = '1.0.0'
 versions.zxing = '2.2'
 versions.rxbinding = '2.1.1'
 versions.rxpermissions = '0.10.2'
+versions.PickerView = '4.1.6'
 
 def deps = [:]
 
@@ -139,6 +140,7 @@ deps.ninegridimageview = "com.lqr.ninegridimageview:library:$versions.ninegridim
 deps.zxing = "cn.yipianfengye.android:zxing-library:$versions.zxing"
 deps.rxbinding = "com.jakewharton.rxbinding2:rxbinding:$versions.rxbinding"
 deps.rxpermissions = "com.github.tbruyelle:rxpermissions:$versions.rxpermissions"
+deps.PickerView = "com.contrarywind:Android-PickerView:$versions.PickerView"
 
 ext.deps = deps
 
