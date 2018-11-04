@@ -119,6 +119,12 @@
         <activity
             android:name=".app.kins.chat.GroupContactActivity"
             android:screenOrientation="portrait" />
+        <activity
+            android:name=".app.kins.chat.EditGroupActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".app.feed.publish.ActivityDetailActivity"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>

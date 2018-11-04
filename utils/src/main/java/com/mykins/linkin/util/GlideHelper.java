@@ -28,7 +28,7 @@ public final class GlideHelper {
     }
 
     public static void init(Context context){
-        radius = ConvertUtils.dp2px(context.getResources(), 15);
+        radius = ConvertUtils.dp2px(context.getResources(), 12);
         isInitials = true;
     }
 

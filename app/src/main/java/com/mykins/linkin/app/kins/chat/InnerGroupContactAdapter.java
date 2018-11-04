@@ -9,6 +9,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.mykins.linkin.R;
@@ -16,6 +18,7 @@ import com.mykins.linkin.app.Router;
 import com.mykins.linkin.app.kins.profile.KinsProfileActivity;
 import com.mykins.linkin.bean.GroupContactBean;
 import com.mykins.linkin.bean.KinsBean;
+import com.mykins.linkin.util.ConvertUtils;
 import com.mykins.linkin.util.GlideHelper;
 
 import java.util.ArrayList;
@@ -57,11 +60,10 @@ class InnerGroupContactAdapter extends RecyclerView.Adapter {
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
 
-                InnerGroupContactHolder contactHolder = (InnerGroupContactHolder) holder;
-                String url = "http://img.hb.aicdn.com/cd392e199f22b27f8d4acb4d4026a79eab46ceeed414-GM93zI_fw658";
-                GlideHelper.loadUrlRound(mActivity, url, (contactHolder).img_contact);
+        InnerGroupContactHolder contactHolder = (InnerGroupContactHolder) holder;
+        String url = "http://img.hb.aicdn.com/cd392e199f22b27f8d4acb4d4026a79eab46ceeed414-GM93zI_fw658";
+        GlideHelper.loadUrlRound(mActivity, url, (contactHolder).img_contact);
     }
-
 
 
     @Override
@@ -83,8 +85,6 @@ class InnerGroupContactAdapter extends RecyclerView.Adapter {
             ButterKnife.bind(this, itemView);
         }
     }
-
-
 
 
 }

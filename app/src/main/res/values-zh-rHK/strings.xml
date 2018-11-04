@@ -136,4 +136,11 @@
     <string name="text_choose_need_money">请选择是否设定报名费用</string>
     <string name="text_activity_range">活动范围</string>
     <string name="done">完成</string>
+    <string name="text_group_name">群名</string>
+    <string name="text_input_group_name">请输入群名</string>
+    <string name="reply">回复</string>
+    <string name="sponsor">赞助</string>
+    <string name="join"><![CDATA[参&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;加]]></string>
+    <string name="undetermined"><![CDATA[待&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;定]]></string>
+    <string name="dis_join">不参加</string>
 </resources>

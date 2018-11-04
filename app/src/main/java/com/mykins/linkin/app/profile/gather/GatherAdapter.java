@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.mykins.linkin.R;
+import com.mykins.linkin.app.Router;
 
 import java.util.List;
 
@@ -41,6 +42,12 @@ public class GatherAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
 
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Router.actActivityDetail(mContext);
+            }
+        });
 
     }
 

@@ -9,13 +9,19 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
+import com.bigkoo.pickerview.builder.OptionsPickerBuilder;
 import com.bigkoo.pickerview.builder.TimePickerBuilder;
+import com.bigkoo.pickerview.listener.OnOptionsSelectChangeListener;
+import com.bigkoo.pickerview.listener.OnOptionsSelectListener;
 import com.bigkoo.pickerview.listener.OnTimeSelectListener;
+import com.bigkoo.pickerview.view.OptionsPickerView;
 import com.bigkoo.pickerview.view.TimePickerView;
 import com.mykins.linkin.R;
 import com.mykins.linkin.app.BaseActivity;
 import com.mykins.linkin.app.Router;
+import com.mykins.linkin.bean.ProvinceBean;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -30,6 +36,9 @@ public class PublishActivityActivity extends BaseActivity {
 
     Unbinder mUiBinder;
     private TimePickerView pvTime;
+    private OptionsPickerView pvAdressOptions;
+    private ArrayList<ProvinceBean> options1Items = new ArrayList<>();
+    private ArrayList<ArrayList<String>> options2Items = new ArrayList<>();
 
     @OnClick(R.id.activity_rang_rl)
     public void goToRange() {
@@ -38,7 +47,6 @@ public class PublishActivityActivity extends BaseActivity {
 
     @OnClick(R.id.rl_activity_time)
     public void timeSelect() {
-
 
 
         Calendar selectedDate = Calendar.getInstance();
@@ -78,6 +86,10 @@ public class PublishActivityActivity extends BaseActivity {
                 .build();
         pvTime.show();
     }
+    @OnClick(R.id.rl_activity_address)
+    public void showAddress(){
+        pvAdressOptions.show();
+    }
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -86,6 +98,8 @@ public class PublishActivityActivity extends BaseActivity {
         mUiBinder = ButterKnife.bind(this, this);
         setSupportActionBar(mToolbar);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
+        getAddressData();
+        initOptionPicker();
 
     }
 
@@ -98,11 +112,81 @@ public class PublishActivityActivity extends BaseActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == R.id.publish_menu_send) {
-            Toast.makeText(mContext, "发布成功", Toast.LENGTH_SHORT).show();
+            Router.actActivityDetail(this);
         } else if (item.getItemId() == android.R.id.home) {
             onBackPressed();
         }
         return true;
+    }
+
+    private void getAddressData() {
+        //选项1
+        options1Items.add(new ProvinceBean(0, "广东", "描述部分", "其他数据"));
+        options1Items.add(new ProvinceBean(1, "湖南", "描述部分", "其他数据"));
+        options1Items.add(new ProvinceBean(2, "广西", "描述部分", "其他数据"));
+
+        //选项2
+        ArrayList<String> options2Items_01 = new ArrayList<>();
+        options2Items_01.add("广州");
+        options2Items_01.add("佛山");
+        options2Items_01.add("东莞");
+        options2Items_01.add("珠海");
+        ArrayList<String> options2Items_02 = new ArrayList<>();
+        options2Items_02.add("长沙");
+        options2Items_02.add("岳阳");
+        options2Items_02.add("株洲");
+        options2Items_02.add("衡阳");
+        ArrayList<String> options2Items_03 = new ArrayList<>();
+        options2Items_03.add("桂林");
+        options2Items_03.add("玉林");
+        options2Items.add(options2Items_01);
+        options2Items.add(options2Items_02);
+        options2Items.add(options2Items_03);
+    }
+
+    private void initOptionPicker() {//条件选择器初始化
+
+        /**
+         * 注意 ：如果是三级联动的数据(省市区等)，请参照 JsonDataActivity 类里面的写法。
+         */
+
+        pvAdressOptions = new OptionsPickerBuilder(this, new OnOptionsSelectListener() {
+            @Override
+            public void onOptionsSelect(int options1, int options2, int options3, View v) {
+                //返回的分别是三个级别的选中位置
+                String tx = options1Items.get(options1).getPickerViewText()
+                        + options2Items.get(options1).get(options2)
+                        /* + options3Items.get(options1).get(options2).get(options3).getPickerViewText()*/;
+//                btn_Options.setText(tx);
+            }
+        })
+                .setTitleText("城市选择")
+                .setContentTextSize(20)//设置滚轮文字大小
+                .setDividerColor(getResources().getColor(R.color.color_ebebeb))//设置分割线的颜色
+                .setSelectOptions(0, 1)//默认选中项
+                .setBgColor(Color.WHITE)
+                .setTitleBgColor(Color.WHITE)
+                .setTitleColor(getResources().getColor(R.color.text_color_normal))
+                .setCancelColor(getResources().getColor(R.color.text_color_normal))
+                .setSubmitColor(getResources().getColor(R.color.text_color_normal))
+                .setTextColorCenter(getResources().getColor(R.color.text_color_normal))
+                .isRestoreItem(true)//切换时是否还原，设置默认选中第一项。
+                .isCenterLabel(false) //是否只显示中间选中项的label文字，false则每项item全部都带有label。
+                .setLabels("省", "市", "区")
+                .setBackgroundId(0x00000000) //设置外部遮罩颜色
+                .setOptionsSelectChangeListener(new OnOptionsSelectChangeListener() {
+                    @Override
+                    public void onOptionsSelectChanged(int options1, int options2, int options3) {
+                        String str = "options1: " + options1 + "\noptions2: " + options2 + "\noptions3: " + options3;
+//                        Toast.makeText(this, str, Toast.LENGTH_SHORT).show();
+                    }
+                })
+                .build();
+
+//        pvOptions.setSelectOptions(1,1);
+        /*pvOptions.setPicker(options1Items);//一级选择器*/
+        pvAdressOptions.setPicker(options1Items, options2Items);//二级选择器
+        /*pvOptions.setPicker(options1Items, options2Items,options3Items);//三级选择器*/
     }
 
     @Override

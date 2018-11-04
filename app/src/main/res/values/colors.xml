@@ -4,6 +4,8 @@
     <color name="colorPrimary">#27302f</color>
     <color name="colorPrimaryDark">#27302f</color>
     <color name="colorAccent">#5c5c5c</color>
+    <color name="text_color_gray">#787878</color>
+    <color name="text_color_normal">#253335</color>
 
     <color name="login_primary">#faebe4</color>
     <color name="login_primary_dark">#faebe4</color>
@@ -44,4 +46,5 @@
     <color name="color_313131">#313131</color>
     <color name="color_335ca1">#335ca1</color>
     <color name="color_cecece">#cecece</color>
+    <color name="color_cbcccc">#cbcccc</color>
 </resources>

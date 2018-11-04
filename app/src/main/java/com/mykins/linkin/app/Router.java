@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 
 import com.mykins.linkin.app.diskins.DisKinsActivity;
+import com.mykins.linkin.app.feed.publish.ActivityDetailActivity;
 import com.mykins.linkin.app.feed.publish.KinsRangeActivity;
 import com.mykins.linkin.app.feed.publish.PublishActivityActivity;
 import com.mykins.linkin.app.feed.publish.PublishShareActivity;
@@ -173,6 +174,16 @@ public final class Router {
     public static void actGroupContact(Activity activity) {
         checkActivity(activity);
         activity.startActivity(new Intent(activity, GroupContactActivity.class));
+    }
+
+    /**
+     * 活动详情页面
+     *
+     * @param activity activity
+     */
+    public static void actActivityDetail(Activity activity) {
+        checkActivity(activity);
+        activity.startActivity(new Intent(activity, ActivityDetailActivity.class));
     }
 
 }

@@ -60,7 +60,7 @@ public class GroupContactActivity extends BaseActivity {
         contactBean1.type = GroupContactBean.TYPE_CONTACT;
         contactBean1.letter = "C";
         List<KinsBean> kinsBeans = new ArrayList<>();
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < 2; i++) {
             KinsBean kinsBean = new KinsBean();
             kinsBean.setName("李橙凌" + i);
             kinsBeans.add(kinsBean);
