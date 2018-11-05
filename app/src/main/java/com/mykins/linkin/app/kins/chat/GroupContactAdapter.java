@@ -1,6 +1,7 @@
 package com.mykins.linkin.app.kins.chat;
 
 import android.app.Activity;
+import android.graphics.Color;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.GridLayoutManager;
@@ -82,7 +83,7 @@ class GroupContactAdapter extends RecyclerView.Adapter {
                 break;
             case TYPE_CONTACT:
                 GroupContactHolder contactHolder = (GroupContactHolder) holder;
-                GridDividerItemDecoration itemDecoration = new GridDividerItemDecoration(mActivity, ConvertUtils.dp2px(mActivity, 10), ConvertUtils.dp2px(mActivity, 10));
+                GridDividerItemDecoration itemDecoration = new GridDividerItemDecoration(ConvertUtils.dp2px(mActivity, 10), Color.WHITE);
                 contactHolder.recyle_inner_contact.addItemDecoration(itemDecoration);
                 contactHolder.recyle_inner_contact.setLayoutManager(new GridLayoutManager(mActivity, 5));
                 InnerGroupContactAdapter adapter = new InnerGroupContactAdapter(mActivity);
