@@ -78,14 +78,14 @@
                 android:background="@color/color_ebebeb" />
 
             <RelativeLayout
-                android:id="@+id/profile.item.name"
+                android:id="@+id/profile.name.rl"
                 android:layout_width="match_parent"
                 android:layout_height="56dp"
                 android:paddingLeft="18dp"
                 android:paddingRight="16dp">
 
                 <TextView
-                    android:id="@+id/profile.item.name.tv"
+                    android:id="@+id/profile.name.tv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentLeft="true"
@@ -100,7 +100,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:layout_toLeftOf="@+id/kins.profile.item.arrow1"
-                    android:layout_toRightOf="@id/profile.item.name.tv"
+                    android:layout_toRightOf="@id/profile.name.tv"
                     android:background="@null"
                     android:enabled="false"
                     android:paddingLeft="32dp"
@@ -260,14 +260,14 @@
                 android:background="@color/color_ebebeb" />
 
             <RelativeLayout
-                android:id="@+id/kins.profile.item.phone_number"
+                android:id="@+id/profile.phone.rl"
                 android:layout_width="match_parent"
                 android:layout_height="56dp"
                 android:paddingLeft="18dp"
                 android:paddingRight="16dp">
 
                 <TextView
-                    android:id="@+id/kins.profile.item.phone_number.title"
+                    android:id="@+id/kins.profile.item.phone.title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentLeft="true"
@@ -277,12 +277,12 @@
                     android:textSize="14sp" />
 
                 <TextView
-                    android:id="@+id/kins.profile.item.phone_number.value"
+                    android:id="@+id/kins.profile.item.phone.value"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:layout_toLeftOf="@+id/kins.profile.item.arrow5"
-                    android:layout_toRightOf="@id/kins.profile.item.phone_number.title"
+                    android:layout_toRightOf="@id/kins.profile.item.phone.title"
                     android:background="@null"
                     android:enabled="false"
                     android:paddingLeft="32dp"
@@ -306,7 +306,7 @@
                 android:background="@color/color_e4e4e4" />
 
             <RelativeLayout
-                android:id="@+id/kins.profile.item.email"
+                android:id="@+id/profile.email.rl"
                 android:layout_width="match_parent"
                 android:layout_height="56dp"
                 android:paddingLeft="18dp"

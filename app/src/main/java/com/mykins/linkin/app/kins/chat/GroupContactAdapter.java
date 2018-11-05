@@ -82,7 +82,7 @@ class GroupContactAdapter extends RecyclerView.Adapter {
                 break;
             case TYPE_CONTACT:
                 GroupContactHolder contactHolder = (GroupContactHolder) holder;
-                GridDividerItemDecoration itemDecoration = new GridDividerItemDecoration(mActivity,ConvertUtils.dp2px(mActivity,10),ConvertUtils.dp2px(mActivity,10));
+                GridDividerItemDecoration itemDecoration = new GridDividerItemDecoration(mActivity, ConvertUtils.dp2px(mActivity, 10), ConvertUtils.dp2px(mActivity, 10));
                 contactHolder.recyle_inner_contact.addItemDecoration(itemDecoration);
                 contactHolder.recyle_inner_contact.setLayoutManager(new GridLayoutManager(mActivity, 5));
                 InnerGroupContactAdapter adapter = new InnerGroupContactAdapter(mActivity);

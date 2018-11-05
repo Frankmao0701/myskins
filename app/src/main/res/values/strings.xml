@@ -38,7 +38,7 @@
     <string name="title_search_im">聊天</string>
     <string name="title_search_event">活动</string>
     <string name="title_diskins_add">填加逝亲</string>
-    <string name="title_feed">亲讯</string>
+    <string name="title_feed">亲&#160;&#160;&#160;&#160;&#160;&#160;&#160;讯</string>
     <string name="title_dashboard">汇总</string>
     <string name="title_setting">设置</string>
     <string name="title_scan_qr">扫码</string>
@@ -147,5 +147,7 @@
     <string name="dis_join">不&#160;&#160;参&#160;&#160;加</string>
     <string name="sex_choose">选择性别</string>
     <string name="age_choose"><![CDATA[ 选择年龄]]></string>
+    <string name="limit_200_word">200字</string>
+    <string name="time_choose">时间选择</string>
 
 </resources>

@@ -106,6 +106,7 @@ public final class Router {
 
     /**
      * 个人中心页面
+     *
      * @param activity
      */
     public static void actUserInfo(Activity activity) {
@@ -115,6 +116,7 @@ public final class Router {
 
     /**
      * 添加亲友页面
+     *
      * @param activity activity
      */
     public static void actAddKin(Activity activity) {
@@ -124,6 +126,7 @@ public final class Router {
 
     /**
      * 汇总页面
+     *
      * @param activity activity
      */
     public static void actGather(Activity activity) {
@@ -133,6 +136,7 @@ public final class Router {
 
     /**
      * 单聊设置页面
+     *
      * @param activity activity
      */
     public static void actSingleChatSetting(Activity activity) {
@@ -142,6 +146,7 @@ public final class Router {
 
     /**
      * 发布分享页面
+     *
      * @param activity activity
      */
     public static void actPublishShare(Activity activity) {
@@ -151,6 +156,7 @@ public final class Router {
 
     /**
      * 发布活动页面
+     *
      * @param activity activity
      */
     public static void actPublishActivity(Activity activity) {
@@ -160,6 +166,7 @@ public final class Router {
 
     /**
      * 活动范围
+     *
      * @param activity activity
      */
     public static void actKinsRange(Activity activity) {
@@ -169,6 +176,7 @@ public final class Router {
 
     /**
      * 群组通讯录
+     *
      * @param activity activity
      */
     public static void actGroupContact(Activity activity) {

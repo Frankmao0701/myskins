@@ -12,6 +12,8 @@ import com.bigkoo.pickerview.listener.OnOptionsSelectListener;
 import com.bigkoo.pickerview.view.OptionsPickerView;
 import com.mykins.linkin.R;
 import com.mykins.linkin.app.BaseActivity;
+import com.mykins.linkin.app.Router;
+import com.mykins.linkin.app.kins.profile.KinsProfileEditActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -38,6 +40,21 @@ public class MyInfoActivity extends BaseActivity {
     @OnClick(R.id.profile_item_age_rl)
     public void ageChoose() {
         pvAgeOptions.show();
+    }
+
+    @OnClick(R.id.profile_phone_rl)
+    public void editPhone() {
+        Router.actKinsProfileEdit(this, KinsProfileEditActivity.Editing.PHONE, "13321232131");
+    }
+
+    @OnClick(R.id.profile_email_rl)
+    public void editEmail() {
+        Router.actKinsProfileEdit(this, KinsProfileEditActivity.Editing.EMAIL, "www.123@163.com");
+    }
+
+    @OnClick(R.id.profile_name_rl)
+    public void editName() {
+        Router.actKinsProfileEdit(this, KinsProfileEditActivity.Editing.NAME, new String[]{"猪", "八戒"});
     }
 
     @Override

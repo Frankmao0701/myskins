@@ -25,7 +25,7 @@ public class ActivityDetailActivity extends BaseActivity {
     Unbinder mUiBinder;
 
     @OnClick(R.id.btn_reply)
-    public void replyDialog(){
+    public void replyDialog() {
         final ReplyDialogFragment dialog = new ReplyDialogFragment();
         dialog.show(getFragmentManager(), "dialog");
     }

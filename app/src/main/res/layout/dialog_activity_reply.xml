@@ -16,20 +16,22 @@
         android:textColor="@color/text_color_normal"
         android:textSize="14sp"
         android:text="@string/join"
-        android:padding="5dp"/>
+        android:padding="5dp" />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@color/text_color_normal"
         android:padding="5dp"
         android:textSize="14sp"
-        android:text="@string/dis_join"/>
+        android:text="@string/dis_join" />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@color/text_color_normal"
         android:padding="5dp"
         android:textSize="14sp"
-        android:text="@string/undetermined"/>
+        android:text="@string/undetermined" />
 
 </LinearLayout>

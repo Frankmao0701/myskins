@@ -14,7 +14,7 @@
         android:background="@color/colorPrimary"
         app:contentInsetStartWithNavigation="0dp"
         app:titleTextAppearance="@style/Linkin_Toolbar_TitleText_Dark"
-        app:titleTextColor="@android:color/white"/>
+        app:titleTextColor="@android:color/white" />
 
 
     <RelativeLayout
@@ -60,7 +60,7 @@
             android:background="@null"
             android:layout_toRightOf="@id/tv_edit_group_name"
             android:textSize="14sp"
-            android:textColor="@color/color_cbcccc"/>
+            android:textColor="@color/color_cbcccc" />
 
     </RelativeLayout>
 </LinearLayout>

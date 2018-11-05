@@ -37,10 +37,10 @@ public class KinsRangeActivity extends BaseActivity {
     }
 
     private void initView() {
-        if (mAdapter == null){
+        if (mAdapter == null) {
             mAdapter = new KinsRangeAdapter(this);
         }
-        if (mLayoutManager == null){
+        if (mLayoutManager == null) {
             mLayoutManager = new LinearLayoutManager(this);
         }
         recycle_range.setLayoutManager(mLayoutManager);

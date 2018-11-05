@@ -13,11 +13,11 @@
         android:background="@color/colorPrimary"
         app:contentInsetStartWithNavigation="0dp"
         app:titleTextAppearance="@style/Linkin_Toolbar_TitleText_Dark"
-        app:titleTextColor="@android:color/white"/>
+        app:titleTextColor="@android:color/white" />
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recycle_group_contact"
         android:background="@color/white"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content" />
 </LinearLayout>

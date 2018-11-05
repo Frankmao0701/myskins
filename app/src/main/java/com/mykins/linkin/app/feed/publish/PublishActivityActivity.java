@@ -19,6 +19,7 @@ import com.bigkoo.pickerview.view.TimePickerView;
 import com.mykins.linkin.R;
 import com.mykins.linkin.app.BaseActivity;
 import com.mykins.linkin.app.Router;
+import com.mykins.linkin.app.kins.profile.KinsProfileEditActivity;
 import com.mykins.linkin.bean.ProvinceBean;
 
 import java.util.ArrayList;
@@ -45,6 +46,21 @@ public class PublishActivityActivity extends BaseActivity {
         Router.actKinsRange(this);
     }
 
+    @OnClick(R.id.rl_activity_title)
+    public void editTitle() {
+        Router.actKinsProfileEdit(this, KinsProfileEditActivity.Editing.TITLE, "");
+    }
+
+    @OnClick(R.id.rl_activity_content)
+    public void editContent() {
+        Router.actKinsProfileEdit(this, KinsProfileEditActivity.Editing.ACTIVITY_CONTENT, "");
+    }
+
+    @OnClick(R.id.rl_activity_address)
+    public void editAddress() {
+        Router.actKinsProfileEdit(this, KinsProfileEditActivity.Editing.ACTIVITY_ADDRESS, "");
+    }
+
     @OnClick(R.id.rl_activity_time)
     public void timeSelect() {
 
@@ -65,29 +81,31 @@ public class PublishActivityActivity extends BaseActivity {
 //                tvTime.setText(getTime(date));
             }
         })
-                .setType(new boolean[]{true, true, true, true, true, true})// 默认全部显示
-                .setCancelText("Cancel")//取消按钮文字
-                .setSubmitText("Sure")//确认按钮文字
+                .setType(new boolean[]{true, true, true, true, false, false})// 默认全部显示
                 .setContentTextSize(18)//滚轮文字大小
                 .setTitleSize(20)//标题文字大小
-                .setTitleText("Time")//标题文字
+                .setTitleText(getResources().getString(R.string.time_choose))//标题文字
                 .setOutSideCancelable(false)//点击屏幕，点在控件外部范围时，是否取消显示
                 .isCyclic(true)//是否循环滚动
-                .setTitleColor(Color.BLACK)//标题文字颜色
-                .setSubmitColor(Color.BLUE)//确定按钮文字颜色
-                .setCancelColor(Color.BLUE)//取消按钮文字颜色
-                .setTitleBgColor(0xffffff)//标题背景颜色
+                .setTitleColor(getResources().getColor(R.color.text_color_normal))
+                .setCancelColor(getResources().getColor(R.color.text_color_normal))
+                .setSubmitColor(getResources().getColor(R.color.text_color_normal))
+                .setTextColorCenter(getResources().getColor(R.color.text_color_normal))
+                .setDividerColor(getResources().getColor(R.color.color_ebebeb))//设置分割线的颜色
+                .setTitleBgColor(Color.WHITE)//标题背景颜色
                 .setBgColor(getResources().getColor(R.color.white))//滚轮背景颜色
                 .setDate(selectedDate)// 如果不设置的话，默认是系统时间*/
                 .setRangDate(startDate, endDate)//起始终止年月日设定
-                .setLabel("年", "月", "日", "时", "分", "秒")//默认设置为年月日时分秒
+                .setLabel("年", "月", "日", "时", null, null)//默认设置为年月日时分秒
                 .isCenterLabel(false) //是否只显示中间选中项的label文字，false则每项item全部都带有label。
                 .isDialog(false)//是否显示为对话框样式
+                .setOutSideCancelable(true)
                 .build();
         pvTime.show();
     }
+
     @OnClick(R.id.rl_activity_address)
-    public void showAddress(){
+    public void showAddress() {
         pvAdressOptions.show();
     }
 

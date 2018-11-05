@@ -48,6 +48,7 @@ public class FeedFragment extends BaseFragment {
     FeedAdapter mAdapter;
     EasyPopup mPopupMenu;
     View mPopupArchorView;
+
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -77,6 +78,7 @@ public class FeedFragment extends BaseFragment {
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         inflater.inflate(R.menu.menu_feed, menu);
     }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == R.id.feed_menu_add) {
@@ -92,6 +94,7 @@ public class FeedFragment extends BaseFragment {
                             @Override
                             public void onClick(View v) {
                                 Router.actPublishShare(mActivity);
+                                mPopupMenu.dismiss();
                             }
                         });
                 mPopupMenu.getContentView().findViewById(R.id.feed_popup_activity)
@@ -99,19 +102,21 @@ public class FeedFragment extends BaseFragment {
                             @Override
                             public void onClick(View v) {
                                 Router.actPublishActivity(mActivity);
+                                mPopupMenu.dismiss();
                             }
                         });
             }
             mPopupArchorView = getActivity().findViewById(R.id.feed_menu_add);
-            mPopupMenu.showAsDropDown(mPopupArchorView, -ConvertUtils.dp2px(mContext,45),0);
+            mPopupMenu.showAsDropDown(mPopupArchorView, -ConvertUtils.dp2px(mContext, 45), 0);
             return true;
-        }else if (item.getItemId() == R.id.feed_menu_search){
+        } else if (item.getItemId() == R.id.feed_menu_search) {
             Router.actGroupContact(mActivity);
             return true;
 
         }
         return super.onOptionsItemSelected(item);
     }
+
     @Override
     public void onDestroyView() {
         super.onDestroyView();

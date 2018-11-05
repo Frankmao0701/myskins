@@ -14,8 +14,8 @@ import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.FrameLayout;
 
-import com.mykins.linkin.app.BaseActivity;
 import com.mykins.linkin.R;
+import com.mykins.linkin.app.BaseActivity;
 import com.mykins.linkin.util.RegexUtil;
 import com.mykins.linkin.util.ResUtils;
 import com.mykins.linkin.util.StringUtils;
@@ -61,6 +61,10 @@ public class KinsProfileEditActivity extends BaseActivity {
     @Nullable
     @BindView(R.id.kins_profile_editing_second_name)
     EditText mSecondName;
+    @Nullable
+    @BindView(R.id.edit_content)
+    EditText edit_content;
+
     private boolean mChanged;
 
     boolean validateName() {
@@ -226,13 +230,100 @@ public class KinsProfileEditActivity extends BaseActivity {
         return validate;
     }
 
+    boolean validateActivityTitle() {
+        boolean validate = false;
+        String error = null;
+        String val = mEdit.getText().toString();
+        if (StringUtils.isEmpty(val)) {
+            error = ResUtils.string(R.string.text_input_activity_title);
+        } else {
+            validate = true;
+        }
+        if (!validate && error != null) {
+            mEditInputLayout.setErrorEnabled(true);
+            mEditInputLayout.setError(error);
+        }
+        return validate;
+    }
+
+    boolean validateActivityContent() {
+        boolean validate = false;
+        String error = null;
+        String val = edit_content.getText().toString();
+        if (StringUtils.isEmpty(val)) {
+            error = ResUtils.string(R.string.text_input_activity_content);
+        } else {
+            validate = true;
+        }
+        if (!validate && error != null) {
+            mEditInputLayout.setErrorEnabled(true);
+            mEditInputLayout.setError(error);
+        }
+        return validate;
+    }
+
+    boolean validateActivityAddress() {
+        boolean validate = false;
+        String error = null;
+        String val = mEdit.getText().toString();
+        if (StringUtils.isEmpty(val)) {
+            error = ResUtils.string(R.string.text_input_activity_address);
+        } else {
+            validate = true;
+        }
+        if (!validate && error != null) {
+            mEditInputLayout.setErrorEnabled(true);
+            mEditInputLayout.setError(error);
+        }
+        return validate;
+    }
+
     Serializable getMark() {
+        return mEdit.getText().toString();
+    }
+
+    Serializable getActivityContent() {
+        return edit_content.getText().toString();
+    }
+
+    Serializable getActivityAddress() {
+        return mEdit.getText().toString();
+    }
+
+    Serializable getActivityTitle() {
         return mEdit.getText().toString();
     }
 
     void setMark(String data) {
         if (StringUtils.isEmpty(data)) {
             mEdit.setHint(ResUtils.string(R.string.hint_mark));
+        } else {
+            mEdit.setText(data);
+            mEdit.setSelection(data.length());
+        }
+    }
+
+    void setActivityContent(String data) {
+        if (StringUtils.isEmpty(data)) {
+            edit_content.setHint(ResUtils.string(R.string.text_input_activity_content));
+        } else {
+            edit_content.setText(data);
+            edit_content.setSelection(data.length());
+        }
+    }
+
+    void setActivityAddress(String data) {
+        if (StringUtils.isEmpty(data)) {
+            mEdit.setHint(ResUtils.string(R.string.text_input_activity_address));
+        } else {
+            mEdit.setText(data);
+            mEdit.setSelection(data.length());
+        }
+    }
+
+    void setActivityTitle(String data) {
+        if (StringUtils.isEmpty(data)) {
+            mEdit.setHint(ResUtils.string(R.string.text_input_activity_title));
         } else {
             mEdit.setText(data);
             mEdit.setSelection(data.length());
@@ -306,7 +397,8 @@ public class KinsProfileEditActivity extends BaseActivity {
     @OnTextChanged({
             R.id.kins_profile_editing_first_name,
             R.id.kins_profile_editing_second_name,
-            R.id.edit
+            R.id.edit,
+            R.id.edit_content
     })
     void onEditTextChange() {
         mChanged = true;
@@ -317,6 +409,9 @@ public class KinsProfileEditActivity extends BaseActivity {
         switch (category) {
             case Editing.NAME:
                 layoutId = R.layout.include_edit_profile_name;
+                break;
+            case Editing.ACTIVITY_CONTENT:
+                layoutId = R.layout.include_edit_activity_content;
                 break;
             default:
                 layoutId = R.layout.include_edit_text;
@@ -348,6 +443,15 @@ public class KinsProfileEditActivity extends BaseActivity {
             case Editing.MARK: {
                 return validateMark();
             }
+            case Editing.TITLE: {
+                return validateActivityTitle();
+            }
+            case Editing.ACTIVITY_CONTENT: {
+                return validateActivityContent();
+            }
+            case Editing.ACTIVITY_ADDRESS: {
+                return validateActivityAddress();
+            }
         }
         return result;
     }
@@ -374,6 +478,18 @@ public class KinsProfileEditActivity extends BaseActivity {
                 setMark((String) data);
                 break;
             }
+            case Editing.TITLE: {
+                setActivityTitle((String) data);
+                break;
+            }
+            case Editing.ACTIVITY_CONTENT: {
+                setActivityContent((String) data);
+                break;
+            }
+            case Editing.ACTIVITY_ADDRESS: {
+                setActivityAddress((String) data);
+                break;
+            }
         }
         // reset EditText changed
         mChanged = false;
@@ -397,17 +513,28 @@ public class KinsProfileEditActivity extends BaseActivity {
                 case Editing.MARK: {
                     return getMark();
                 }
+                case Editing.TITLE: {
+                    return getActivityTitle();
+                }
+                case Editing.ACTIVITY_CONTENT: {
+                    return getActivityContent();
+                }
+                case Editing.ACTIVITY_ADDRESS: {
+                    return getActivityAddress();
+                }
             }
         }
         return null;
     }
 
-    interface Editing {
+    public interface Editing {
         int NAME = 1;
         int ADDRESS = 2;
         int PHONE = 3;
         int EMAIL = 4;
         int MARK = 5;
-        int age = 6;
+        int TITLE = 6;
+        int ACTIVITY_ADDRESS = 7;
+        int ACTIVITY_CONTENT = 8;
     }
 }

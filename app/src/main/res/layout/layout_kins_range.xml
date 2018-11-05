@@ -13,7 +13,7 @@
         android:layout_weight="1"
         android:textColor="@color/color_253335"
         android:textSize="14sp"
-        android:text="这是我妈妈的群组无疑"/>
+        android:text="这是我妈妈的群组无疑" />
 
     <CheckBox
         android:id="@+id/checkbox"
