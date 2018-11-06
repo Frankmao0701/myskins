@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 import com.mykins.linkin.R;
 import com.mykins.linkin.app.Router;
+import com.mykins.linkin.app.kins.chat.ChatActivity;
 import com.mykins.linkin.bean.FeedBean;
 import com.mykins.linkin.util.GlideHelper;
 
@@ -46,7 +47,7 @@ class FeedAdapter extends RecyclerView.Adapter<FeedAdapter.ViewHolder> {
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Router.actChat(mActivity);
+                Router.actChat(mActivity, ChatActivity.TYPE_SINGLE);
             }
         });
         String url = "http://img.hb.aicdn.com/1bb534a3c66ceef02f2ad0ce0368c05966437cc819d23-cRA0rz_fw658";

@@ -10,7 +10,7 @@ import com.mykins.linkin.app.feed.publish.PublishActivityActivity;
 import com.mykins.linkin.app.feed.publish.PublishShareActivity;
 import com.mykins.linkin.app.kins.chat.ChatActivity;
 import com.mykins.linkin.app.kins.chat.GroupContactActivity;
-import com.mykins.linkin.app.kins.chat.SingleChatSettingActivity;
+import com.mykins.linkin.app.kins.chat.ChatSettingActivity;
 import com.mykins.linkin.app.kins.manage.KinsManageActivity;
 import com.mykins.linkin.app.kins.profile.KinsProfileActivity;
 import com.mykins.linkin.app.kins.profile.KinsProfileEditActivity;
@@ -62,9 +62,9 @@ public final class Router {
         activity.startActivity(new Intent(activity, DisKinsActivity.class));
     }
 
-    public static void actChat(Activity activity) {
+    public static void actChat(Activity activity, int type) {
         checkActivity(activity);
-        activity.startActivity(new Intent(activity, ChatActivity.class));
+        activity.startActivity(new Intent(activity, ChatActivity.class).putExtra("type", type));
     }
 
     public static void actKinsProfile(Activity activity, int type) {
@@ -139,9 +139,9 @@ public final class Router {
      *
      * @param activity activity
      */
-    public static void actSingleChatSetting(Activity activity) {
+    public static void actSingleChatSetting(Activity activity, int type) {
         checkActivity(activity);
-        activity.startActivity(new Intent(activity, SingleChatSettingActivity.class));
+        activity.startActivity(new Intent(activity, ChatSettingActivity.class).putExtra("type", type));
     }
 
     /**

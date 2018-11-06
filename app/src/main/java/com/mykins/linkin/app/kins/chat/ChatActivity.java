@@ -18,18 +18,21 @@ import butterknife.Unbinder;
  */
 
 public class ChatActivity extends BaseActivity {
+    public static final int TYPE_SINGLE = 0;
+    public static final int TYPE_GROUP = 1;
     Unbinder unbinder;
     ChatFragment mChatFragment;
 
     @BindView(R.id.chat_toolbar)
     Toolbar mToolbar;
+    private int type;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.ui_chat_act);
         unbinder = ButterKnife.bind(this, this);
-
+        type = getIntent().getIntExtra("type",0);
         setSupportActionBar(mToolbar);
 
         FragmentManager fm = getSupportFragmentManager();
@@ -41,6 +44,9 @@ public class ChatActivity extends BaseActivity {
         } else {
             mChatFragment = (ChatFragment) fragment;
         }
+        Bundle bundle = new Bundle();
+        bundle.putInt("type",type);
+        mChatFragment.setArguments(bundle);
     }
 
     @Override

@@ -51,6 +51,7 @@ public class ChatFragment extends BaseFragment {
     ChatAdapter mAdapter;
     ArrayList<ChatMessage> mData = new ArrayList<>();
     boolean markEmoticonVisible;
+    private int chatType;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -63,6 +64,9 @@ public class ChatFragment extends BaseFragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.ui_chat_frag, null);
         unbinder = ButterKnife.bind(this, view);
+        if (getArguments()!=null){
+            chatType = getArguments().getInt("type",0);
+        }
         mLinearLayoutManager = new LinearLayoutManager(mContext, LinearLayoutManager.VERTICAL, true);
         mAdapter = new ChatAdapter(mActivity, this);
         mRecyclerView.setLayoutManager(mLinearLayoutManager);
@@ -106,7 +110,7 @@ public class ChatFragment extends BaseFragment {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == R.id.chat_menu_more) {
-            Router.actSingleChatSetting(mActivity);
+            Router.actSingleChatSetting(mActivity,chatType);
             return true;
         }
         return super.onOptionsItemSelected(item);

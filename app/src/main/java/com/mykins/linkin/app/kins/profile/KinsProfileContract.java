@@ -18,6 +18,7 @@ public interface KinsProfileContract {
         void localizationRelation();
 
         void selectAppellation(LinkedList<Integer> relationsPath);
+
     }
 
     interface View {

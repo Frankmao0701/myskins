@@ -16,6 +16,7 @@ import com.lqr.ninegridimageview.LQRNineGridImageView;
 import com.lqr.ninegridimageview.LQRNineGridImageViewAdapter;
 import com.mykins.linkin.R;
 import com.mykins.linkin.app.Router;
+import com.mykins.linkin.app.kins.chat.ChatActivity;
 import com.mykins.linkin.app.kins.profile.KinsProfileActivity;
 import com.mykins.linkin.bean.GroupBean;
 import com.mykins.linkin.util.ConvertUtils;
@@ -108,6 +109,12 @@ class KinsAdapter extends RecyclerView.Adapter {
                 break;
             case TYPE_GROUP:
                 GroupHolder groupHolder = (GroupHolder) holder;
+                groupHolder.itemView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Router.actChat(mActivity, ChatActivity.TYPE_GROUP);
+                    }
+                });
                 GroupBean groupBean = mGroups.get(dataPos);
                 groupHolder.kins_item_groupName.setText(groupBean.getName());
                 break;

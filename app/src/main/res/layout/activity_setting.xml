@@ -1,244 +1,259 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/setting_toolbar"
-        style="@style/Linkin_NavigationBack"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="@dimen/linkin.actionBarSize"
-        android:background="@color/colorPrimary"
-        app:contentInsetStartWithNavigation="0dp"
-        app:titleTextAppearance="@style/Linkin_Toolbar_TitleText_Dark"
-        app:titleTextColor="@android:color/white">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/kins.profile.title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:ellipsize="end"
-            android:gravity="center"
-            android:maxLines="1"
-            android:text="@string/title_setting"
-            android:textColor="@android:color/white"
-            android:textSize="16sp"
-            tools:text="@string/title_setting" />
-    </android.support.v7.widget.Toolbar>
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="64dp"
-        android:background="@android:color/white"
-        android:paddingLeft="18dp"
-        android:paddingRight="16dp">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:text="@string/text_mode_day_night"
-            android:textColor="@color/color_253335" />
-
-        <LinearLayout
-            android:layout_width="50dp"
-            android:layout_height="25dp"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:background="@drawable/bg_switch"
-            android:orientation="horizontal">
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/setting_toolbar"
+            style="@style/Linkin_NavigationBack"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/linkin.actionBarSize"
+            android:background="@color/colorPrimary"
+            app:contentInsetStartWithNavigation="0dp"
+            app:titleTextAppearance="@style/Linkin_Toolbar_TitleText_Dark"
+            app:titleTextColor="@android:color/white">
 
             <TextView
-                android:id="@+id/tv_day"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="@drawable/select_bg_switch"
+                android:id="@+id/kins.profile.title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:ellipsize="end"
                 android:gravity="center"
-                android:text="@string/day"
-                android:textColor="@android:color/white" />
+                android:maxLines="1"
+                android:text="@string/title_setting"
+                android:textColor="@android:color/white"
+                android:textSize="16sp"
+                tools:text="@string/title_setting" />
+        </android.support.v7.widget.Toolbar>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:background="@android:color/white"
+            android:paddingLeft="18dp"
+            android:paddingRight="16dp">
 
             <TextView
-                android:id="@+id/tv_night"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="@drawable/select_bg_switch"
-                android:gravity="center"
-                android:text="@string/night"
-                android:textColor="@color/color_a2a2a2" />
-        </LinearLayout>
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="@string/text_mode_day_night"
+                android:textColor="@color/color_253335" />
+
+            <LinearLayout
+                android:layout_width="50dp"
+                android:layout_height="25dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/bg_switch"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_day"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/select_bg_switch"
+                    android:gravity="center"
+                    android:text="@string/day"
+                    android:textColor="@android:color/white" />
+
+                <TextView
+                    android:id="@+id/tv_night"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/select_bg_switch"
+                    android:gravity="center"
+                    android:text="@string/night"
+                    android:textColor="@color/color_a2a2a2" />
+            </LinearLayout>
 
 
-        <View
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/color_ebebeb" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="0.5dp"
-            android:background="@color/color_ebebeb" />
-
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="64dp"
-        android:background="@android:color/white"
-        android:paddingLeft="18dp"
-        android:paddingRight="16dp">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:text="@string/text_language_choose"
-            android:textColor="@color/color_253335" />
-
-        <LinearLayout
-            android:layout_width="50dp"
-            android:layout_height="25dp"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:background="@drawable/bg_switch"
-            android:orientation="horizontal">
+            android:layout_height="64dp"
+            android:background="@android:color/white"
+            android:paddingLeft="18dp"
+            android:paddingRight="16dp">
 
             <TextView
-                android:id="@+id/tv_en"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="@drawable/select_bg_switch"
-                android:gravity="center"
-                android:text="@string/en"
-                android:textColor="@android:color/white" />
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="@string/text_language_choose"
+                android:textColor="@color/color_253335" />
+
+            <LinearLayout
+                android:layout_width="50dp"
+                android:layout_height="25dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/bg_switch"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_en"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/select_bg_switch"
+                    android:gravity="center"
+                    android:text="@string/en"
+                    android:textColor="@android:color/white" />
+
+                <TextView
+                    android:id="@+id/tv_cn"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/select_bg_switch"
+                    android:gravity="center"
+                    android:text="@string/cn"
+                    android:textColor="@color/color_a2a2a2" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/color_ebebeb" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:layout_marginTop="10dp"
+            android:background="@android:color/white"
+            android:paddingLeft="18dp"
+            android:paddingRight="16dp">
 
             <TextView
-                android:id="@+id/tv_cn"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="@drawable/select_bg_switch"
-                android:gravity="center"
-                android:text="@string/cn"
-                android:textColor="@color/color_a2a2a2" />
-        </LinearLayout>
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="@string/text_tips_voice"
+                android:textColor="@color/color_253335" />
 
-        <View
+            <com.mykins.linkin.view.SwitchButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                app:sb_checked_color="@color/color_62c554" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/color_ebebeb" />
+        </RelativeLayout>
+
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="0.5dp"
-            android:background="@color/color_ebebeb" />
-    </RelativeLayout>
+            android:layout_height="64dp"
+            android:background="@android:color/white"
+            android:paddingLeft="18dp"
+            android:paddingRight="16dp">
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="64dp"
-        android:layout_marginTop="10dp"
-        android:background="@android:color/white"
-        android:paddingLeft="18dp"
-        android:paddingRight="16dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="@string/text_tips_shake"
+                android:textColor="@color/color_253335" />
+
+            <com.mykins.linkin.view.SwitchButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                app:sb_checked_color="@color/color_62c554" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/color_ebebeb" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/profile.privacy.rl"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:layout_marginTop="10dp"
+            android:background="@android:color/white"
+            android:paddingLeft="18dp"
+            android:paddingRight="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="@string/text_privacy"
+                android:textColor="@color/color_253335" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:src="@mipmap/ic_arrow" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/color_ebebeb" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/profile.reset.rl"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:background="@android:color/white"
+            android:paddingLeft="18dp"
+            android:paddingRight="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="@string/text_reset_password"
+                android:textColor="@color/color_253335" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:src="@mipmap/ic_arrow" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/color_ebebeb" />
+        </RelativeLayout>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:text="@string/text_tips_voice"
-            android:textColor="@color/color_253335" />
-
-        <com.mykins.linkin.view.SwitchButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            app:sb_checked_color="@color/color_62c554" />
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="0.5dp"
-            android:background="@color/color_ebebeb" />
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="64dp"
-        android:background="@android:color/white"
-        android:paddingLeft="18dp"
-        android:paddingRight="16dp">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:text="@string/text_tips_shake"
-            android:textColor="@color/color_253335" />
-
-        <com.mykins.linkin.view.SwitchButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            app:sb_checked_color="@color/color_62c554" />
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="0.5dp"
-            android:background="@color/color_ebebeb" />
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:id="@+id/profile.privacy.rl"
-        android:layout_width="match_parent"
-        android:layout_height="64dp"
-        android:layout_marginTop="10dp"
-        android:background="@android:color/white"
-        android:paddingLeft="18dp"
-        android:paddingRight="16dp">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:text="@string/text_privacy"
-            android:textColor="@color/color_253335" />
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:src="@mipmap/ic_arrow" />
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="0.5dp"
-            android:background="@color/color_ebebeb" />
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:id="@+id/profile.reset.rl"
-        android:layout_width="match_parent"
-        android:layout_height="64dp"
-        android:background="@android:color/white"
-        android:paddingLeft="18dp"
-        android:paddingRight="16dp">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:text="@string/text_reset_password"
-            android:textColor="@color/color_253335" />
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:src="@mipmap/ic_arrow" />
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="0.5dp"
-            android:background="@color/color_ebebeb" />
-    </RelativeLayout>
-</LinearLayout>
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="30dp"
+            android:drawablePadding="5dp"
+            android:drawableTop="@mipmap/ic_logout"
+            android:text="@string/quit" />
+    </LinearLayout>
+</ScrollView>

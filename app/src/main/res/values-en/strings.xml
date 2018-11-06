@@ -147,5 +147,8 @@
     <string name="age_choose"><![CDATA[ 选择年龄]]></string>
     <string name="limit_200_word">200字</string>
     <string name="time_choose">时间选择</string>
+    <string name="quit">退出</string>
+    <string name="quit_group">退出群组</string>
+    <string name="tips_quit_group">退出群组后，将不再接收此群聊消息</string>
 
 </resources>

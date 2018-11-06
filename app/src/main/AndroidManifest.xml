@@ -18,9 +18,9 @@
     <application
         android:name=".app.MyApp"
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher_round"
+        android:icon="@mipmap/ic_login_logo"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/ic_login_logo"
         android:supportsRtl="true"
         android:theme="@style/Linkin.AppTheme">
         <activity
@@ -105,7 +105,7 @@
             android:name=".app.profile.gather.GatherActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".app.kins.chat.SingleChatSettingActivity"
+            android:name=".app.kins.chat.ChatSettingActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".app.feed.publish.KinsRangeActivity"

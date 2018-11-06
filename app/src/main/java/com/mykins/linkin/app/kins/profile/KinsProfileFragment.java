@@ -2,6 +2,7 @@ package com.mykins.linkin.app.kins.profile;
 
 import android.app.Dialog;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -15,14 +16,18 @@ import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.bigkoo.pickerview.builder.OptionsPickerBuilder;
+import com.bigkoo.pickerview.listener.OnOptionsSelectChangeListener;
+import com.bigkoo.pickerview.listener.OnOptionsSelectListener;
+import com.bigkoo.pickerview.view.OptionsPickerView;
 import com.google.gson.internal.LinkedTreeMap;
 import com.mykins.linkin.R;
 import com.mykins.linkin.SnackBarHelper;
 import com.mykins.linkin.app.BaseFragment;
 import com.mykins.linkin.app.Router;
-//import com.mykins.linkin.app.kins.ItemsDialog;
 import com.mykins.linkin.app.kins.ItemsDialog;
 import com.mykins.linkin.app.kins.KinsRelationPicker;
+import com.mykins.linkin.app.kins.chat.ChatActivity;
 import com.mykins.linkin.bean.KinsProfileBean;
 import com.mykins.linkin.injection.Injectable;
 import com.mykins.linkin.util.GlideHelper;
@@ -30,6 +35,7 @@ import com.mykins.linkin.util.ResUtils;
 import com.mykins.linkin.util.StringUtils;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -42,6 +48,8 @@ import butterknife.Unbinder;
 
 import static android.app.Activity.RESULT_OK;
 import static com.mykins.linkin.app.kins.profile.KinsProfileActivity.TYPE_KINS;
+
+//import com.mykins.linkin.app.kins.ItemsDialog;
 
 /**
  * 亲资料
@@ -148,6 +156,9 @@ public class KinsProfileFragment extends BaseFragment implements Injectable, Kin
 
     @Inject
     KinsProfileContract.Presenter mPresenter;
+
+    private OptionsPickerView pvZodiacOptions;
+    private List<String> zodiacList;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -258,7 +269,7 @@ public class KinsProfileFragment extends BaseFragment implements Injectable, Kin
         switch (id) {
             //chat
             case R.id.kins_profile_chat: {
-                Router.actChat(mActivity);
+                Router.actChat(mActivity, ChatActivity.TYPE_SINGLE);
                 break;
             }
 
@@ -284,7 +295,7 @@ public class KinsProfileFragment extends BaseFragment implements Injectable, Kin
             }
 
             case R.id.kins_profile_item_zodiac: {
-
+                showZodiac();
                 break;
             }
 
@@ -307,6 +318,58 @@ public class KinsProfileFragment extends BaseFragment implements Injectable, Kin
                 break;
             }
         }
+
+    }
+
+    private void showZodiac() {
+        zodiacList = new ArrayList<>();
+        zodiacList.add("鼠");
+        zodiacList.add("牛");
+        zodiacList.add("虎");
+        zodiacList.add("兔");
+        zodiacList.add("龙");
+        zodiacList.add("蛇");
+        zodiacList.add("马");
+        zodiacList.add("羊");
+        zodiacList.add("猴");
+        zodiacList.add("鸡");
+        zodiacList.add("狗");
+        zodiacList.add("猪");
+        pvZodiacOptions = new OptionsPickerBuilder(mActivity, new OnOptionsSelectListener() {
+            @Override
+            public void onOptionsSelect(int options1, int options2, int options3, View v) {
+
+            }
+        })
+                .setTitleText(getResources().getString(R.string.zodiac_choose))
+                .setContentTextSize(20)//设置滚轮文字大小
+                .setDividerColor(getResources().getColor(R.color.color_ebebeb))//设置分割线的颜色
+                .setSelectOptions(0)//默认选中项
+                .setBgColor(Color.WHITE)
+                .setTitleBgColor(Color.WHITE)
+                .setTitleColor(getResources().getColor(R.color.text_color_normal))
+                .setCancelColor(getResources().getColor(R.color.text_color_normal))
+                .setSubmitColor(getResources().getColor(R.color.text_color_normal))
+                .setTextColorCenter(getResources().getColor(R.color.text_color_normal))
+                .isRestoreItem(true)//切换时是否还原，设置默认选中第一项。
+                .isCenterLabel(false) //是否只显示中间选中项的label文字，false则每项item全部都带有label。
+//                .setLabels("性别")
+                .setBackgroundId(0x00000000) //设置外部遮罩颜色
+                .setOptionsSelectChangeListener(new OnOptionsSelectChangeListener() {
+                    @Override
+                    public void onOptionsSelectChanged(int options1, int options2, int options3) {
+                        String str = "options1: " + options1 + "\noptions2: " + options2 + "\noptions3: " + options3;
+//                        Toast.makeText(this, str, Toast.LENGTH_SHORT).show();
+                    }
+                })
+                .build();
+
+//        pvOptions.setSelectOptions(1,1);
+        /*pvOptions.setPicker(options1Items);//一级选择器*/
+        pvZodiacOptions.setPicker(zodiacList);//二级选择器
+        pvZodiacOptions.show();
+        /*pvOptions.setPicker(options1Items, options2Items,options3Items);//三级选择器*/
+
 
     }
 

@@ -12,7 +12,7 @@
         android:layout_width="56dp"
         android:layout_height="56dp"
         android:layout_centerVertical="true"
-        tools:src="@mipmap/ic_launcher_round" />
+        tools:src="@mipmap/ic_launcher" />
 
     <RelativeLayout
         android:layout_width="match_parent"
