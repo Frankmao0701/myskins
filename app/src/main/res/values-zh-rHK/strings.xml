@@ -25,7 +25,7 @@
     <string name="title_group_setting">设定群组</string>
     <string name="title_new_kins">链接提示</string>
     <string name="title_empty">暂无内容</string>
-    <string name="hint_search_kins">亲讯好／手机号</string>
+    <string name="hint_search_kins">亲讯号／手机号</string>
     <string name="title_accept">接受</string>
     <string name="title_reject">拒绝</string>
     <string name="title_kins_new">新好友</string>

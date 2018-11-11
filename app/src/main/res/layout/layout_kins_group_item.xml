@@ -10,11 +10,13 @@
         android:orientation="horizontal"
         android:gravity="center_vertical"
         android:paddingLeft="10dp">
+
         <ImageView
             android:id="@+id/kins.contact.item.avatar"
             android:layout_width="56dp"
             android:layout_height="56dp"
-            android:src="@mipmap/ic_launcher"/>
+            android:src="@mipmap/ic_launcher" />
+
         <TextView
             android:id="@+id/kins.contact.item.groupName"
             android:layout_width="wrap_content"

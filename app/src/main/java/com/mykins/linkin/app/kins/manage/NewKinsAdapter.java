@@ -45,7 +45,7 @@ class NewKinsAdapter extends RecyclerView.Adapter<NewKinsAdapter.NewKinsHolder> 
 
     void addNewKins(ArrayList<KinsBean> data) {
         if (data != null && data.size() > 0)
-            mNewKins.add(ResUtils.string(R.string.title_kins_new));
+            mNewKins.add(ResUtils.string(R.string.text_kins_tips));
         mNewKins.addAll(data);
         notifyDataSetChanged();
     }

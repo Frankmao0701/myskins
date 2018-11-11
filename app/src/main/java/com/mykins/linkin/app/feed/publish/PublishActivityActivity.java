@@ -20,6 +20,7 @@ import com.mykins.linkin.R;
 import com.mykins.linkin.app.BaseActivity;
 import com.mykins.linkin.app.Router;
 import com.mykins.linkin.app.kins.profile.KinsProfileEditActivity;
+import com.mykins.linkin.app.utils.PickerUtils;
 import com.mykins.linkin.bean.ProvinceBean;
 
 import java.util.ArrayList;
@@ -87,6 +88,8 @@ public class PublishActivityActivity extends BaseActivity {
                 .setTitleText(getResources().getString(R.string.time_choose))//标题文字
                 .setOutSideCancelable(false)//点击屏幕，点在控件外部范围时，是否取消显示
                 .isCyclic(true)//是否循环滚动
+                .setCancelText(getResources().getString(R.string.cancel))
+                .setSubmitText(getResources().getString(R.string.sure))
                 .setTitleColor(getResources().getColor(R.color.text_color_normal))
                 .setCancelColor(getResources().getColor(R.color.text_color_normal))
                 .setSubmitColor(getResources().getColor(R.color.text_color_normal))
@@ -104,10 +107,6 @@ public class PublishActivityActivity extends BaseActivity {
         pvTime.show();
     }
 
-    @OnClick(R.id.rl_activity_address)
-    public void showAddress() {
-        pvAdressOptions.show();
-    }
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -117,7 +116,7 @@ public class PublishActivityActivity extends BaseActivity {
         setSupportActionBar(mToolbar);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
         getAddressData();
-        initOptionPicker();
+//        initOptionPicker();
 
     }
 
@@ -168,42 +167,44 @@ public class PublishActivityActivity extends BaseActivity {
          * 注意 ：如果是三级联动的数据(省市区等)，请参照 JsonDataActivity 类里面的写法。
          */
 
-        pvAdressOptions = new OptionsPickerBuilder(this, new OnOptionsSelectListener() {
-            @Override
-            public void onOptionsSelect(int options1, int options2, int options3, View v) {
-                //返回的分别是三个级别的选中位置
-                String tx = options1Items.get(options1).getPickerViewText()
-                        + options2Items.get(options1).get(options2)
-                        /* + options3Items.get(options1).get(options2).get(options3).getPickerViewText()*/;
-//                btn_Options.setText(tx);
-            }
-        })
-                .setTitleText("城市选择")
-                .setContentTextSize(20)//设置滚轮文字大小
-                .setDividerColor(getResources().getColor(R.color.color_ebebeb))//设置分割线的颜色
-                .setSelectOptions(0, 1)//默认选中项
-                .setBgColor(Color.WHITE)
-                .setTitleBgColor(Color.WHITE)
-                .setTitleColor(getResources().getColor(R.color.text_color_normal))
-                .setCancelColor(getResources().getColor(R.color.text_color_normal))
-                .setSubmitColor(getResources().getColor(R.color.text_color_normal))
-                .setTextColorCenter(getResources().getColor(R.color.text_color_normal))
-                .isRestoreItem(true)//切换时是否还原，设置默认选中第一项。
-                .isCenterLabel(false) //是否只显示中间选中项的label文字，false则每项item全部都带有label。
-                .setLabels("省", "市", "区")
-                .setBackgroundId(0x00000000) //设置外部遮罩颜色
-                .setOptionsSelectChangeListener(new OnOptionsSelectChangeListener() {
-                    @Override
-                    public void onOptionsSelectChanged(int options1, int options2, int options3) {
-                        String str = "options1: " + options1 + "\noptions2: " + options2 + "\noptions3: " + options3;
-//                        Toast.makeText(this, str, Toast.LENGTH_SHORT).show();
-                    }
-                })
-                .build();
-
-//        pvOptions.setSelectOptions(1,1);
-        /*pvOptions.setPicker(options1Items);//一级选择器*/
-        pvAdressOptions.setPicker(options1Items, options2Items);//二级选择器
+//        pvAdressOptions = new OptionsPickerBuilder(this, new OnOptionsSelectListener() {
+//            @Override
+//            public void onOptionsSelect(int options1, int options2, int options3, View v) {
+//                //返回的分别是三个级别的选中位置
+//                String tx = options1Items.get(options1).getPickerViewText()
+//                        + options2Items.get(options1).get(options2)
+//                        /* + options3Items.get(options1).get(options2).get(options3).getPickerViewText()*/;
+////                btn_Options.setText(tx);
+//            }
+//        })
+//                .setTitleText("城市选择")
+//                .setContentTextSize(20)//设置滚轮文字大小
+//                .setDividerColor(getResources().getColor(R.color.color_ebebeb))//设置分割线的颜色
+//                .setSelectOptions(0, 1)//默认选中项
+//                .setBgColor(Color.WHITE)
+//                .setTitleBgColor(Color.WHITE)
+//                .setTitleColor(getResources().getColor(R.color.text_color_normal))
+//                .setCancelColor(getResources().getColor(R.color.text_color_normal))
+//                .setSubmitColor(getResources().getColor(R.color.text_color_normal))
+//                .setCancelText(getResources().getString(R.string.cancel))
+//                .setSubmitText(getResources().getString(R.string.sure))
+//                .setTextColorCenter(getResources().getColor(R.color.text_color_normal))
+//                .isRestoreItem(true)//切换时是否还原，设置默认选中第一项。
+//                .isCenterLabel(false) //是否只显示中间选中项的label文字，false则每项item全部都带有label。
+//                .setLabels("省", "市", "区")
+//                .setBackgroundId(0x00000000) //设置外部遮罩颜色
+//                .setOptionsSelectChangeListener(new OnOptionsSelectChangeListener() {
+//                    @Override
+//                    public void onOptionsSelectChanged(int options1, int options2, int options3) {
+//                        String str = "options1: " + options1 + "\noptions2: " + options2 + "\noptions3: " + options3;
+////                        Toast.makeText(this, str, Toast.LENGTH_SHORT).show();
+//                    }
+//                })
+//                .build();
+//
+////        pvOptions.setSelectOptions(1,1);
+//        /*pvOptions.setPicker(options1Items);//一级选择器*/
+//        pvAdressOptions.setPicker(options1Items, options2Items);//二级选择器
         /*pvOptions.setPicker(options1Items, options2Items,options3Items);//三级选择器*/
     }
 

@@ -78,7 +78,7 @@ public class ChatSettingActivity extends BaseActivity {
 
                     }
                 });
-         builder.create().show();
+        builder.create().show();
 
     }
 

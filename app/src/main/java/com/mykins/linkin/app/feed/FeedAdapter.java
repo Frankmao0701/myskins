@@ -50,7 +50,8 @@ class FeedAdapter extends RecyclerView.Adapter<FeedAdapter.ViewHolder> {
                 Router.actChat(mActivity, ChatActivity.TYPE_SINGLE);
             }
         });
-        String url = "http://img.hb.aicdn.com/1bb534a3c66ceef02f2ad0ce0368c05966437cc819d23-cRA0rz_fw658";
+        String url = "http://img.hb.aicdn.com/cd392e199f22b27f8d4acb4d4026a79eab46ceeed414-GM93zI_fw658";
+//        String url = "http://img.hb.aicdn.com/1bb534a3c66ceef02f2ad0ce0368c05966437cc819d23-cRA0rz_fw658";
         GlideHelper.loadUrlRound(mFragment, url, holder.avatar);
         if (position % 2 != 0) {
             holder.typeFlag.setImageResource(R.mipmap.ic_event_flag);

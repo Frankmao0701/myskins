@@ -101,10 +101,11 @@
             android:textColor="@color/color_7a7a7a" />
 
     </RelativeLayout>
+
     <com.github.mikephil.charting.charts.BarChart
         android:id="@+id/chart"
         android:layout_width="match_parent"
         android:layout_height="287dp"
-        android:background="@color/white"/>
+        android:background="@color/white" />
 
 </LinearLayout>

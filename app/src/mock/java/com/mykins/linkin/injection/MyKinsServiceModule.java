@@ -91,7 +91,7 @@ public class MyKinsServiceModule {
 
     @Singleton
     @Provides
-    public KinsProfileService provideKinsProfileService(Retrofit retrofit){
+    public KinsProfileService provideKinsProfileService(Retrofit retrofit) {
         return retrofit.create(KinsProfileService.class);
     }
 

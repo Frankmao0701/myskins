@@ -25,7 +25,7 @@
     <string name="title_group_setting">设定群组</string>
     <string name="title_new_kins">链接提示</string>
     <string name="title_empty">暂无内容</string>
-    <string name="hint_search_kins">亲讯好／手机号</string>
+    <string name="hint_search_kins">亲讯号／手机号</string>
     <string name="title_accept">接受</string>
     <string name="title_reject">拒绝</string>
     <string name="title_kins_new">新好友</string>
@@ -70,7 +70,7 @@
     <string name="title_birthday">诞&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;辰</string>
     <string name="title_years_old">享&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;年</string>
     <string name="title_age">年&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;龄</string>
-    <string name="title_gender">性&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;别</string>
+    <string name="title_gender">性别</string>
     <string name="title_is_my">是我的</string>
     <string name="title_male">他</string>
     <string name="title_female">她</string>
@@ -144,11 +144,19 @@
     <string name="undetermined"><![CDATA[待&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;定]]></string>
     <string name="dis_join">不参加</string>
     <string name="sex_choose">选择性别</string>
-    <string name="age_choose"><![CDATA[ 选择年龄]]></string>
+    <string name="age_choose">选择年龄</string>
     <string name="limit_200_word">200字</string>
     <string name="time_choose">时间选择</string>
     <string name="quit">退出</string>
     <string name="quit_group">退出群组</string>
     <string name="tips_quit_group">退出群组后，将不再接收此群聊消息</string>
+    <string name="text_kins_tips">亲友提示</string>
+    <string name="title_input_relation_selection">请输入关系</string>
+    <string name="cancel">取消</string>
+    <string name="like">赞</string>
+    <string name="comment">评</string>
+    <string name="reward">赏</string>
+    <string name="text_select_birthday">请输入生辰</string>
+    <string name="text_select_die_day">请输入去世日期</string>
 
 </resources>

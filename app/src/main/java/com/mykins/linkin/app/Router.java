@@ -8,12 +8,14 @@ import com.mykins.linkin.app.feed.publish.ActivityDetailActivity;
 import com.mykins.linkin.app.feed.publish.KinsRangeActivity;
 import com.mykins.linkin.app.feed.publish.PublishActivityActivity;
 import com.mykins.linkin.app.feed.publish.PublishShareActivity;
+import com.mykins.linkin.app.feed.publish.ShareDetailActivity;
 import com.mykins.linkin.app.kins.chat.ChatActivity;
 import com.mykins.linkin.app.kins.chat.GroupContactActivity;
 import com.mykins.linkin.app.kins.chat.ChatSettingActivity;
 import com.mykins.linkin.app.kins.manage.KinsManageActivity;
 import com.mykins.linkin.app.kins.profile.KinsProfileActivity;
 import com.mykins.linkin.app.kins.profile.KinsProfileEditActivity;
+import com.mykins.linkin.app.login.ForgetPwdActivity;
 import com.mykins.linkin.app.login.LoginActivity;
 import com.mykins.linkin.app.profile.AddKinActivity;
 import com.mykins.linkin.app.profile.MyInfoActivity;
@@ -192,6 +194,26 @@ public final class Router {
     public static void actActivityDetail(Activity activity) {
         checkActivity(activity);
         activity.startActivity(new Intent(activity, ActivityDetailActivity.class));
+    }
+
+    /**
+     * 分享详情页面
+     *
+     * @param activity activity
+     */
+    public static void actShareDetail(Activity activity) {
+        checkActivity(activity);
+        activity.startActivity(new Intent(activity, ShareDetailActivity.class));
+    }
+
+    /**
+     * 忘记密码页面
+     *
+     * @param activity activity
+     */
+    public static void actForgetActivity(Activity activity) {
+        checkActivity(activity);
+        activity.startActivity(new Intent(activity, ForgetPwdActivity.class));
     }
 
 }

@@ -50,7 +50,6 @@
                     android:layout_centerVertical="true"
                     android:layout_marginLeft="12dp"
                     android:layout_toRightOf="@id/kins.profile.avatar"
-                    android:background="@color/color_ebebeb"
                     android:src="@mipmap/ic_liao" />
 
                 <RelativeLayout

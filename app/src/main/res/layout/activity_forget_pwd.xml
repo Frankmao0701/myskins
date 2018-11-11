@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/forget_pwd_toolbar"
+        style="@style/Linkin_NavigationBack"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/linkin.actionBarSize"
+        android:background="@color/colorPrimary"
+        app:contentInsetStartWithNavigation="0dp"
+        app:titleTextAppearance="@style/Linkin_Toolbar_TitleText_Dark"
+        app:titleTextColor="@android:color/white" />
+
+
+    <!-- account -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:paddingLeft="62dp"
+        android:paddingRight="16dp">
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/forget.account.input"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:gravity="center_vertical"
+            app:hintEnabled="false">
+
+            <EditText
+                android:id="@+id/forget.account.edt"
+                android:layout_width="match_parent"
+                android:layout_height="42dp"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:background="@null"
+                android:ems="10"
+                android:gravity="center_vertical"
+                android:hint="@string/hint_phone_email"
+                android:inputType="textEmailAddress"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:textColorHint="@color/color_787878"
+                android:textSize="13sp" />
+
+        </android.support.design.widget.TextInputLayout>
+    </FrameLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/color_ebebeb" />
+
+
+    <!-- verify-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:paddingLeft="62dp"
+        android:paddingRight="16dp">
+
+        <Button
+            android:id="@+id/forget.verify.btn"
+            android:layout_width="wrap_content"
+            android:layout_height="23dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/round_5c5c5c_bg"
+            android:paddingLeft="3dp"
+            android:paddingRight="3dp"
+            android:text="@string/title_send_verify_code"
+            android:textColor="@android:color/white"
+            android:textSize="13sp" />
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/forget.verify.input"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:layout_toLeftOf="@id/register.verify.btn"
+            android:gravity="center_vertical"
+            app:hintEnabled="false">
+
+            <EditText
+                android:id="@+id/forget.verify.edt"
+                android:layout_width="match_parent"
+                android:layout_height="42dp"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:background="@null"
+                android:ems="10"
+                android:gravity="center_vertical"
+                android:hint="@string/hint_register_verify_code"
+                android:inputType="number"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:textColorHint="@color/color_787878"
+                android:textSize="13sp" />
+
+        </android.support.design.widget.TextInputLayout>
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/color_ebebeb" />
+    <!-- password -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:paddingLeft="62dp"
+        android:paddingRight="16dp">
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/forget.passwd.input"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:gravity="center_vertical"
+            app:hintEnabled="false">
+
+            <EditText
+                android:id="@+id/forget.passwd.edt"
+                android:layout_width="match_parent"
+                android:layout_height="42dp"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:background="@null"
+                android:ems="10"
+                android:gravity="center_vertical"
+                android:hint="@string/text_input_new_password"
+                android:inputType="textPassword"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:textColorHint="@color/color_787878"
+                android:textSize="13sp" />
+
+        </android.support.design.widget.TextInputLayout>
+    </FrameLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/color_ebebeb" />
+
+    <Button
+        android:id="@+id/forget.submit.btn"
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="62dp"
+        android:layout_marginRight="62dp"
+        android:layout_marginTop="60dp"
+        android:background="@drawable/round_5c5c5c_bg"
+        android:text="@string/text_reset_password"
+        android:textColor="@android:color/white"
+        android:textSize="16sp" />
+
+</LinearLayout>

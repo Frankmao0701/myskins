@@ -97,5 +97,4 @@ class KinsProfilePresenter implements KinsProfileContract.Presenter {
     }
 
 
-
 }

@@ -11,6 +11,7 @@ import android.widget.ImageView;
 
 import com.mykins.linkin.app.BaseFragment;
 import com.mykins.linkin.R;
+import com.mykins.linkin.app.Router;
 import com.mykins.linkin.injection.Injectable;
 import com.mykins.linkin.app.main.MainActivity;
 import com.mykins.linkin.app.register.RegisterActivity;
@@ -97,6 +98,11 @@ public class LoginFragment extends BaseFragment implements LoginContract.View, I
         );
         startActivity(new Intent(mActivity, MainActivity.class));
         mActivity.finish();
+    }
+
+    @OnClick(R.id.login_forget_btn)
+    void onForgetClick() {
+        Router.actForgetActivity(mActivity);
     }
 
     @Override

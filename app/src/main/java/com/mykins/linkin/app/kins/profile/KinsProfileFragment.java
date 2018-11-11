@@ -17,9 +17,12 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.bigkoo.pickerview.builder.OptionsPickerBuilder;
+import com.bigkoo.pickerview.builder.TimePickerBuilder;
 import com.bigkoo.pickerview.listener.OnOptionsSelectChangeListener;
 import com.bigkoo.pickerview.listener.OnOptionsSelectListener;
+import com.bigkoo.pickerview.listener.OnTimeSelectListener;
 import com.bigkoo.pickerview.view.OptionsPickerView;
+import com.bigkoo.pickerview.view.TimePickerView;
 import com.google.gson.internal.LinkedTreeMap;
 import com.mykins.linkin.R;
 import com.mykins.linkin.SnackBarHelper;
@@ -28,7 +31,9 @@ import com.mykins.linkin.app.Router;
 import com.mykins.linkin.app.kins.ItemsDialog;
 import com.mykins.linkin.app.kins.KinsRelationPicker;
 import com.mykins.linkin.app.kins.chat.ChatActivity;
+import com.mykins.linkin.app.utils.PickerUtils;
 import com.mykins.linkin.bean.KinsProfileBean;
+import com.mykins.linkin.bean.ProvinceBean;
 import com.mykins.linkin.injection.Injectable;
 import com.mykins.linkin.util.GlideHelper;
 import com.mykins.linkin.util.ResUtils;
@@ -36,6 +41,8 @@ import com.mykins.linkin.util.StringUtils;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -159,6 +166,8 @@ public class KinsProfileFragment extends BaseFragment implements Injectable, Kin
 
     private OptionsPickerView pvZodiacOptions;
     private List<String> zodiacList;
+    private ArrayList<ProvinceBean> options1Items = new ArrayList<>();
+    private ArrayList<ArrayList<String>> options2Items = new ArrayList<>();
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -184,6 +193,7 @@ public class KinsProfileFragment extends BaseFragment implements Injectable, Kin
         mActivity.setSupportActionBar(mToolbar);
         mActivity.getSupportActionBar().setDisplayShowTitleEnabled(false);
 
+        getAddressData();
         mHeadBackground.setImageResource(type == TYPE_KINS ? R.mipmap.ic_thumbail2 : R.mipmap.ic_thumbail);
         mTitle.setText(ResUtils.string(type == TYPE_KINS ? R.string.title_kins_profile : R.string.title_dis_kins_profile));
         mChatButton.setVisibility(type == TYPE_KINS ? View.VISIBLE : View.GONE);
@@ -195,6 +205,31 @@ public class KinsProfileFragment extends BaseFragment implements Injectable, Kin
         showData(mKinsProfile);
 
         return root;
+    }
+
+    private void getAddressData() {
+        //选项1
+        options1Items.add(new ProvinceBean(0, "广东", "描述部分", "其他数据"));
+        options1Items.add(new ProvinceBean(1, "湖南", "描述部分", "其他数据"));
+        options1Items.add(new ProvinceBean(2, "广西", "描述部分", "其他数据"));
+
+        //选项2
+        ArrayList<String> options2Items_01 = new ArrayList<>();
+        options2Items_01.add("广州");
+        options2Items_01.add("佛山");
+        options2Items_01.add("东莞");
+        options2Items_01.add("珠海");
+        ArrayList<String> options2Items_02 = new ArrayList<>();
+        options2Items_02.add("长沙");
+        options2Items_02.add("岳阳");
+        options2Items_02.add("株洲");
+        options2Items_02.add("衡阳");
+        ArrayList<String> options2Items_03 = new ArrayList<>();
+        options2Items_03.add("桂林");
+        options2Items_03.add("玉林");
+        options2Items.add(options2Items_01);
+        options2Items.add(options2Items_02);
+        options2Items.add(options2Items_03);
     }
 
     @Override
@@ -262,7 +297,9 @@ public class KinsProfileFragment extends BaseFragment implements Injectable, Kin
             R.id.kins_profile_item_address,
             R.id.kins_profile_item_phone_number,
             R.id.kins_profile_item_email,
-            R.id.kins_profile_item_mark
+            R.id.kins_profile_item_mark,
+            R.id.kins_profile_item_birthday,
+            R.id.kins_profile_item_years
     })
     void onClick(View target) {
         int id = target.getId();
@@ -300,7 +337,8 @@ public class KinsProfileFragment extends BaseFragment implements Injectable, Kin
             }
 
             case R.id.kins_profile_item_address: {
-                Router.actKinsProfileEdit(mActivity, KinsProfileEditActivity.Editing.ADDRESS, mKinsProfile.getAddress());
+                PickerUtils.showAddressPicker(getActivity(), options1Items, options2Items);
+//                Router.actKinsProfileEdit(mActivity, KinsProfileEditActivity.Editing.ADDRESS, mKinsProfile.getAddress());
                 break;
             }
 
@@ -317,57 +355,69 @@ public class KinsProfileFragment extends BaseFragment implements Injectable, Kin
                 Router.actKinsProfileEdit(mActivity, KinsProfileEditActivity.Editing.MARK, mKinsProfile.getMark());
                 break;
             }
+            case R.id.kins_profile_item_birthday: {
+                PickerUtils.showTimePicker(mActivity);
+                break;
+            }
+            case R.id.kins_profile_item_years: {
+                PickerUtils.showTimePicker(mActivity);
+                break;
+            }
         }
 
     }
 
+
     private void showZodiac() {
-        zodiacList = new ArrayList<>();
-        zodiacList.add("鼠");
-        zodiacList.add("牛");
-        zodiacList.add("虎");
-        zodiacList.add("兔");
-        zodiacList.add("龙");
-        zodiacList.add("蛇");
-        zodiacList.add("马");
-        zodiacList.add("羊");
-        zodiacList.add("猴");
-        zodiacList.add("鸡");
-        zodiacList.add("狗");
-        zodiacList.add("猪");
-        pvZodiacOptions = new OptionsPickerBuilder(mActivity, new OnOptionsSelectListener() {
-            @Override
-            public void onOptionsSelect(int options1, int options2, int options3, View v) {
-
-            }
-        })
-                .setTitleText(getResources().getString(R.string.zodiac_choose))
-                .setContentTextSize(20)//设置滚轮文字大小
-                .setDividerColor(getResources().getColor(R.color.color_ebebeb))//设置分割线的颜色
-                .setSelectOptions(0)//默认选中项
-                .setBgColor(Color.WHITE)
-                .setTitleBgColor(Color.WHITE)
-                .setTitleColor(getResources().getColor(R.color.text_color_normal))
-                .setCancelColor(getResources().getColor(R.color.text_color_normal))
-                .setSubmitColor(getResources().getColor(R.color.text_color_normal))
-                .setTextColorCenter(getResources().getColor(R.color.text_color_normal))
-                .isRestoreItem(true)//切换时是否还原，设置默认选中第一项。
-                .isCenterLabel(false) //是否只显示中间选中项的label文字，false则每项item全部都带有label。
-//                .setLabels("性别")
-                .setBackgroundId(0x00000000) //设置外部遮罩颜色
-                .setOptionsSelectChangeListener(new OnOptionsSelectChangeListener() {
-                    @Override
-                    public void onOptionsSelectChanged(int options1, int options2, int options3) {
-                        String str = "options1: " + options1 + "\noptions2: " + options2 + "\noptions3: " + options3;
-//                        Toast.makeText(this, str, Toast.LENGTH_SHORT).show();
-                    }
-                })
-                .build();
-
-//        pvOptions.setSelectOptions(1,1);
-        /*pvOptions.setPicker(options1Items);//一级选择器*/
-        pvZodiacOptions.setPicker(zodiacList);//二级选择器
-        pvZodiacOptions.show();
+        PickerUtils.showTimePicker(mActivity);
+//        zodiacList = new ArrayList<>();
+//        zodiacList.add("鼠");
+//        zodiacList.add("牛");
+//        zodiacList.add("虎");
+//        zodiacList.add("兔");
+//        zodiacList.add("龙");
+//        zodiacList.add("蛇");
+//        zodiacList.add("马");
+//        zodiacList.add("羊");
+//        zodiacList.add("猴");
+//        zodiacList.add("鸡");
+//        zodiacList.add("狗");
+//        zodiacList.add("猪");
+//        pvZodiacOptions = new OptionsPickerBuilder(mActivity, new OnOptionsSelectListener() {
+//            @Override
+//            public void onOptionsSelect(int options1, int options2, int options3, View v) {
+//
+//            }
+//        })
+//                .setTitleText(getResources().getString(R.string.zodiac_choose))
+//                .setContentTextSize(20)//设置滚轮文字大小
+//                .setDividerColor(getResources().getColor(R.color.color_ebebeb))//设置分割线的颜色
+//                .setSelectOptions(0)//默认选中项
+//                .setBgColor(Color.WHITE)
+//                .setTitleBgColor(Color.WHITE)
+//                .setTitleColor(getResources().getColor(R.color.text_color_normal))
+//                .setCancelColor(getResources().getColor(R.color.text_color_normal))
+//                .setSubmitColor(getResources().getColor(R.color.text_color_normal))
+//                .setTextColorCenter(getResources().getColor(R.color.text_color_normal))
+//                .setCancelText(getResources().getString(R.string.cancel))
+//                .setSubmitText(getResources().getString(R.string.sure))
+//                .isRestoreItem(true)//切换时是否还原，设置默认选中第一项。
+//                .isCenterLabel(false) //是否只显示中间选中项的label文字，false则每项item全部都带有label。
+////                .setLabels("性别")
+//                .setBackgroundId(0x00000000) //设置外部遮罩颜色
+//                .setOptionsSelectChangeListener(new OnOptionsSelectChangeListener() {
+//                    @Override
+//                    public void onOptionsSelectChanged(int options1, int options2, int options3) {
+//                        String str = "options1: " + options1 + "\noptions2: " + options2 + "\noptions3: " + options3;
+////                        Toast.makeText(this, str, Toast.LENGTH_SHORT).show();
+//                    }
+//                })
+//                .build();
+//
+////        pvOptions.setSelectOptions(1,1);
+//        /*pvOptions.setPicker(options1Items);//一级选择器*/
+//        pvZodiacOptions.setPicker(zodiacList);//二级选择器
+//        pvZodiacOptions.show();
         /*pvOptions.setPicker(options1Items, options2Items,options3Items);//三级选择器*/
 
 
@@ -392,9 +442,9 @@ public class KinsProfileFragment extends BaseFragment implements Injectable, Kin
 
         mEmailValue.setText(StringUtils.valueOf(data.getEmail(), ResUtils.string(R.string.hint_email)));
 
-        mBirthdayValue.setText(StringUtils.valueOf(data.getBirthday(), ResUtils.string(R.string.title_selection)));
+        mBirthdayValue.setText(StringUtils.valueOf(data.getBirthday(), ResUtils.string(R.string.text_select_birthday)));
 
-        mYearsOldValue.setText(StringUtils.valueOf(data.getYearsOld()));
+        mYearsOldValue.setText(StringUtils.valueOf(data.getYearsOld(), ResUtils.string(R.string.text_select_die_day)));
 
         mMarkValue.setText(StringUtils.valueOf(data.getMark(), ResUtils.string(R.string.hint_mark)));
     }
@@ -434,6 +484,8 @@ public class KinsProfileFragment extends BaseFragment implements Injectable, Kin
                 mRelationValue.setText(relationPathTitle);
                 mRelations = relations;
                 mAppellationLayout.setVisibility(View.VISIBLE);
+                mAppellationValue.setText(ResUtils.string(R.string.title_selection));
+
             });
         }
         mRelationPickerDialog.show(mActivity.getFragmentManager(), KinsProfileEditActivity.class.getName(), relationTitleList);

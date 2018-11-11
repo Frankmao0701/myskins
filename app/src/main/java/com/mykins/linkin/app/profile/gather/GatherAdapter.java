@@ -32,7 +32,7 @@ public class GatherAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         RecyclerView.ViewHolder holder;
-        if (viewType == GatherBean.TYPE_ACTIVITY) {
+        if (viewType == GatherBean.TYPE_SHARE) {
             holder = new ActivityViewHolder(LayoutInflater.from(mContext).inflate(R.layout.layout_gather_share, parent, false));
         } else {
             holder = new ShareViewHolder(LayoutInflater.from(mContext).inflate(R.layout.layout_gather_active, parent, false));
@@ -45,7 +45,11 @@ public class GatherAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Router.actActivityDetail(mContext);
+                if (holder instanceof ActivityViewHolder) {
+                    Router.actActivityDetail(mContext);
+                } else {
+                    Router.actShareDetail(mContext);
+                }
             }
         });
 

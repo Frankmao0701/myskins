@@ -175,7 +175,7 @@ public class KinsRelationPicker extends DialogFragment {
             R.id.relation_dialog_picker_frame,
             R.id.dialog_button_close,
             R.id.dialog_button_ok,
-            R.id.relation_dialog_relation_controls,
+            R.id.relation_dialog_selection_button,
             R.id.relation_dialog_gender_female,
             R.id.relation_dialog_gender_male})
     void onClickOutside(View target) {
@@ -240,7 +240,7 @@ public class KinsRelationPicker extends DialogFragment {
             }
 
             //显示
-            case R.id.relation_dialog_relation_controls: {
+            case R.id.relation_dialog_selection_button: {
                 mAdapter.clearSelected();
                 //addBarItemSplit(ResUtils.string(R.string.title_is_my));
                 showSectionList();

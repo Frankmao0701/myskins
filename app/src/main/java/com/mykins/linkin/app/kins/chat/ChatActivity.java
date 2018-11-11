@@ -32,7 +32,7 @@ public class ChatActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.ui_chat_act);
         unbinder = ButterKnife.bind(this, this);
-        type = getIntent().getIntExtra("type",0);
+        type = getIntent().getIntExtra("type", 0);
         setSupportActionBar(mToolbar);
 
         FragmentManager fm = getSupportFragmentManager();
@@ -45,7 +45,7 @@ public class ChatActivity extends BaseActivity {
             mChatFragment = (ChatFragment) fragment;
         }
         Bundle bundle = new Bundle();
-        bundle.putInt("type",type);
+        bundle.putInt("type", type);
         mChatFragment.setArguments(bundle);
     }
 
