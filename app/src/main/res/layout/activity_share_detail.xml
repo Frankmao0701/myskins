@@ -92,7 +92,8 @@
             android:layout_height="wrap_content"
             android:background="@color/white"
             android:orientation="vertical"
-            android:paddingLeft="100dp">
+            android:paddingLeft="80dp"
+            android:paddingRight="5dp">
 
             <TextView
                 android:id="@+id/tv_share_title"
@@ -132,7 +133,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:layout_marginTop="5dp">
+                android:layout_marginTop="8dp">
 
                 <TextView
                     android:layout_width="0dp"
@@ -156,7 +157,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="8dp"
                 android:gravity="right">
 
                 <TextView
@@ -194,7 +195,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="8dp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -204,10 +205,95 @@
                     android:textColor="@color/text_color_normal"
                     android:drawableLeft="@mipmap/ic_liked"
                     android:drawablePadding="5dp"
-                    android:text="娟姐、张三、李逵"
-                    android:layout_marginLeft="5dp" />
+                    android:text="娟姐、张三、李逵" />
             </LinearLayout>
-
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp">
+                <ImageView
+                    android:id="@+id/img_comment_avatar"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:src="@mipmap/ic_launcher"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/font_14"
+                    android:layout_toRightOf="@id/img_comment_avatar"
+                    android:layout_marginLeft="8dp"
+                    android:text="猪八戒   2018年11月11日   12：10"
+                    android:layout_marginTop="2dp"
+                    android:textColor="@color/text_color_gray"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/font_14"
+                    android:layout_toRightOf="@id/img_comment_avatar"
+                    android:layout_alignBottom="@id/img_comment_avatar"
+                    android:layout_marginLeft="8dp"
+                    android:text="这小日子，过的很潇洒嘛!"
+                    android:layout_marginBottom="2dp"
+                    android:textColor="@color/text_color_normal"/>
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp">
+                <ImageView
+                    android:id="@+id/img_comment_avatar2"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:src="@mipmap/ic_launcher"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/font_14"
+                    android:layout_toRightOf="@id/img_comment_avatar2"
+                    android:layout_marginLeft="8dp"
+                    android:text="沙和尚   2018年11月11日   12：10"
+                    android:layout_marginTop="2dp"
+                    android:textColor="@color/text_color_gray"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/font_14"
+                    android:layout_toRightOf="@id/img_comment_avatar2"
+                    android:layout_alignBottom="@id/img_comment_avatar2"
+                    android:layout_marginLeft="8dp"
+                    android:text="大师兄，玩的真爽!"
+                    android:layout_marginBottom="2dp"
+                    android:textColor="@color/text_color_normal"/>
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp">
+                <ImageView
+                    android:id="@+id/img_comment_avatar3"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:src="@mipmap/ic_launcher"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/font_14"
+                    android:layout_toRightOf="@id/img_comment_avatar3"
+                    android:layout_marginLeft="8dp"
+                    android:text="唐僧   2018年11月11日   12：10"
+                    android:layout_marginTop="2dp"
+                    android:textColor="@color/text_color_gray"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/font_14"
+                    android:layout_toRightOf="@id/img_comment_avatar3"
+                    android:layout_alignBottom="@id/img_comment_avatar3"
+                    android:layout_marginLeft="8dp"
+                    android:text="小子，玩完了回来上班！!"
+                    android:layout_marginBottom="2dp"
+                    android:textColor="@color/text_color_normal"/>
+            </RelativeLayout>
 
         </LinearLayout>
     </android.support.v4.widget.NestedScrollView>
