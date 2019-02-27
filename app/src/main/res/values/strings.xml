@@ -11,11 +11,11 @@
 
     <string name="hint_register_password">请输入 6-12 位密码</string>
     <string name="hint_register_verify_code">请输入验证码</string>
-    <string name="title_send_verify_code">发送验证码</string>
+    <string name="title_send_verify_code">获取验证码</string>
     <string name="error_invalid_account">请输入正确的电话/邮箱地址</string>
     <string name="error_invalid_password_zh">密码不能使用中文</string>
     <string name="error_invalid_verify">请输入验证码数字</string>
-    <string name="title_register_protocal">注册及同意 《协议》</string>
+    <string name="title_register_protocal">《亲讯服务协议》</string>
     <string name="title_kin">亲</string>
     <string name="title_xun">讯</string>
     <string name="title_profile">我</string>
@@ -23,15 +23,15 @@
     <string name="title_kins_add">添加 亲友/群组</string>
     <string name="title_search">搜索</string>
     <string name="title_dis_kins">逝亲</string>
-    <string name="title_adding_kins">加好友</string>
-    <string name="title_group_setting">设定群组</string>
+    <string name="title_adding_kins">设亲友圈</string>
+    <string name="title_group_setting">设聊天群</string>
     <string name="title_new_kins">链接提示</string>
     <string name="title_empty">暂无内容</string>
     <string name="hint_search_kins">亲讯号／手机号</string>
     <string name="title_accept">接受</string>
     <string name="title_reject">拒绝</string>
     <string name="title_kins_new">新好友</string>
-    <string name="title_kins_new_recommend">亲友推荐列表</string>
+    <string name="title_kins_new_recommend">亲友提示</string>
     <string name="hint_search">搜索</string>
     <string name="title_search_project">指定搜索内容</string>
     <string name="title_search_share">分享</string>
@@ -64,7 +64,7 @@
     <string name="hint_email">请输入邮箱</string>
     <string name="hint_mark">请输入备注</string>
     <string name="hint_phone">请输入电话</string>
-    <string name="hint_address">请输入居住地址</string>
+    <string name="hint_address">请选择居住地</string>
     <string name="title_dis_kins_profile">逝亲信息</string>
     <string name="hint_kins_name">请输入亲友的姓名</string>
     <string name="hint_dis_kins_name">请输入逝亲的姓名</string>
@@ -72,7 +72,7 @@
     <string name="title_birthday">诞&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;辰</string>
     <string name="title_years_old">享&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;年</string>
     <string name="title_age">年&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;龄</string>
-    <string name="title_gender">性别</string>
+    <string name="title_gender">性&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;别</string>
     <string name="title_is_my">是我的</string>
     <string name="title_male">他</string>
     <string name="title_female">她</string>
@@ -123,7 +123,7 @@
     <string name="text_share_round">分享范围</string>
     <string name="title_share_range">分享范围</string>
     <string name="title_activity_range">活动范围</string>
-    <string name="title_publish">发起</string>
+    <string name="title_publish">发布</string>
     <string name="text_input_activity_title">请输入活动标题</string>
     <string name="text_theme_pic">主题图片</string>
     <string name="text_activity_title">活动标题</string>
@@ -154,7 +154,7 @@
     <string name="tips_quit_group">退出群组后，将不再接收此群聊消息</string>
     <string name="zodiac_choose">选择生肖</string>
 
-    <string name="text_kins_tips">亲友提示</string>
+    <string name="text_kins_tips">链接请求</string>
     <string name="title_input_relation_selection">请输入关系</string>
     <string name="cancel">取消</string>
     <string name="like">赞</string>
@@ -162,5 +162,10 @@
     <string name="reward">赏</string>
     <string name="text_select_birthday">请输入生辰</string>
     <string name="text_select_die_day">请输入去世日期</string>
+    <string name="title_register_and_agree">同意亲讯服务并注册</string>
+    <string name="title_select_relation">请选择关系描述</string>
+    <string name="title_select_birthday">请选择生日</string>
+    <string name="title_publish_share">发布分享</string>
+    <string name="title_publish_event">发布活动</string>
 
 </resources>

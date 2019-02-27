@@ -3,6 +3,7 @@ package com.mykins.linkin.app.feed.publish;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.view.MenuItemCompat;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -20,6 +21,7 @@ import butterknife.OnClick;
 import butterknife.Unbinder;
 
 public class PublishShareActivity extends BaseActivity {
+    public static final int REQUEST_CODE = 0x11;
     @BindView(R.id.publish_share_toolbar)
     Toolbar mToolbar;
 
@@ -27,7 +29,7 @@ public class PublishShareActivity extends BaseActivity {
 
     @OnClick(R.id.share_rang_rl)
     public void goToRange() {
-        Router.actKinsRange(this);
+        Router.actKinsRange(this, REQUEST_CODE);
     }
 
     @Override
@@ -54,6 +56,14 @@ public class PublishShareActivity extends BaseActivity {
             onBackPressed();
         }
         return true;
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == REQUEST_CODE){
+
+        }
     }
 
     @Override

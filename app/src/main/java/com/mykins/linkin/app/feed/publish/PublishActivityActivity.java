@@ -33,6 +33,7 @@ import butterknife.OnClick;
 import butterknife.Unbinder;
 
 public class PublishActivityActivity extends BaseActivity {
+    public static final int ReQEUST_CODE = 0x22;
     @BindView(R.id.publish_activity_toolbar)
     Toolbar mToolbar;
 
@@ -44,7 +45,7 @@ public class PublishActivityActivity extends BaseActivity {
 
     @OnClick(R.id.activity_rang_rl)
     public void goToRange() {
-        Router.actKinsRange(this);
+        Router.actKinsRange(this,ReQEUST_CODE);
     }
 
     @OnClick(R.id.rl_activity_title)

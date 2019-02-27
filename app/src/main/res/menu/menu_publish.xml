@@ -7,7 +7,7 @@
         app:showAsAction="always" />
     <item
         android:id="@+id/publish.menu.send"
-        android:icon="@mipmap/ic_attach"
+        android:icon="@drawable/select_ic_attach"
         android:title="@string/title_publish"
         app:showAsAction="always" />
 </menu>

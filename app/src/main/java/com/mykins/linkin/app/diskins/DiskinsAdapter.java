@@ -10,6 +10,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.mykins.linkin.R;
+import com.mykins.linkin.app.Router;
+import com.mykins.linkin.app.kins.profile.KinsProfileActivity;
 import com.mykins.linkin.bean.KinsBean;
 import com.mykins.linkin.util.GlideHelper;
 
@@ -64,6 +66,12 @@ class DiskinsAdapter extends RecyclerView.Adapter<DiskinsAdapter.ViewHolder> {
             holder.name.setText(kinsBean.getName());
             holder.desc.setText(kinsBean.getDescription());
             holder.kinsTitle.setText(kinsBean.getKinsTitle());
+            holder.itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Router.actKinsProfile(mActivity, KinsProfileActivity.TYPE_DIS_KINS);
+                }
+            });
         }
     }
 

@@ -40,6 +40,12 @@ public class KinsRangeActivity extends BaseActivity {
         if (mAdapter == null) {
             mAdapter = new KinsRangeAdapter(this);
         }
+        mAdapter.setOnActionListener(new KinsRangeAdapter.OnActionListener() {
+            @Override
+            public void onCheckPosition(int position) {
+                finish();
+            }
+        });
         if (mLayoutManager == null) {
             mLayoutManager = new LinearLayoutManager(this);
         }

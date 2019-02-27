@@ -171,9 +171,9 @@ public final class Router {
      *
      * @param activity activity
      */
-    public static void actKinsRange(Activity activity) {
+    public static void actKinsRange(Activity activity,int requestCode) {
         checkActivity(activity);
-        activity.startActivity(new Intent(activity, KinsRangeActivity.class));
+        activity.startActivityForResult(new Intent(activity, KinsRangeActivity.class),requestCode);
     }
 
     /**

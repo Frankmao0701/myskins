@@ -193,7 +193,7 @@
                         android:background="@null"
                         android:enabled="false"
                         android:paddingLeft="32dp"
-                        android:text="@string/title_selection"
+                        android:text="@string/title_select_relation"
                         android:textColor="@color/color_8b8b8b"
                         android:textSize="14sp" />
 
@@ -316,7 +316,7 @@
                         android:background="@null"
                         android:enabled="false"
                         android:paddingLeft="32dp"
-                        android:text="@string/title_selection"
+                        android:text="@string/title_select_birthday"
                         android:textColor="@color/color_8b8b8b"
                         android:textSize="14sp"
                         tools:text="猪八戒888" />

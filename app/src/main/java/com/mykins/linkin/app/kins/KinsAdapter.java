@@ -109,10 +109,12 @@ class KinsAdapter extends RecyclerView.Adapter {
                 break;
             case TYPE_GROUP:
                 GroupHolder groupHolder = (GroupHolder) holder;
+                String urlGroup = "http://img.hb.aicdn.com/1bb534a3c66ceef02f2ad0ce0368c05966437cc819d23-cRA0rz_fw658";
+                GlideHelper.loadUrlRound(mFragment, urlGroup, ((GroupHolder) holder).kins_item_group_avatar);
                 groupHolder.itemView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        Router.actChat(mActivity, ChatActivity.TYPE_GROUP);
+                        Router.actGroupContact(mActivity);
                     }
                 });
                 GroupBean groupBean = mGroups.get(dataPos);
@@ -176,6 +178,8 @@ class KinsAdapter extends RecyclerView.Adapter {
     class GroupHolder extends RecyclerView.ViewHolder {
         @BindView(R.id.kins_contact_item_groupName)
         TextView kins_item_groupName;
+        @BindView(R.id.kins_contact_item_avatar)
+        ImageView kins_item_group_avatar;
 
         public GroupHolder(View itemView) {
             super(itemView);

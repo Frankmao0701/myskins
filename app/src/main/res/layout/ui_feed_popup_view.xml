@@ -41,7 +41,7 @@
                 android:paddingLeft="8dp"
                 android:paddingRight="8dp"
                 android:singleLine="true"
-                android:text="@string/title_search_share"
+                android:text="@string/title_publish_share"
                 android:textColor="@color/color_f5f5f5"
                 android:textSize="14sp"
                 tools:text="分享" />
@@ -60,7 +60,7 @@
                 android:paddingLeft="8dp"
                 android:paddingRight="8dp"
                 android:singleLine="true"
-                android:text="@string/title_search_event"
+                android:text="@string/title_publish_event"
                 android:textColor="@color/color_f5f5f5"
                 android:textSize="14sp"
                 tools:text="活动" />

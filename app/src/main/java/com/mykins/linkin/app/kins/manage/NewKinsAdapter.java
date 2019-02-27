@@ -13,6 +13,8 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.mykins.linkin.R;
+import com.mykins.linkin.app.Router;
+import com.mykins.linkin.app.kins.chat.ChatActivity;
 import com.mykins.linkin.bean.KinsBean;
 import com.mykins.linkin.util.GlideHelper;
 import com.mykins.linkin.util.ResUtils;
@@ -93,6 +95,12 @@ class NewKinsAdapter extends RecyclerView.Adapter<NewKinsAdapter.NewKinsHolder> 
             holder.desc.setText(kin.getDescription());
             holder.buttons.setVisibility(View.GONE);
             holder.more.setVisibility(View.VISIBLE);
+            holder.itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Router.actChat(mActivity, ChatActivity.TYPE_SINGLE);
+                }
+            });
 
         } else if (type == VIEW_TYPE_RECOMMEND_KINS_TITLE) {
             String title = (String) mNewRecommendKins.get(0);

@@ -3,6 +3,7 @@ package com.mykins.linkin.app.register;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.TextInputLayout;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +13,7 @@ import android.widget.EditText;
 import com.mykins.linkin.app.BaseFragment;
 import com.mykins.linkin.R;
 import com.mykins.linkin.SnackBarHelper;
+import com.mykins.linkin.app.Router;
 import com.mykins.linkin.injection.Injectable;
 import com.mykins.linkin.util.CheckStrUtil;
 import com.mykins.linkin.util.RegexUtil;
@@ -127,10 +129,12 @@ public class RegisterFragment extends BaseFragment implements RegisterContract.V
             mRegisterVerifyInputLayout.setError(ResUtils.string(R.string.hint_register_verify_code));
             return;
         }
-        if (!RegexUtil.checkDigit(verifyCode)) {
-            mRegisterVerifyInputLayout.setError(ResUtils.string(R.string.error_invalid_verify));
-            return;
-        }
+//        if (!RegexUtil.checkDigit(verifyCode)) {
+//            mRegisterVerifyInputLayout.setError(ResUtils.string(R.string.error_invalid_verify));
+//            return;
+//        }
+        Router.actUserInfo(mActivity);
+        mActivity.finish();
 
     }
 
@@ -151,9 +155,12 @@ public class RegisterFragment extends BaseFragment implements RegisterContract.V
 
     @Override
     public void interval(Long s) {
-        if (s < 60 && s >= 0) {
-            mRegisterVerifyBtn.setText("( " + (60 - s) + " )");
+        Log.e("vetify::", s + "");
+        if (s < 59 && s >= 0) {
+            mRegisterVerifyBtn.setEnabled(false);
+            mRegisterVerifyBtn.setText("( " + (60 - s) + " )" + "秒");
         } else {
+            mRegisterVerifyBtn.setEnabled(true);
             mRegisterVerifyBtn.setText(ResUtils.string(R.string.title_send_verify_code));
         }
     }

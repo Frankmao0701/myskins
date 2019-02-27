@@ -35,6 +35,7 @@ import butterknife.Unbinder;
 import dagger.Binds;
 
 /**
+ * 亲页面
  * Created by jerry on 2017/9/4.
  */
 public class KinsFragment extends BaseFragment implements KinsContract.View, Injectable {
