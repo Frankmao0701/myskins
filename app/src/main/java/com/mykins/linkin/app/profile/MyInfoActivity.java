@@ -1,10 +1,14 @@
 package com.mykins.linkin.app.profile;
 
+import android.content.Intent;
 import android.graphics.Color;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
+import android.widget.ImageView;
 
 import com.bigkoo.pickerview.builder.OptionsPickerBuilder;
 import com.bigkoo.pickerview.listener.OnOptionsSelectChangeListener;
@@ -14,6 +18,8 @@ import com.mykins.linkin.R;
 import com.mykins.linkin.app.BaseActivity;
 import com.mykins.linkin.app.Router;
 import com.mykins.linkin.app.kins.profile.KinsProfileEditActivity;
+import com.mykins.linkin.util.GlideHelper;
+import com.zhihu.matisse.Matisse;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,8 +30,12 @@ import butterknife.OnClick;
 import butterknife.Unbinder;
 
 public class MyInfoActivity extends BaseActivity {
+    public static final int REQUEST_COCE_PHOTO = 0;
     @BindView(R.id.profile_user_info_toolbar)
     Toolbar mToolbar;
+
+    @BindView(R.id.profile_user_avatar)
+    ImageView img_avatar;
 
     Unbinder mUiBinder;
     private OptionsPickerView pvSexsOptions, pvAgeOptions;
@@ -57,6 +67,13 @@ public class MyInfoActivity extends BaseActivity {
         Router.actKinsProfileEdit(this, KinsProfileEditActivity.Editing.NAME, new String[]{"猪", "八戒"});
     }
 
+    @OnClick(R.id.kins_profile_item_avatar)
+    public void picAvatar() {
+        Router.actSysUlbum(mContext, REQUEST_COCE_PHOTO);
+    }
+
+    private List<Uri> mSelected;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         setContentView(R.layout.activity_my_info);
@@ -66,6 +83,19 @@ public class MyInfoActivity extends BaseActivity {
         getSupportActionBar().setDisplayShowTitleEnabled(false);
         initSexAgeData();
 
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == REQUEST_COCE_PHOTO && resultCode == RESULT_OK) {
+            mSelected = Matisse.obtainResult(data);
+            Log.d(TAG, "mSelected: " + mSelected);
+            if (mSelected != null && mSelected.size() == 1) {
+                String url = mSelected.get(0).toString();
+                GlideHelper.loadUrlRound(mContext, null, url, img_avatar, img_avatar.getWidth(), img_avatar.getHeight());
+            }
+        }
     }
 
     private void initSexAgeData() {

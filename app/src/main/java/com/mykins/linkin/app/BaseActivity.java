@@ -1,5 +1,6 @@
 package com.mykins.linkin.app;
 
+import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -16,7 +17,7 @@ import butterknife.Unbinder;
 
 public class BaseActivity extends AppCompatActivity {
     public final String TAG = this.getClass().getSimpleName();
-    protected Context mContext;
+    protected Activity mContext;
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {

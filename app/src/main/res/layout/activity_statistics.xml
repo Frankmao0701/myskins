@@ -105,7 +105,7 @@
     <com.github.mikephil.charting.charts.BarChart
         android:id="@+id/chart"
         android:layout_width="match_parent"
-        android:layout_height="287dp"
+        android:layout_height="300dp"
         android:background="@color/white" />
 
 </LinearLayout>

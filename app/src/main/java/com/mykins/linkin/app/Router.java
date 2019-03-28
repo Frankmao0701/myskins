@@ -2,6 +2,7 @@ package com.mykins.linkin.app;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 
 import com.mykins.linkin.app.diskins.DisKinsActivity;
 import com.mykins.linkin.app.feed.publish.ActivityDetailActivity;
@@ -26,7 +27,11 @@ import com.mykins.linkin.app.profile.StatisticsActivity;
 import com.mykins.linkin.app.profile.gather.GatherActivity;
 import com.mykins.linkin.app.search.SearchActivity;
 import com.mykins.linkin.app.start.StartActivity;
+import com.mykins.linkin.app.utils.MyGlideEngine;
 import com.uuzuche.lib_zxing.activity.CaptureActivity;
+import com.zhihu.matisse.Matisse;
+import com.zhihu.matisse.MimeType;
+import com.zhihu.matisse.engine.impl.GlideEngine;
 
 import java.io.Serializable;
 
@@ -214,6 +219,17 @@ public final class Router {
     public static void actForgetActivity(Activity activity) {
         checkActivity(activity);
         activity.startActivity(new Intent(activity, ForgetPwdActivity.class));
+    }
+    public static void actSysUlbum(Activity activity,int requestCode){
+        Matisse.from(activity)
+                .choose(MimeType.ofAll(), false) // 选择 mime 的类型
+                .countable(true)
+                .maxSelectable(1) // 图片选择的最多数量
+                .gridExpectedSize(320)
+                .restrictOrientation(ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED)
+                .thumbnailScale(0.85f) // 缩略图的比例
+                .imageEngine(new MyGlideEngine()) // 使用的图片加载引擎
+                .forResult(requestCode); // 设置作为标记的请求码
     }
 
 }

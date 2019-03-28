@@ -10,6 +10,7 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.RequestManager;
 import com.bumptech.glide.load.MultiTransformation;
 import com.bumptech.glide.request.RequestOptions;
+import com.mykins.linkin.utils.R;
 
 import jp.wasabeef.glide.transformations.RoundedCornersTransformation;
 
@@ -27,7 +28,7 @@ public final class GlideHelper {
         }
     }
 
-    public static void init(Context context){
+    public static void init(Context context) {
         radius = ConvertUtils.dp2px(context.getResources(), 12);
         isInitials = true;
     }
@@ -46,5 +47,20 @@ public final class GlideHelper {
 
         RequestManager rm = fragment != null ? Glide.with(fragment) : Glide.with(activity);
         rm.load(url).apply(RequestOptions.bitmapTransform(multi)).into(target);
+    }
+
+    public static void loadUrlRound(Activity activity, Fragment fragment, final String url, final ImageView target, int width, int height) {
+        MultiTransformation multi = new MultiTransformation(
+                new RoundedCornersTransformation(radius, 0, RoundedCornersTransformation.CornerType.ALL));
+
+        RequestManager rm = fragment != null ? Glide.with(fragment) : Glide.with(activity);
+        rm.load(url).apply(RequestOptions.bitmapTransform(multi).overrideOf(width, height).centerCrop()).into(target);
+    }
+
+    public static void loadUrl(Context context, final String url, final ImageView target) {
+        Glide.with(context)
+                .load(url)
+                .apply(RequestOptions.fitCenterTransform())
+                .into(target);
     }
 }

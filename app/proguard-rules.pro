@@ -37,7 +37,7 @@
     **[] $VALUES;
     public *;
 }
-
+-dontwarn com.bumptech.glide.**
 # butterknife
 -keep class **$$ViewBinder { *; }
 # A resource is loaded with a relative path so the package of this class must be preserved.

@@ -6,8 +6,17 @@ import android.support.v7.widget.Toolbar;
 
 import com.github.mikephil.charting.charts.BarChart;
 import com.github.mikephil.charting.components.XAxis;
+import com.github.mikephil.charting.data.BarData;
+import com.github.mikephil.charting.data.BarDataSet;
+import com.github.mikephil.charting.data.BarEntry;
+import com.github.mikephil.charting.formatter.IAxisValueFormatter;
+import com.github.mikephil.charting.interfaces.datasets.IBarDataSet;
+import com.github.mikephil.charting.utils.ColorTemplate;
 import com.mykins.linkin.R;
 import com.mykins.linkin.app.BaseActivity;
+import com.mykins.linkin.component.KinsAxisValueFormatter;
+
+import java.util.ArrayList;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -29,7 +38,42 @@ public class StatisticsActivity extends BaseActivity {
         setSupportActionBar(mToolbar);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
         initBarChart();
+        initData();
 
+    }
+
+    private void initData() {
+        ArrayList<BarEntry> values = new ArrayList<>();
+
+        for (int i = 0; i < 6; i++) {
+            float multi = (6 + 1);
+            float val = (float) (Math.random() * multi) + multi / 3;
+            val = 111 * (i + 1);
+            values.add(new BarEntry(i, val));
+        }
+
+        BarDataSet set1;
+
+        if (chart.getData() != null &&
+                chart.getData().getDataSetCount() > 0) {
+            set1 = (BarDataSet) chart.getData().getDataSetByIndex(0);
+            set1.setValues(values);
+            chart.getData().notifyDataChanged();
+            chart.notifyDataSetChanged();
+        } else {
+            set1 = new BarDataSet(values, "Data Set");
+            set1.setColors(ColorTemplate.VORDIPLOM_COLORS);
+            set1.setDrawValues(false);
+
+            ArrayList<IBarDataSet> dataSets = new ArrayList<>();
+            dataSets.add(set1);
+
+            BarData data = new BarData(dataSets);
+            chart.setData(data);
+            chart.setFitBars(true);
+        }
+
+        chart.invalidate();
     }
 
     private void initBarChart() {
@@ -45,9 +89,14 @@ public class StatisticsActivity extends BaseActivity {
         chart.setDrawBarShadow(false);
         chart.setDrawGridBackground(false);
 
+        IAxisValueFormatter xAxisFormatter = new KinsAxisValueFormatter(chart);
+
         XAxis xAxis = chart.getXAxis();
         xAxis.setPosition(XAxis.XAxisPosition.BOTTOM);
+        xAxis.setValueFormatter(xAxisFormatter);
         xAxis.setDrawGridLines(false);
+        xAxis.setTextSize(10);
+        xAxis.setTextColor(getResources().getColor(R.color.color_253335));
 
         chart.getAxisLeft().setDrawGridLines(false);
 
