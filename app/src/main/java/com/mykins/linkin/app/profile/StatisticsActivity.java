@@ -46,9 +46,8 @@ public class StatisticsActivity extends BaseActivity {
         ArrayList<BarEntry> values = new ArrayList<>();
 
         for (int i = 0; i < 6; i++) {
-            float multi = (6 + 1);
-            float val = (float) (Math.random() * multi) + multi / 3;
-            val = 111 * (i + 1);
+//            float multi = (6 + 1);
+            float val  = 80 * (i + 1);
             values.add(new BarEntry(i, val));
         }
 

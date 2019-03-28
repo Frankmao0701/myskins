@@ -7,6 +7,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.bigkoo.pickerview.builder.OptionsPickerBuilder;
@@ -34,6 +35,7 @@ import butterknife.Unbinder;
 
 public class PublishActivityActivity extends BaseActivity {
     public static final int ReQEUST_CODE = 0x22;
+    public static final int ReQEUST_CODE_PHOTO = 0x33;
     @BindView(R.id.publish_activity_toolbar)
     Toolbar mToolbar;
 
@@ -61,6 +63,10 @@ public class PublishActivityActivity extends BaseActivity {
     @OnClick(R.id.rl_activity_address)
     public void editAddress() {
         Router.actKinsProfileEdit(this, KinsProfileEditActivity.Editing.ACTIVITY_ADDRESS, "");
+    }
+    @OnClick(R.id.rl_theme_pic)
+    public void pickThemePhoto() {
+        Router.actSysUlbum(this, PublishActivityActivity.ReQEUST_CODE_PHOTO);
     }
 
     @OnClick(R.id.rl_activity_time)
@@ -117,6 +123,7 @@ public class PublishActivityActivity extends BaseActivity {
         setSupportActionBar(mToolbar);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
         getAddressData();
+
 //        initOptionPicker();
 
     }

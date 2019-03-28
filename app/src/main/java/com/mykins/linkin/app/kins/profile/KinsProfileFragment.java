@@ -430,11 +430,11 @@ public class KinsProfileFragment extends BaseFragment implements Injectable, Kin
         mNameValue.setText(StringUtils.valueOf(firstName == null ? null : (firstName + " " + secondName)
                 , ResUtils.string(is ? R.string.hint_kins_name : R.string.hint_dis_kins_name)));
 
-        mRelationValue.setText(StringUtils.valueOf(data.getRelations(), ResUtils.string(R.string.title_selection)));
+        mRelationValue.setText(StringUtils.valueOf(data.getRelations(), ResUtils.string(R.string.title_select_relation)));
 
         mAppellationValue.setText(StringUtils.valueOf(data.getAppellation(), ResUtils.string(R.string.title_selection)));
 
-        mZodiacValue.setText(StringUtils.valueOf(data.getZodiac(), ResUtils.string(R.string.title_selection)));
+        mZodiacValue.setText(StringUtils.valueOf(data.getZodiac(), ResUtils.string(R.string.title_select_birthday)));
 
         mAddressValue.setText(StringUtils.valueOf(data.getAddress()
                 , ResUtils.string(is ? R.string.hint_address : R.string.hint_dis_kins_address)));

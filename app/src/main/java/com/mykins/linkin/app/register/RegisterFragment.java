@@ -55,6 +55,11 @@ public class RegisterFragment extends BaseFragment implements RegisterContract.V
     @BindView(R.id.register_verify_btn)
     Button mRegisterVerifyBtn;
 
+    @OnClick(R.id.register_submit_btn)
+    public void registerFinished() {
+        Router.actUserInfo(mActivity);
+    }
+
 
     @Nullable
     @Override

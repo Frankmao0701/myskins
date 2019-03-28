@@ -109,7 +109,7 @@ class KinsAdapter extends RecyclerView.Adapter {
                 break;
             case TYPE_GROUP:
                 GroupHolder groupHolder = (GroupHolder) holder;
-                String urlGroup = "http://img.hb.aicdn.com/1bb534a3c66ceef02f2ad0ce0368c05966437cc819d23-cRA0rz_fw658";
+                String urlGroup = "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1553795272322&di=6c62180c365deb3b1b920a02fd84cde6&imgtype=0&src=http%3A%2F%2Fbpic.588ku.com%2Felement_origin_min_pic%2F00%2F91%2F20%2F7656f16057ce9da.jpg";
                 GlideHelper.loadUrlRound(mFragment, urlGroup, ((GroupHolder) holder).kins_item_group_avatar);
                 groupHolder.itemView.setOnClickListener(new View.OnClickListener() {
                     @Override

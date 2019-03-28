@@ -98,7 +98,7 @@ class NewKinsAdapter extends RecyclerView.Adapter<NewKinsAdapter.NewKinsHolder> 
             holder.itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Router.actChat(mActivity, ChatActivity.TYPE_SINGLE);
+                    Router.actAddKin(mActivity);
                 }
             });
 
